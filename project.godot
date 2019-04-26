@@ -16,8 +16,14 @@ _global_script_class_icons={
 [application]
 
 config/name="LudumDare44"
+run/main_scene="res://source/interface/menu/TitleScreen.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Scene="*res://source/global/Scene.tscn"
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
 environment/default_environment="res://default_env.tres"
