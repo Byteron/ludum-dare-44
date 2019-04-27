@@ -9,6 +9,8 @@ var neighbors = []
 export(Texture) var building_texture = null
 export(int) var build_time = 4.0
 
+export(int) var cost = 20
+
 onready var tween = $Tween
 onready var build_timer = $BuildTimer
 onready var sprite = $Sprite
