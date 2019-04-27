@@ -4,6 +4,7 @@ signal scene_loading_done
 
 # Scenes
 const TitleScreen := "res://source/interface/menu/Titlescreen.tscn"
+const Game := "res://source/game/Game.tscn"
 
 var next_scene := ""
 var loader: ResourceInteractiveLoader = null
