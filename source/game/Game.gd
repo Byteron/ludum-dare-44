@@ -9,8 +9,12 @@ onready var hud = $HUD
 
 func _input(event):
 	if event.is_action_pressed("click_left"):
-		var mouse_position = map.map_to_world(map.world_to_map(get_global_mouse_position())) + Vector2(8, 8)
-		build(mouse_position)
+		var mouse_cell = map.world_to_map(get_global_mouse_position())
+		var cell_tile = map.get_cellv(mouse_cell)
+		var tile_name = map.tile_set.tile_get_name(cell_tile)
+
+		if tile_name == "ground":
+			build(map.map_to_world(mouse_cell) + Vector2(8, 8))
 
 func _ready():
 	hud.set_max_budget(budget)
