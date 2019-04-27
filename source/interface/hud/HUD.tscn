@@ -7,4 +7,3 @@
 script = ExtResource( 1 )
 
 [node name="TopPanel" parent="." instance=ExtResource( 2 )]
-

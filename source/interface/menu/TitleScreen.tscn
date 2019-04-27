@@ -14,26 +14,35 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.145098, 0.133333, 0.117647, 1 )
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="CenterContainer" type="PanelContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -19.5
+margin_top = -25.0
+margin_right = 19.5
+margin_bottom = 25.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 175.0
-margin_top = 128.0
-margin_right = 225.0
-margin_bottom = 172.0
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 32.0
+margin_bottom = 43.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="Game" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_right = 54.0
-margin_bottom = 18.0
+margin_right = 25.0
+margin_bottom = 16.0
 text = "Game"
 
 [node name="Quit" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 22.0
-margin_right = 54.0
-margin_bottom = 40.0
+margin_top = 20.0
+margin_right = 25.0
+margin_bottom = 36.0
 text = "Quit"
-
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Game" to="." method="_on_Game_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]

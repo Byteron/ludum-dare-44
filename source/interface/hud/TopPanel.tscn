@@ -1,39 +1,69 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/interface/theme.tres" type="Theme" id=1]
-[ext_resource path="res://source/interface/hud/TopPanel.gd" type="Script" id=2]
-[ext_resource path="res://assets/sprites/progress.png" type="Texture" id=3]
+[ext_resource path="res://assets/interface/panel_styleboxtexture.tres" type="StyleBox" id=2]
+[ext_resource path="res://source/interface/hud/TopPanel.gd" type="Script" id=3]
+[ext_resource path="res://assets/sprites/progress.png" type="Texture" id=4]
+[ext_resource path="res://assets/interface/gui_elements.png" type="Texture" id=5]
 
-[node name="TopPanel" type="Control"]
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 5 )
+region = Rect2( 32, 16, 32, 7 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 5 )
+region = Rect2( 32, 23, 32, 7 )
+
+[node name="TopPanel" type="PanelContainer"]
 anchor_right = 1.0
 margin_left = 1.0
 margin_top = 1.0
 margin_right = -1.0
+margin_bottom = 14.0
 rect_min_size = Vector2( 0, 10 )
 theme = ExtResource( 1 )
-script = ExtResource( 2 )
+custom_styles/panel = ExtResource( 2 )
+script = ExtResource( 3 )
 
 [node name="Tween" type="Tween" parent="."]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 188.0
+margin_bottom = 17.0
 
 [node name="BugdetProgress" type="TextureProgress" parent="HBoxContainer"]
+visible = false
 margin_right = 50.0
-margin_bottom = 10.0
+margin_bottom = 15.0
 rect_min_size = Vector2( 50, 0 )
 max_value = 1000.0
 value = 1000.0
-texture_under = ExtResource( 3 )
-texture_progress = ExtResource( 3 )
+texture_under = ExtResource( 4 )
+texture_progress = ExtResource( 4 )
 tint_under = Color( 0, 0, 0, 0.54902 )
 tint_progress = Color( 0.580392, 0.52549, 0.0823529, 1 )
 nine_patch_stretch = true
 
-[node name="Label" type="Label" parent="HBoxContainer/BugdetProgress"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-text = "Budget"
-align = 1
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 32.0
+margin_bottom = 15.0
+custom_constants/separation = 0
+alignment = 1
 
+[node name="TextureProgress" type="TextureProgress" parent="HBoxContainer/VBoxContainer"]
+margin_right = 32.0
+margin_bottom = 7.0
+value = 25.0
+texture_under = SubResource( 1 )
+texture_progress = SubResource( 2 )
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
+margin_top = 7.0
+margin_right = 32.0
+margin_bottom = 15.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "100.000$"
+align = 1
