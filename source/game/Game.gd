@@ -12,6 +12,9 @@ func _input(event):
 		var mouse_position = map.map_to_world(map.world_to_map(get_global_mouse_position())) + Vector2(8, 8)
 		build(mouse_position)
 
+func _ready():
+	hud.set_max_budget(budget)
+
 func build(position):
 	var building = Building.instance()
 	building.position = position
