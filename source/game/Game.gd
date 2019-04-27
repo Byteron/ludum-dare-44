@@ -1,6 +1,14 @@
 extends Node2D
 
 const Building = preload("res://source/game/buildings/Building.tscn")
+const LivingUnit = preload("res://source/game/buildings/LivingUnit.tscn")
+const ProductionUnit = preload("res://source/game/buildings/ProductionUnit.tscn")
+
+var buildings = [
+	Building,
+	LivingUnit,
+	ProductionUnit
+]
 
 export(int) var budget = 1000 setget _set_budget
 
@@ -20,7 +28,7 @@ func _ready():
 	hud.set_max_budget(budget)
 
 func build(position):
-	var building = Building.instance()
+	var building = buildings[randi() % buildings.size()].instance()
 	building.position = position
 	var new_budget = budget - building.cost
 	_set_budget(new_budget)
