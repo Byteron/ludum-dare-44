@@ -23,6 +23,15 @@ config/icon="res://icon.png"
 
 Scene="*res://source/global/Scene.tscn"
 
+[display]
+
+window/size/width=200
+window/size/height=150
+window/size/test_width=800
+window/size/test_height=600
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
 [rendering]
 
 quality/driver/driver_name="GLES2"
