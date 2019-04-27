@@ -27,6 +27,7 @@ Scene="*res://source/global/Scene.tscn"
 
 window/size/width=200
 window/size/height=150
+window/size/resizable=false
 window/size/test_width=800
 window/size/test_height=600
 window/stretch/mode="viewport"
@@ -35,4 +36,7 @@ window/stretch/aspect="keep"
 [rendering]
 
 quality/driver/driver_name="GLES2"
+quality/intended_usage/framebuffer_allocation=0
+quality/intended_usage/framebuffer_allocation.mobile=0
+quality/depth/hdr=false
 environment/default_environment="res://default_env.tres"
