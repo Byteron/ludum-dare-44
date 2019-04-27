@@ -29,7 +29,8 @@ func _ready():
 
 func build(position):
 	var building = buildings[randi() % buildings.size()].instance()
-	building.connect("ticked", self, "_on_building_ticked")
+	if building.type == building.TYPE.PRODUCTION_UNIT:
+		building.connect("ticked", self, "_on_building_ticked")
 	building.position = position
 	var new_budget = budget - building.cost
 	_set_budget(new_budget)

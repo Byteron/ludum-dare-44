@@ -1,5 +1,4 @@
 extends Building
-
 const PopLabel = preload("res://source/interface/PopLabel.tscn")
 
 signal ticked(income)
@@ -10,7 +9,7 @@ export(float) var tick_time = 10
 
 onready var tick_timer = $TickTimer
 
-func _ready():
+func _init():
 	type = TYPE.PRODUCTION_UNIT
 
 func _calculate_income():
