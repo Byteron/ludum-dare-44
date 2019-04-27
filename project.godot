@@ -30,11 +30,11 @@ Scene="*res://source/global/Scene.tscn"
 
 [display]
 
-window/size/width=200
-window/size/height=150
+window/size/width=192
+window/size/height=144
 window/size/resizable=false
-window/size/test_width=800
-window/size/test_height=600
+window/size/test_width=768
+window/size/test_height=576
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
