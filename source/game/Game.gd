@@ -29,6 +29,7 @@ func _ready():
 
 func build(position):
 	var building = buildings[randi() % buildings.size()].instance()
+	building.connect("ticked", self, "_on_building_ticked")
 	building.position = position
 	var new_budget = budget - building.cost
 	_set_budget(new_budget)
@@ -37,3 +38,6 @@ func build(position):
 func _set_budget(new_budget):
 	budget = new_budget
 	hud.update_budget(new_budget)
+
+func _on_building_ticked(income):
+	_set_budget(budget + income)

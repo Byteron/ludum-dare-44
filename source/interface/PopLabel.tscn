@@ -7,6 +7,9 @@
 script = ExtResource( 1 )
 text = "100"
 tint = Color( 1, 0, 0, 1 )
+final_scale = Vector2( 1.2, 1.2 )
+float_distance = 40.0
+duration = 0.35
 
 [node name="Tween" type="Tween" parent="."]
 
