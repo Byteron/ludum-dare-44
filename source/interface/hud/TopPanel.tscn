@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/interface/theme.tres" type="Theme" id=1]
 [ext_resource path="res://source/interface/hud/TopPanel.gd" type="Script" id=2]
+[ext_resource path="res://assets/sprites/progress.png" type="Texture" id=3]
 
 [node name="TopPanel" type="Control"]
 anchor_right = 1.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = -1.0
 rect_min_size = Vector2( 0, 10 )
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
@@ -15,9 +19,15 @@ script = ExtResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="BudgetLabel" type="Label" parent="HBoxContainer"]
-margin_right = 51.0
+[node name="BugdetProgress" type="TextureProgress" parent="HBoxContainer"]
+margin_right = 50.0
 margin_bottom = 10.0
-rect_min_size = Vector2( 0, 10 )
-text = "Budget: 1000"
+rect_min_size = Vector2( 50, 0 )
+max_value = 1000.0
+value = 1000.0
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 3 )
+tint_under = Color( 0, 0, 0, 0.54902 )
+tint_progress = Color( 0.752941, 0.701961, 0.294118, 1 )
+nine_patch_stretch = true
 

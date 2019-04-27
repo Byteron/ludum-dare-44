@@ -4,11 +4,12 @@ const Building = preload("res://source/game/buildings/Building.tscn")
 
 export(int) var budget = 1000 setget _set_budget
 
+onready var map = $Map
 onready var hud = $HUD
 
 func _input(event):
 	if event.is_action_pressed("click_left"):
-		var mouse_position = get_global_mouse_position()
+		var mouse_position = map.map_to_world(map.world_to_map(get_global_mouse_position())) + Vector2(8, 8)
 		build(mouse_position)
 
 func build(position):
