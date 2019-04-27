@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://source/interface/PopLabel.gd" type="Script" id=1]
+[ext_resource path="res://assets/interface/theme.tres" type="Theme" id=2]
+
+[node name="PopLabel" type="Control"]
+script = ExtResource( 1 )
+text = "100"
+tint = Color( 1, 0, 0, 1 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -35.0
+margin_top = -7.0
+margin_right = 35.0
+margin_bottom = 7.0
+theme = ExtResource( 2 )
+text = "My Text"
+align = 1
+valign = 1
+
