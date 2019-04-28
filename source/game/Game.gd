@@ -53,11 +53,9 @@ func _set_budget(new_budget):
 	hud.update_budget(new_budget)
 
 func _on_mouse_entered_building(building_name):
-	print("entered")
 	hud.show_name_panel(building_name)
 
 func _on_mouse_exited_building():
-	print("exited")
 	hud.clear_name_panel()
 
 func _on_building_ticked(income):

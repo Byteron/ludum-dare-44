@@ -32,7 +32,6 @@ func change(scene: String) -> void:
 func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
 	if anim_name == "fade_out":
 		loader = ResourceLoader.load_interactive(next_scene)
-		print(loader.get_stage_count())
 		loading_bar.max_value = loader.get_stage_count() - 1
 
 		yield(self, "scene_loading_done")
