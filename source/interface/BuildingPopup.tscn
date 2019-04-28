@@ -77,5 +77,5 @@ margin_top = 71.0
 margin_right = 109.0
 margin_bottom = 87.0
 text = "Invest!"
-
+[connection signal="about_to_show" from="." to="." method="_on_BuildingPopup_about_to_show"]
 [connection signal="pressed" from="VBoxContainer/InvestButton" to="." method="_on_InvestButton_pressed"]
