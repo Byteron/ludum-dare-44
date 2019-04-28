@@ -44,18 +44,21 @@ building_name = ""
 
 [node name="LivingUnit3" parent="BuildingContainer" instance=ExtResource( 4 )]
 position = Vector2( 8, 72 )
+build_on_startup = true
 building_name = ""
 
 [node name="LivingUnit5" parent="BuildingContainer" instance=ExtResource( 4 )]
 position = Vector2( 8, 56 )
+build_on_startup = true
 building_name = ""
 
 [node name="LivingUnit8" parent="BuildingContainer" instance=ExtResource( 4 )]
 position = Vector2( 8, 40 )
+build_on_startup = true
 building_name = ""
 
 [node name="ProductionBuilding" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 24, 56 )
+build_on_startup = true
 
 [node name="HUD" parent="." instance=ExtResource( 6 )]
-

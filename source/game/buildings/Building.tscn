@@ -29,5 +29,4 @@ texture_progress = ExtResource( 4 )
 tint_under = Color( 0, 0, 0, 0.54902 )
 tint_progress = Color( 0.435294, 0.309804, 0.137255, 1 )
 nine_patch_stretch = true
-
 [connection signal="timeout" from="BuildTimer" to="." method="_on_BuildTimer_timeout"]

@@ -8,14 +8,16 @@ var neighbors = []
 
 var is_build = false
 
+export(bool) var build_on_startup = false
+
 export(String) var building_name = ""
+export(String) var flavour_text = ""
 
 export(Texture) var building_texture = null
 export(int) var build_time = 4.0
 
 export(int) var cost = 20
 
-export(String) var flavour_text = ""
 
 onready var tween = $Tween
 onready var build_timer = $BuildTimer
@@ -24,6 +26,8 @@ onready var building_progress = $BuildingProgress
 
 func _ready():
 	build_timer.wait_time = build_time
+	if build_on_startup:
+		build()
 
 func build():
 	is_build = true
