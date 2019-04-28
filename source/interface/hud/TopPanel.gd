@@ -8,7 +8,6 @@ func set_max_budget(max_budget):
 	budget_progress.max_value = max_budget
 
 func update_budget(new_budget):
-	print("update_budget")
 	var color = null
 
 	if budget_progress.value > new_budget:

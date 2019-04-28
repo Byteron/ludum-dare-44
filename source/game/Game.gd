@@ -63,9 +63,8 @@ func _on_mouse_exited_building():
 func _on_building_ticked(income):
 	_set_budget(budget + income)
 
-func _on_EventHandler_event_happened(event) -> void:
+func _on_EventHandler_event_happened(event):
 	hud.show_article(event.description)
 
-func _on_HUD_building_invested(building) -> void:
-	print("invested")
+func _on_HUD_building_invested(building):
 	_build(building)

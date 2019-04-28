@@ -30,5 +30,5 @@ func clear_name_panel():
 	name_panel.text = ""
 	name_panel.fade_out()
 
-func _on_BuildingPopup_invested(building) -> void:
+func _on_BuildingPopup_invested(building):
 	emit_signal("building_invested", building)
