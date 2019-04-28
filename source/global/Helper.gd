@@ -6,4 +6,4 @@ func beautify_number(num):
     while index > 0:
         number_string = number_string.insert(index, ',')
         index -= 3
-    return "$" + number_string
+    return number_string
