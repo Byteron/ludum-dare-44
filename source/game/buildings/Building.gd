@@ -30,7 +30,8 @@ onready var building_progress = $BuildingProgress
 func _ready():
 	build_timer.wait_time = build_time
 	if build_on_startup:
-		build()
+		is_build = true
+		call_deferred("_on_BuildTimer_timeout")
 
 func build():
 	is_build = true
