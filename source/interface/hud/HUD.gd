@@ -2,6 +2,10 @@ extends CanvasLayer
 
 onready var top_panel = $TopPanel
 onready var building_popup = $BuildingPopup
+onready var newspaper = $Newspaper
+
+func show_article(text):
+	newspaper.show_article(text)
 
 func show_building_popup(building):
 	building_popup.building = building
