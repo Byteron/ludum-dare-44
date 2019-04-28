@@ -19,3 +19,6 @@ func set_building(slug):
 func _on_InvestButton_pressed():
 	emit_signal("invest_pressed")
 	
+
+func _on_BuildingPopup_about_to_show():
+	$VBoxContainer/InvestButton.disabled = building.cost > get_node("/root/Game").budget
