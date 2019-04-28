@@ -7,6 +7,7 @@
 color = Color( 1, 1, 1, 1 )
 
 [node name="BuildingPopup" type="PopupPanel"]
+visible = true
 margin_right = 8.0
 margin_bottom = 8.0
 theme = ExtResource( 1 )
@@ -22,6 +23,7 @@ custom_constants/separation = 1
 [node name="Name" type="Label" parent="VBoxContainer"]
 margin_right = 109.0
 margin_bottom = 8.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Sternbucks"
 align = 1
 
