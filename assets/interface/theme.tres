@@ -41,3 +41,4 @@ Panel/styles/panel = ExtResource( 2 )
 Panel/styles/panelf = null
 Panel/styles/panelnc = null
 PanelContainer/styles/panel = ExtResource( 2 )
+PopupPanel/styles/panel = ExtResource( 2 )
