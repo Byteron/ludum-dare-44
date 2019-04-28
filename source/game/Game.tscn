@@ -4,8 +4,8 @@
 [ext_resource path="res://source/game/EventHandler.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/tilesets/tileset.tres" type="TileSet" id=3]
 [ext_resource path="res://source/game/map/Map.tscn" type="PackedScene" id=4]
-[ext_resource path="res://source/game/buildings/LivingUnit.tscn" type="PackedScene" id=5]
-[ext_resource path="res://source/game/buildings/ProductionUnit.tscn" type="PackedScene" id=6]
+[ext_resource path="res://source/game/buildings/Housings.tscn" type="PackedScene" id=5]
+[ext_resource path="res://source/game/buildings/SuperMarket.tscn" type="PackedScene" id=6]
 [ext_resource path="res://source/interface/hud/HUD.tscn" type="PackedScene" id=7]
 
 [node name="Game" type="Node2D"]
@@ -25,36 +25,59 @@ tile_data = PoolIntArray( -65532, 3, 65536, -65527, 3, 65536, 0, 0, 0, 1, 0, 0, 
 
 [node name="BuildingContainer" type="Node2D" parent="."]
 
-[node name="LivingUnit" parent="BuildingContainer" instance=ExtResource( 5 )]
-position = Vector2( 40, 72 )
+[node name="Housings" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 8, 72 )
 
-[node name="LivingUnit6" parent="BuildingContainer" instance=ExtResource( 5 )]
-position = Vector2( 40, 56 )
+[node name="Housings3" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 104, 56 )
 
-[node name="LivingUnit7" parent="BuildingContainer" instance=ExtResource( 5 )]
-position = Vector2( 40, 40 )
+[node name="Housings10" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 120, 56 )
 
-[node name="LivingUnit2" parent="BuildingContainer" instance=ExtResource( 5 )]
+[node name="Housings11" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 136, 56 )
+
+[node name="Housings12" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 120, 72 )
+
+[node name="Housings13" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 104, 72 )
+
+[node name="Housings5" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 8, 56 )
+
+[node name="Housings9" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 8, 40 )
+
+[node name="Housings2" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 24, 72 )
 
-[node name="LivingUnit9" parent="BuildingContainer" instance=ExtResource( 5 )]
+[node name="Housings4" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 24, 56 )
+
+[node name="Housings7" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 24, 40 )
 
-[node name="LivingUnit3" parent="BuildingContainer" instance=ExtResource( 5 )]
-position = Vector2( 8, 72 )
-build_on_startup = true
+[node name="Housings6" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 40, 56 )
 
-[node name="LivingUnit5" parent="BuildingContainer" instance=ExtResource( 5 )]
-position = Vector2( 8, 56 )
-build_on_startup = true
+[node name="Housings14" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 72, 88 )
 
-[node name="LivingUnit8" parent="BuildingContainer" instance=ExtResource( 5 )]
-position = Vector2( 8, 40 )
-build_on_startup = true
+[node name="Housings15" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 104, 88 )
 
-[node name="ProductionBuilding" parent="BuildingContainer" instance=ExtResource( 6 )]
-position = Vector2( 24, 56 )
-build_on_startup = true
+[node name="Housings8" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 40, 40 )
+
+[node name="SuperMarket" parent="BuildingContainer" instance=ExtResource( 6 )]
+position = Vector2( 40, 72 )
+
+[node name="SuperMarket2" parent="BuildingContainer" instance=ExtResource( 6 )]
+position = Vector2( 136, 72 )
+
+[node name="SuperMarket3" parent="BuildingContainer" instance=ExtResource( 6 )]
+position = Vector2( 88, 88 )
 
 [node name="HUD" parent="." instance=ExtResource( 7 )]
 [connection signal="event_happened" from="EventHandler" to="." method="_on_EventHandler_event_happened"]

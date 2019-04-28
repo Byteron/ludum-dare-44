@@ -7,6 +7,9 @@ onready var building_popup = $BuildingPopup
 onready var newspaper = $Newspaper
 onready var name_panel = $NamePanel
 
+func _ready():
+	newspaper.show()
+
 func show_article(text):
 	newspaper.show_article(text)
 	name_panel.text = ""

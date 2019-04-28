@@ -1,16 +1,7 @@
 extends Node2D
 
-const Building = preload("res://source/game/buildings/Building.tscn")
-const LivingUnit = preload("res://source/game/buildings/LivingUnit.tscn")
-const ProductionUnit = preload("res://source/game/buildings/ProductionUnit.tscn")
-
-var buildings = [
-	LivingUnit,
-	ProductionUnit
-]
-
-export(int) var max_budget = 10000
-export(int) var budget = 1000 setget _set_budget
+export(int) var max_budget = 100000
+export(int) var budget = 85000 setget _set_budget
 
 onready var map = $Map
 onready var building_container = $BuildingContainer

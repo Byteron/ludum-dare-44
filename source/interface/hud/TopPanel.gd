@@ -1,7 +1,7 @@
 extends Control
 
 onready var tween = $Tween
-onready var budget_progress = $HBoxContainer/BugdetProgress
+onready var budget_progress = $HBoxContainer/VBoxContainer/BudgetProgress
 onready var budget_label = $HBoxContainer/VBoxContainer/Label
 
 func set_max_budget(max_budget):
