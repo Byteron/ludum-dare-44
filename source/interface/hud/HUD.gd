@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+signal building_invested(building)
+
 onready var top_panel = $TopPanel
 onready var building_popup = $BuildingPopup
 onready var newspaper = $Newspaper
@@ -7,6 +9,8 @@ onready var name_panel = $NamePanel
 
 func show_article(text):
 	newspaper.show_article(text)
+	name_panel.text = ""
+	name_panel.fade_out()
 
 func show_building_popup(building):
 	building_popup.building = building
@@ -25,3 +29,6 @@ func show_name_panel(building_name):
 func clear_name_panel():
 	name_panel.text = ""
 	name_panel.fade_out()
+
+func _on_BuildingPopup_invested(building) -> void:
+	emit_signal("building_invested", building)

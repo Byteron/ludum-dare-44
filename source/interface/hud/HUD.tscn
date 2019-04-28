@@ -36,3 +36,4 @@ margin_left = -35.0
 margin_top = -10.0
 margin_right = 35.0
 margin_bottom = 0.0
+[connection signal="invested" from="BuildingPopup" to="." method="_on_BuildingPopup_invested"]

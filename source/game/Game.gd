@@ -9,6 +9,7 @@ var buildings = [
 	ProductionUnit
 ]
 
+export(int) var max_budget = 10000
 export(int) var budget = 1000 setget _set_budget
 
 onready var map = $Map
@@ -27,22 +28,23 @@ func _input(event):
 				hud.show_building_popup(location.building)
 
 func _ready():
-	hud.set_max_budget(budget)
+	hud.set_max_budget(max_budget)
+	hud.update_budget(budget)
 	_setup_buildings()
 
-func build(position):
-	var building = buildings[randi() % buildings.size()].instance()
-	if building.type == building.TYPE.PRODUCTION_UNIT:
-		building.connect("ticked", self, "_on_building_ticked")
-	building.position = position
+func _build(building):
 	var new_budget = budget - building.cost
 	_set_budget(new_budget)
-	add_child(building)
+	building.build()
 
 func _setup_buildings():
 	for building in building_container.get_children():
 		building.connect("mouse_entered", self, "_on_mouse_entered_building")
 		building.connect("mouse_exited", self, "_on_mouse_exited_building")
+
+		if building.type == building.TYPE.PRODUCTION_UNIT:
+			building.connect("ticked", self, "_on_building_ticked")
+
 		var cell = map.world_to_map(building.position)
 		var location = map.get_location(cell)
 		building.position = location.position
@@ -63,3 +65,7 @@ func _on_building_ticked(income):
 
 func _on_EventHandler_event_happened(event) -> void:
 	hud.show_article(event.description)
+
+func _on_HUD_building_invested(building) -> void:
+	print("invested")
+	_build(building)

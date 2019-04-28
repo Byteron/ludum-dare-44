@@ -1,5 +1,7 @@
 extends PopupPanel
 
+signal invested(building)
+
 var building setget _set_building
 
 onready var name_label = $VBoxContainer/Name
@@ -24,7 +26,7 @@ func _set_building(slug):
 	flavour_label.text = str(building.flavour_text)
 
 func _on_InvestButton_pressed():
-	building.build()
+	emit_signal("invested", building)
 	building = null
 	hide()
 

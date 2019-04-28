@@ -58,3 +58,4 @@ build_on_startup = true
 
 [node name="HUD" parent="." instance=ExtResource( 7 )]
 [connection signal="event_happened" from="EventHandler" to="." method="_on_EventHandler_event_happened"]
+[connection signal="building_invested" from="HUD" to="." method="_on_HUD_building_invested"]
