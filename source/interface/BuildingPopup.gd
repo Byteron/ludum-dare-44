@@ -1,5 +1,7 @@
 extends PopupPanel
 
+signal invest_pressed
+
 var building setget set_building
 
 func set_building(slug):
@@ -9,3 +11,7 @@ func set_building(slug):
 	$VBoxContainer/IncomeLabel.text = str(building.income)
 	$VBoxContainer/UpkeepLabel.text = str(building.upkep)
 	$VBoxContainer/FlavourLabel.text = str(building.flavourtext)
+
+func _on_InvestButton_pressed():
+	emit_signal("invest_pressed")
+	
