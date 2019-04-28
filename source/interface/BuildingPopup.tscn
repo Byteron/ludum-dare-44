@@ -38,7 +38,7 @@ margin_right = 109.0
 margin_bottom = 22.0
 custom_styles/separator = SubResource( 1 )
 
-[node name="IncomeLabel" type="Label" parent="VBoxContainer"]
+[node name="RevenueLabel" type="Label" parent="VBoxContainer"]
 margin_top = 23.0
 margin_right = 109.0
 margin_bottom = 31.0

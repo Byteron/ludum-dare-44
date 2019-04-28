@@ -13,6 +13,7 @@ var buildings = [
 export(int) var budget = 1000 setget _set_budget
 
 onready var map = $Map
+onready var building_container = $BuildingContainer
 onready var hud = $HUD
 
 func _input(event):
@@ -22,10 +23,13 @@ func _input(event):
 		var tile_name = map.tile_set.tile_get_name(cell_tile)
 
 		if tile_name == "ground":
-			build(map.map_to_world(mouse_cell) + Vector2(8, 8))
+			var location = map.get_location(mouse_cell)
+			if location.building and not location.building.is_build:
+				hud.show_building_popup(location.building)
 
 func _ready():
 	hud.set_max_budget(budget)
+	_setup_buildings()
 
 func build(position):
 	var building = buildings[randi() % buildings.size()].instance()
@@ -35,6 +39,13 @@ func build(position):
 	var new_budget = budget - building.cost
 	_set_budget(new_budget)
 	add_child(building)
+
+func _setup_buildings():
+	for building in building_container.get_children():
+		var cell = map.world_to_map(building.position)
+		var location = map.get_location(cell)
+		building.position = location.position
+		location.building = building
 
 func _set_budget(new_budget):
 	budget = new_budget
