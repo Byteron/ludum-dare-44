@@ -53,3 +53,6 @@ func _set_budget(new_budget):
 
 func _on_building_ticked(income):
 	_set_budget(budget + income)
+
+func _on_EventHandler_event_happened(event) -> void:
+	hud.show_article(event.description)

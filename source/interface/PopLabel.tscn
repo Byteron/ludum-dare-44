@@ -1,15 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://source/interface/PopLabel.gd" type="Script" id=1]
 [ext_resource path="res://assets/interface/theme.tres" type="Theme" id=2]
+[ext_resource path="res://fonts/poco/PocoOutlined.tres" type="DynamicFont" id=3]
 
 [node name="PopLabel" type="Control"]
 script = ExtResource( 1 )
 text = "100"
 tint = Color( 1, 0, 0, 1 )
-final_scale = Vector2( 1.2, 1.2 )
+final_scale = Vector2( 1, 1 )
 float_distance = 40.0
-duration = 0.35
 
 [node name="Tween" type="Tween" parent="."]
 
@@ -23,7 +23,7 @@ margin_top = -7.0
 margin_right = 35.0
 margin_bottom = 7.0
 theme = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 text = "My Text"
 align = 1
 valign = 1
-
