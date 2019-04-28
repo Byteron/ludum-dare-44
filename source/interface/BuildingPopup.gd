@@ -11,15 +11,15 @@ onready var flavour_label = $VBoxContainer/FlavourLabel
 func _set_building(slug):
 	building = slug
 	name_label.text = str(building.building_name)
-	cost_label.text = "Investment: %s$" % str(building.cost)
+	cost_label.text = "Investment: %s$" % Helper.beautify_number(building.cost)
 
 	if building.type == building.TYPE.LIVING_UNIT:
 		revenue_label.text = "Max Revenue: %s$" % "-"
 		upkeep_label.text = "Upkeep: %s$" % "-"
 
 	elif building.type == building.TYPE.PRODUCTION_UNIT:
-		revenue_label.text = "Max Revenue: %d$" % building.revenue
-		upkeep_label.text = "Upkeep: %d$" % building.upkeep
+		revenue_label.text = "Max Revenue: %s$" % Helper.beautify_number(building.revenue)
+		upkeep_label.text = "Upkeep: %s$" % Helper.beautify_number(building.upkeep)
 
 	flavour_label.text = str(building.flavour_text)
 
