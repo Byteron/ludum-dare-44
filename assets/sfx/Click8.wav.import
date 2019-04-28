@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Click8.wav-fd98e0623cccc4f1553ab034ca1b0998.sample"
+
+[deps]
+
+source_file="res://assets/sfx/Click8.wav"
+dest_files=[ "res://.import/Click8.wav-fd98e0623cccc4f1553ab034ca1b0998.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

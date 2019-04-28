@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Confirm5.wav-2b2888cbfbe6c6eba0a90844908e5e2d.sample"
+
+[deps]
+
+source_file="res://assets/sfx/Confirm5.wav"
+dest_files=[ "res://.import/Confirm5.wav-2b2888cbfbe6c6eba0a90844908e5e2d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

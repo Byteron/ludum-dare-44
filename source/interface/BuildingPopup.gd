@@ -26,6 +26,7 @@ func _set_building(slug):
 	flavour_label.text = str(building.flavour_text)
 
 func _on_InvestButton_pressed():
+	Audio.play("confirm")
 	emit_signal("invested", building)
 	building = null
 	hide()

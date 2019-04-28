@@ -22,7 +22,7 @@ func _ready():
 	hud.set_max_budget(max_budget)
 	hud.update_budget(budget)
 	_setup_buildings()
-
+	Audio.play("music")
 func _build(building):
 	var new_budget = budget - building.cost
 	_set_budget(new_budget)

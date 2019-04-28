@@ -18,6 +18,7 @@ func show_article(text):
 func slide_in():
 	$Tween.interpolate_property(self, "rect_position", hidden_pos, visible_pos, 0.8, Tween.TRANS_BACK, Tween.EASE_OUT)
 	$Tween.start()
+	Audio.play("alert")
 
 func slide_out():
 	$Tween.interpolate_property(self, "rect_position", visible_pos, hidden_pos, 0.8, Tween.TRANS_BACK, Tween.EASE_IN)

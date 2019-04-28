@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Streetscape.ogg-700ac004cad32d4322d6e0f74012090b.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/Streetscape.ogg"
+dest_files=[ "res://.import/Streetscape.ogg-700ac004cad32d4322d6e0f74012090b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

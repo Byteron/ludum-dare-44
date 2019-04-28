@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Build5.wav-b268af1d700864e6a1980b9bab854d37.sample"
+
+[deps]
+
+source_file="res://assets/sfx/Build5.wav"
+dest_files=[ "res://.import/Build5.wav-b268af1d700864e6a1980b9bab854d37.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

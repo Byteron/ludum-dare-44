@@ -43,7 +43,7 @@ func build():
 
 func _on_BuildTimer_timeout():
 	building_progress.hide()
-
+	Audio.play("build")
 	tween.interpolate_property(sprite, "modulate", Color("000000"), Color("FFFFFF"), 0.2, Tween.TRANS_SINE, Tween.EASE_IN)
 	tween.start()
 

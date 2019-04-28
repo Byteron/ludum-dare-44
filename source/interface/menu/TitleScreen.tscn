@@ -44,5 +44,19 @@ margin_top = 20.0
 margin_right = 25.0
 margin_bottom = 36.0
 text = "Quit"
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 0.6
+
+[node name="Label" type="Label" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = -21.0
+margin_right = 128.0
+margin_bottom = -2.0
+text = "A Game by:
+Bitron, Dalton5000, SilverSock"
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Game" to="." method="_on_Game_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
