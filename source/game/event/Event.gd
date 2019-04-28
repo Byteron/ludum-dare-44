@@ -4,7 +4,9 @@ signal happened(event)
 
 export(int) var tick_time = 10
 export(float, 0.0, 1.0) var probability = 0.1
-export(String) var description = "an event happened!"
+
+export(String) var title = "Event Title"
+export(String, MULTILINE) var description = "An event happened this week!"
 
 onready var tick_timer = $TickTimer
 

@@ -1,19 +1,18 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/interface/theme.tres" type="Theme" id=1]
-[ext_resource path="res://assets/interface/panel_styleboxtexture.tres" type="StyleBox" id=2]
-[ext_resource path="res://source/interface/hud/TopPanel.gd" type="Script" id=3]
-[ext_resource path="res://assets/interface/gui_elements.png" type="Texture" id=4]
+[ext_resource path="res://source/interface/hud/TopPanel.gd" type="Script" id=2]
+[ext_resource path="res://assets/interface/gui_elements.png" type="Texture" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 4 )
+atlas = ExtResource( 3 )
 region = Rect2( 32, 16, 32, 7 )
 
 [sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 4 )
+atlas = ExtResource( 3 )
 region = Rect2( 32, 23, 32, 7 )
 
-[node name="TopPanel" type="PanelContainer"]
+[node name="TopPanel" type="Control"]
 anchor_right = 1.0
 margin_left = 1.0
 margin_top = 1.0
@@ -21,8 +20,7 @@ margin_right = -1.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 0, 10 )
 theme = ExtResource( 1 )
-custom_styles/panel = ExtResource( 2 )
-script = ExtResource( 3 )
+script = ExtResource( 2 )
 
 [node name="Tween" type="Tween" parent="."]
 
