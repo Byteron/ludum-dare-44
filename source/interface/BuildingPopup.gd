@@ -27,7 +27,7 @@ func _on_InvestButton_pressed():
 	building.build()
 	building = null
 	hide()
-	
+
 
 func _on_BuildingPopup_about_to_show():
 	$VBoxContainer/InvestButton.disabled = building.cost > get_node("/root/Game").budget

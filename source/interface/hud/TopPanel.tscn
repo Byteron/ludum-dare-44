@@ -28,7 +28,7 @@ script = ExtResource( 3 )
 [node name="Tween" type="Tween" parent="."]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_left = 2.0
+margin_left = 3.0
 margin_top = 2.0
 margin_right = 188.0
 margin_bottom = 17.0
