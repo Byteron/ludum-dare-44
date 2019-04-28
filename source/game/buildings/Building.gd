@@ -44,3 +44,11 @@ func _on_BuildTimer_timeout():
 	tween.start()
 
 	sprite.texture = building_texture
+
+
+func _on_MouseArea_mouse_entered():
+	$NamePanel.fade_in()
+
+
+func _on_MouseArea_mouse_exited():
+	$NamePanel.fade_out()
