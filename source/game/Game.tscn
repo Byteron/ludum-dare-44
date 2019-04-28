@@ -32,12 +32,23 @@ position = Vector2( 8, 72 )
 [node name="Housings3" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 104, 56 )
 
+[node name="Housings16" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 72, 104 )
+
 [node name="Housings10" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 120, 56 )
 build_on_startup = true
 
+[node name="Housings17" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 88, 104 )
+build_on_startup = true
+
 [node name="Housings11" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 136, 56 )
+build_on_startup = true
+
+[node name="Housings18" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 104, 104 )
 build_on_startup = true
 
 [node name="Housings12" parent="BuildingContainer" instance=ExtResource( 5 )]
