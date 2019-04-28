@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/interface/theme.tres" type="Theme" id=1]
+[ext_resource path="res://source/interface/Newspaper.gd" type="Script" id=2]
+[ext_resource path="res://assets/interface/letter.png" type="Texture" id=3]
+[ext_resource path="res://fonts/poco/Poco.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 10
+use_mipmaps = true
+extra_spacing_top = -5
+extra_spacing_bottom = -1
+extra_spacing_space = -2
+font_data = ExtResource( 4 )
+
+[node name="Letter" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -48.0
+margin_bottom = -64.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_top = -0.193726
+margin_right = 256.0
+margin_bottom = 255.806
+mouse_filter = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 3 )
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="."]
+margin_left = 5.0
+margin_top = 18.0
+margin_right = 75.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Supermarkets
+need nearby
+residents
+to make profit.
+This should
+be obvious."
+autowrap = true
+clip_text = true
+
+[node name="Button" type="Button" parent="."]
+margin_left = 1.0
+margin_top = 95.0
+margin_right = 80.0
+margin_bottom = 111.0
+text = "I see..."
+
+[node name="Tween" type="Tween" parent="."]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
