@@ -7,6 +7,7 @@ var locations = {}
 func _ready():
 	size = get_used_rect().size
 	_load_locations()
+	call_deferred("_update_neighbours")
 
 func map_to_world_centered(cell):
 	return map_to_world(cell) + cell_size / 2
