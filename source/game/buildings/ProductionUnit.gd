@@ -28,13 +28,14 @@ func _on_TickTimer_timeout():
 	var income = _calculate_income()
 	emit_signal("ticked", income)
 	var label = PopLabel.instance()
-	label.text = str(income)
+	label.text = "+" + str(income) + "$"
 	if income < 0:
 		label.tint = Color("FF0000")
 	else:
 		label.tint = Color("00FF00")
 	add_child(label)
-
+	Audio.play("cash")
+	
 func _on_BuildTimer_timeout():
 	._on_BuildTimer_timeout()
 	tick_timer.wait_time = tick_time

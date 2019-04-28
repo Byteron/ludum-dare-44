@@ -24,6 +24,7 @@ func _ready():
 	hud.update_budget(budget)
 	_setup_buildings()
 	Audio.play("music")
+	Audio.play("ambience")
 
 func _build(building):
 	var new_budget = budget - building.cost

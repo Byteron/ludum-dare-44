@@ -5,11 +5,14 @@
 [ext_resource path="res://fonts/poco/PocoOutlined.tres" type="DynamicFont" id=3]
 
 [node name="PopLabel" type="Control"]
+margin_top = 0.237827
+margin_bottom = 0.237827
 script = ExtResource( 1 )
 text = "100"
 tint = Color( 1, 0, 0, 1 )
 final_scale = Vector2( 1, 1 )
-float_distance = 40.0
+float_distance = 30.0
+duration = 0.5
 
 [node name="Tween" type="Tween" parent="."]
 

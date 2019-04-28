@@ -3,10 +3,9 @@
 [ext_resource path="res://assets/interface/theme.tres" type="Theme" id=1]
 [ext_resource path="res://source/interface/Newspaper.gd" type="Script" id=2]
 [ext_resource path="res://assets/interface/letter.png" type="Texture" id=3]
-[ext_resource path="res://fonts/poco/Poco.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://fonts/TinyUnicode.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=1]
-size = 10
 use_mipmaps = true
 extra_spacing_top = -5
 extra_spacing_bottom = -1

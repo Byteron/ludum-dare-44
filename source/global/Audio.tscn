@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://source/global/Audio.gd" type="Script" id=1]
-[ext_resource path="res://assets/sfx/Alert4.wav" type="AudioStream" id=2]
-[ext_resource path="res://assets/sfx/Click3.wav" type="AudioStream" id=3]
-[ext_resource path="res://assets/sfx/Confirm10.wav" type="AudioStream" id=4]
-[ext_resource path="res://assets/sfx/Build5.wav" type="AudioStream" id=5]
-[ext_resource path="res://assets/music/BuildingGame_InGameMaster.ogg" type="AudioStream" id=6]
-[ext_resource path="res://assets/music/BuildingGame_MenuMaster.ogg" type="AudioStream" id=7]
+[ext_resource path="res://assets/sfx/NAlert.wav" type="AudioStream" id=2]
+[ext_resource path="res://assets/sfx/Streetscape.ogg" type="AudioStream" id=3]
+[ext_resource path="res://assets/sfx/MClick4.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/sfx/Cash3.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/sfx/Confirm10.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/sfx/BuildCombo.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/music/BuildingGame_InGameMaster.ogg" type="AudioStream" id=8]
+[ext_resource path="res://assets/music/BuildingGame_MenuMaster.ogg" type="AudioStream" id=9]
 
 [node name="Audio" type="Node"]
 script = ExtResource( 1 )
@@ -15,19 +17,34 @@ script = ExtResource( 1 )
 
 [node name="alert" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
+bus = "sound"
+
+[node name="ambience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "ambience"
 
 [node name="click" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
+stream = ExtResource( 4 )
+bus = "sound"
+
+[node name="cash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -6.13
+bus = "sound"
 
 [node name="confirm" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
+stream = ExtResource( 6 )
+bus = "sound"
 
 [node name="build" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
+stream = ExtResource( 7 )
+bus = "sound"
 
 [node name="music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
+stream = ExtResource( 8 )
+bus = "music"
 
 [node name="menu_music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
+stream = ExtResource( 9 )
 volume_db = -80.0
+bus = "music"
