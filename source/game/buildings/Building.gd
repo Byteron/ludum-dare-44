@@ -21,6 +21,8 @@ export(int) var build_time = 4.0
 
 export(int) var cost = 20
 
+export(Array, String) var required_buildings = []
+
 onready var tween = $Tween
 onready var build_timer = $BuildTimer
 onready var sprite = $Sprite
@@ -31,6 +33,12 @@ func _ready():
 	if build_on_startup:
 		is_build = true
 		call_deferred("_on_BuildTimer_timeout")
+
+func can_build():
+	for building_name in required_buildings:
+		if not Global.Game.building_container.has_node(building_name):
+			return false
+	return true
 
 func build():
 	is_build = true
