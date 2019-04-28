@@ -19,4 +19,5 @@ func update_budget(new_budget):
 	budget_label.text = "%s$" % Helper.beautify_number(new_budget)
 
 	tween.interpolate_property(budget_progress, "modulate", color, Color("FFFFFF"), 0.25, Tween.TRANS_SINE, Tween.EASE_OUT)
+	tween.interpolate_property(budget_label, "modulate", color, Color("FFFFFF"), 0.25, Tween.TRANS_SINE, Tween.EASE_OUT)
 	tween.start()
