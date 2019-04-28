@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/interface/panel_styleboxtexture.tres" type="StyleBox" id=2]
 [ext_resource path="res://fonts/poco/Poco.tres" type="DynamicFont" id=3]
 
-[sub_resource type="StyleBoxTexture" id=4]
+[sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 1 )
 region_rect = Rect2( 64, 0, 16, 16 )
 margin_left = 2.0
@@ -13,9 +13,9 @@ margin_top = 2.0
 margin_bottom = 6.0
 expand_margin_left = 1.0
 
-[sub_resource type="StyleBoxEmpty" id=1]
+[sub_resource type="StyleBoxEmpty" id=2]
 
-[sub_resource type="StyleBoxTexture" id=2]
+[sub_resource type="StyleBoxTexture" id=3]
 texture = ExtResource( 1 )
 region_rect = Rect2( 32, 0, 16, 16 )
 margin_left = 2.0
@@ -24,7 +24,7 @@ margin_top = 2.0
 margin_bottom = 6.0
 expand_margin_left = 1.0
 
-[sub_resource type="StyleBoxTexture" id=3]
+[sub_resource type="StyleBoxTexture" id=4]
 texture = ExtResource( 1 )
 region_rect = Rect2( 48, 0, 16, 16 )
 margin_left = 2.0
@@ -41,11 +41,11 @@ Button/colors/font_color_hover = Color( 0.878431, 0.996078, 1, 1 )
 Button/colors/font_color_pressed = Color( 0.878431, 0.996078, 1, 1 )
 Button/constants/hseparation = 2
 Button/fonts/font = null
-Button/styles/disabled = SubResource( 4 )
-Button/styles/focus = SubResource( 1 )
-Button/styles/hover = SubResource( 2 )
-Button/styles/normal = SubResource( 2 )
-Button/styles/pressed = SubResource( 3 )
+Button/styles/disabled = SubResource( 1 )
+Button/styles/focus = SubResource( 2 )
+Button/styles/hover = SubResource( 3 )
+Button/styles/normal = SubResource( 3 )
+Button/styles/pressed = SubResource( 4 )
 Panel/styles/panel = ExtResource( 2 )
 Panel/styles/panelf = null
 Panel/styles/panelnc = null
