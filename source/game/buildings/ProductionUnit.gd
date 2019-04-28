@@ -5,6 +5,7 @@ const PopLabel = preload("res://source/interface/PopLabel.tscn")
 signal ticked(income)
 
 export(int) var revenue = 20
+export(bool) var revenue_per_housing = true
 export(int) var upkeep = 10
 export(float) var tick_time = 10
 
@@ -15,9 +16,12 @@ func _init():
 
 func _calculate_income():
 	var income = 0
-	for neighbor in neighbours:
-		if neighbor.type == TYPE.LIVING_UNIT:
-			income += revenue
+	if revenue_per_housing:
+		for neighbor in neighbours:
+			if neighbor.type == TYPE.LIVING_UNIT:
+				income += revenue
+	else:
+		income = revenue
 	return income - upkeep
 
 func _on_TickTimer_timeout():
