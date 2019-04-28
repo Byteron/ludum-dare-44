@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "Building",
 "language": "GDScript",
 "path": "res://source/game/buildings/Building.gd"
+}, {
+"base": "Reference",
+"class": "Location",
+"language": "GDScript",
+"path": "res://source/game/map/Location.gd"
 } ]
 _global_script_class_icons={
-"Building": ""
+"Building": "",
+"Location": ""
 }
 
 [application]

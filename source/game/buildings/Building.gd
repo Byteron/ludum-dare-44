@@ -6,10 +6,16 @@ enum TYPE { LIVING_UNIT, PRODUCTION_UNIT }
 var type = null
 var neighbors = []
 
+var is_build = false
+
+export(String) var building_name = ""
+
 export(Texture) var building_texture = null
 export(int) var build_time = 4.0
 
 export(int) var cost = 20
+
+export(String) var flavour_text = ""
 
 onready var tween = $Tween
 onready var build_timer = $BuildTimer
@@ -18,6 +24,10 @@ onready var building_progress = $BuildingProgress
 
 func _ready():
 	build_timer.wait_time = build_time
+
+func build():
+	is_build = true
+	building_progress.show()
 	build_timer.start()
 
 	tween.interpolate_property(building_progress, "value", 0, building_progress.max_value, build_time, Tween.TRANS_LINEAR, Tween.EASE_IN)
