@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://source/game/EventHandler.gd" type="Script" id=1]
-[ext_resource path="res://source/game/Event.tscn" type="PackedScene" id=2]
+[ext_resource path="res://source/game/event/Event.tscn" type="PackedScene" id=2]
 
 [node name="EventHandler" type="Node"]
 script = ExtResource( 1 )
@@ -9,8 +9,9 @@ script = ExtResource( 1 )
 [node name="Events" type="Node" parent="."]
 
 [node name="Event1" parent="Events" instance=ExtResource( 2 )]
-description = "Event 1 happened"
+probability = 0.05
+description = "50% Discount on Production Units"
 
 [node name="Event2" parent="Events" instance=ExtResource( 2 )]
-probability = 0.4
+probability = 0.05
 description = "Event 2 happened"
