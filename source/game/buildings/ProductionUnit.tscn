@@ -10,5 +10,4 @@ building_name = "Supermarket"
 building_texture = ExtResource( 3 )
 
 [node name="TickTimer" type="Timer" parent="." index="0"]
-
 [connection signal="timeout" from="TickTimer" to="." method="_on_TickTimer_timeout"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://source/interface/hud/HUD.gd" type="Script" id=1]
 [ext_resource path="res://source/interface/hud/TopPanel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://source/interface/BuildingPopup.tscn" type="PackedScene" id=3]
 [ext_resource path="res://source/interface/Newspaper.tscn" type="PackedScene" id=4]
+[ext_resource path="res://source/interface/NamePanel.tscn" type="PackedScene" id=5]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -25,3 +26,13 @@ margin_left = 22.8334
 margin_top = 41.2559
 margin_right = -25.1666
 margin_bottom = -22.7441
+
+[node name="NamePanel" parent="." instance=ExtResource( 5 )]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -35.0
+margin_top = -10.0
+margin_right = 35.0
+margin_bottom = 0.0

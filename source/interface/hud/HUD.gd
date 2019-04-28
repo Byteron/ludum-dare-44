@@ -3,6 +3,7 @@ extends CanvasLayer
 onready var top_panel = $TopPanel
 onready var building_popup = $BuildingPopup
 onready var newspaper = $Newspaper
+onready var name_panel = $NamePanel
 
 func show_article(text):
 	newspaper.show_article(text)
@@ -16,3 +17,11 @@ func set_max_budget(max_budget):
 
 func update_budget(new_budget):
 	top_panel.update_budget(new_budget)
+
+func show_name_panel(building_name):
+	name_panel.text = building_name
+	name_panel.fade_in()
+
+func clear_name_panel():
+	name_panel.text = ""
+	name_panel.fade_out()

@@ -1,4 +1,5 @@
 extends Building
+
 const PopLabel = preload("res://source/interface/PopLabel.tscn")
 
 signal ticked(income)

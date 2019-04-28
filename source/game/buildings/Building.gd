@@ -1,6 +1,9 @@
 extends Node2D
 class_name Building
 
+signal mouse_entered(building_name)
+signal mouse_exited
+
 enum TYPE { LIVING_UNIT, PRODUCTION_UNIT }
 
 var type = null
@@ -10,7 +13,7 @@ var is_build = false
 
 export(bool) var build_on_startup = false
 
-export(String) var building_name = ""
+export(String) var building_name = "Building Name"
 export(String) var flavour_text = ""
 
 export(Texture) var building_texture = null
@@ -45,10 +48,8 @@ func _on_BuildTimer_timeout():
 
 	sprite.texture = building_texture
 
-
 func _on_MouseArea_mouse_entered():
-	$NamePanel.fade_in()
-
+	emit_signal("mouse_entered", building_name)
 
 func _on_MouseArea_mouse_exited():
-	$NamePanel.fade_out()
+	emit_signal("mouse_exited")

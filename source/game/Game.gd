@@ -5,7 +5,6 @@ const LivingUnit = preload("res://source/game/buildings/LivingUnit.tscn")
 const ProductionUnit = preload("res://source/game/buildings/ProductionUnit.tscn")
 
 var buildings = [
-	Building,
 	LivingUnit,
 	ProductionUnit
 ]
@@ -42,6 +41,8 @@ func build(position):
 
 func _setup_buildings():
 	for building in building_container.get_children():
+		building.connect("mouse_entered", self, "_on_mouse_entered_building")
+		building.connect("mouse_exited", self, "_on_mouse_exited_building")
 		var cell = map.world_to_map(building.position)
 		var location = map.get_location(cell)
 		building.position = location.position
@@ -50,6 +51,14 @@ func _setup_buildings():
 func _set_budget(new_budget):
 	budget = new_budget
 	hud.update_budget(new_budget)
+
+func _on_mouse_entered_building(building_name):
+	print("entered")
+	hud.show_name_panel(building_name)
+
+func _on_mouse_exited_building():
+	print("exited")
+	hud.clear_name_panel()
 
 func _on_building_ticked(income):
 	_set_budget(budget + income)

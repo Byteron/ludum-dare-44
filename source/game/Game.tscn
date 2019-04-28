@@ -27,38 +27,30 @@ tile_data = PoolIntArray( -65532, 3, 65536, -65527, 3, 65536, 0, 0, 0, 1, 0, 0, 
 
 [node name="LivingUnit" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 40, 72 )
-building_name = ""
 
 [node name="LivingUnit6" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 40, 56 )
-building_name = ""
 
 [node name="LivingUnit7" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 40, 40 )
-building_name = ""
 
 [node name="LivingUnit2" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 24, 72 )
-building_name = ""
 
 [node name="LivingUnit9" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 24, 40 )
-building_name = ""
 
 [node name="LivingUnit3" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 8, 72 )
 build_on_startup = true
-building_name = ""
 
 [node name="LivingUnit5" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 8, 56 )
 build_on_startup = true
-building_name = ""
 
 [node name="LivingUnit8" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 8, 40 )
 build_on_startup = true
-building_name = ""
 
 [node name="ProductionBuilding" parent="BuildingContainer" instance=ExtResource( 6 )]
 position = Vector2( 24, 56 )
