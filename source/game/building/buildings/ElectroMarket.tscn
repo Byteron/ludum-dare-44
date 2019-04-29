@@ -9,12 +9,13 @@ load_path = "res://.import/tilemap.png-97bf26cbe4098c4ccdc8ca24f9406864.stex"
 atlas = SubResource( 1 )
 region = Rect2( 144, 32, 16, 16 )
 
-[node name="ElectroMarket" instance=ExtResource( 1 )]
+[node name="ElectroMarket" index="0" instance=ExtResource( 1 )]
 building_name = "Electro Market"
 flavour_text = "Provides advanced technology like vacuum robots."
 cost = 50000
 build_time = 30
-penalty = 2000
-revenue = 3000
+penalty = 4000
+revenue = 6000
 upkeep = 1000
+penalty_requirements = [ "Factory" ]
 building_texture = SubResource( 2 )

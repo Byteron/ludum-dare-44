@@ -6,13 +6,15 @@
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 3 )
-region = Rect2( 176, 48, 16, 16 )
+region = Rect2( 176, 32, 16, 16 )
 
-[node name="Airport" index="0" instance=ExtResource( 1 )]
+[node name="Factory" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-building_name = "Airport"
-flavour_text = "More people can visit our town. Or escape it!"
+building_name = "Factory"
+flavour_text = "Produces mobile phones and other electronics"
 revenue_per_housing = false
-cost = 50000
-upkeep = 4000
+cost = 60000
+build_time = 15
+revenue = 8000
+upkeep = 3000
 building_texture = SubResource( 1 )
