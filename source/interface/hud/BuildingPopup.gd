@@ -18,11 +18,8 @@ func _set_building(slug):
 	else:
 		cost_label.text = "Investment: %s$" % Helper.beautify_number(building.cost)
 
-	if building.revenue_per_housing:
-		revenue_label.text = "Max Revenue: %s$/m" % Helper.beautify_number(int((building.revenue * 8 / building.tick_time) * 60))
-	else:
-		revenue_label.text = "Max Revenue: %s$/m" % Helper.beautify_number(int((building.revenue / building.tick_time) * 60))
-	income_label.text = "Income: %s$/m" % Helper.beautify_number(int((building._calculate_income() / building.tick_time) * 60))
-	upkeep_label.text = "Upkeep: %s$/m" % Helper.beautify_number(int((building.upkeep / building.tick_time) * 60))
+	revenue_label.text = "Max Revenue: %s$/m" % Helper.beautify_number(building.revenue_per_minute())
+	income_label.text = "Income: %s$/m" % Helper.beautify_number(building.income_per_minute())
+	upkeep_label.text = "Upkeep: %s$/m" % Helper.beautify_number(building.upkeep_per_minute())
 
 	flavour_label.text = str(building.flavour_text)

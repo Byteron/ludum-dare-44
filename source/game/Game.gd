@@ -59,6 +59,16 @@ func earn(amount):
 	var new_budget = budget + amount
 	_set_budget(new_budget)
 
+func _get_balance():
+	var balance = 0
+	var buildings = get_tree().get_nodes_in_group("Building")
+	for building in buildings:
+		if not building.is_build or not building.tick:
+			continue
+
+		balance += building.income_per_minute()
+	return balance
+
 func _set_max_budget(new_max_budget):
 	max_budget = new_max_budget
 	hud.set_max_budget(max_budget)
@@ -90,3 +100,6 @@ func _on_HUD_building_invested(building):
 
 func _on_HUD_hint_purchased():
 	_set_budget(budget - Hints.cost_per_hint)
+
+func _on_BalanceTimer_timeout():
+	hud.update_balance(_get_balance())

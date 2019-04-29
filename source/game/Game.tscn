@@ -29,6 +29,9 @@ __meta__ = {
 "_edit_vertical_guides_": [  ]
 }
 
+[node name="BalanceTimer" type="Timer" parent="."]
+autostart = true
+
 [node name="EventHandler" parent="." instance=ExtResource( 2 )]
 
 [node name="Background" type="TileMap" parent="."]
@@ -178,6 +181,7 @@ position = Vector2( 72, 152 )
 [node name="Camera2D" parent="." instance=ExtResource( 21 )]
 position = Vector2( 96, 96 )
 speed = 350
+[connection signal="timeout" from="BalanceTimer" to="." method="_on_BalanceTimer_timeout"]
 [connection signal="event_happened" from="EventHandler" to="." method="_on_EventHandler_event_happened"]
 [connection signal="building_invested" from="HUD" to="." method="_on_HUD_building_invested"]
 [connection signal="hint_purchased" from="HUD" to="." method="_on_HUD_hint_purchased"]
