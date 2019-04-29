@@ -6,6 +6,7 @@ onready var tween = $Tween
 onready var label = $CenterContainer/Label
 
 func _ready():
+	visible = true
 	modulate = Color(1, 1, 1, 0)
 
 func _set_text(slug):

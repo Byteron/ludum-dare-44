@@ -5,6 +5,7 @@ var visible_pos
 var hidden_pos
 
 func _ready():
+	visible = true
 	visible_pos = rect_position
 	hidden_pos = rect_position
 	slide_distance = - rect_size.y * 2 + 10
