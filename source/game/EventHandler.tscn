@@ -23,7 +23,7 @@ button_text = "that's me!"
 description = "New company in town!
 what is their goal? Making money of course!"
 
-[node name="Newspapers2" parent="Events" instance=ExtResource( 2 )]
+[node name="MafiaInTown" parent="Events" instance=ExtResource( 2 )]
 one_time_event = true
 tick_time = 250
 probability = 1.0
