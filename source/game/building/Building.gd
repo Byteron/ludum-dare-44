@@ -22,8 +22,6 @@ export(String) var flavour_text = ""
 export(bool) var build_on_startup = false
 export(bool) var revenue_tick = false
 export(bool) var revenue_per_housing = true
-export(bool) var requirement_penalty = false
-export(bool) var requirement_boost = false
 
 export(int) var cost = 10000
 export(int) var build_time = 4.0
@@ -75,9 +73,9 @@ func _calculate_income():
 
 	income - upkeep
 
-	if requirement_satisfied() and requirement_boost:
+	if requirement_satisfied():
 		income += boost
-	elif not requirement_satisfied() and requirement_penalty:
+	else:
 		income -= penalty
 
 	return income
