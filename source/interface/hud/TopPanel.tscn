@@ -1,16 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/interface/theme.tres" type="Theme" id=1]
 [ext_resource path="res://source/interface/hud/TopPanel.gd" type="Script" id=2]
-[ext_resource path="res://assets/interface/gui_elements.png" type="Texture" id=3]
-
-[sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 3 )
-region = Rect2( 32, 16, 32, 7 )
-
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 3 )
-region = Rect2( 32, 23, 32, 7 )
+[ext_resource path="res://source/interface/LoadingBar.tscn" type="PackedScene" id=3]
 
 [sub_resource type="StyleBoxEmpty" id=3]
 
@@ -38,12 +30,7 @@ margin_bottom = 18.0
 custom_constants/separation = 0
 alignment = 1
 
-[node name="BudgetProgress" type="TextureProgress" parent="HBoxContainer/VBoxContainer"]
-margin_right = 35.0
-margin_bottom = 7.0
-value = 25.0
-texture_under = SubResource( 1 )
-texture_progress = SubResource( 2 )
+[node name="BudgetProgress" parent="HBoxContainer/VBoxContainer" instance=ExtResource( 3 )]
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
 margin_top = 7.0

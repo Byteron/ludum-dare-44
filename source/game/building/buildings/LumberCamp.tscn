@@ -9,7 +9,7 @@ load_path = "res://.import/tilemap.png-97bf26cbe4098c4ccdc8ca24f9406864.stex"
 atlas = SubResource( 1 )
 region = Rect2( 128, 48, 16, 16 )
 
-[node name="LumberCamp" index="0" instance=ExtResource( 1 )]
+[node name="LumberCamp" instance=ExtResource( 1 )]
 building_name = "Lumber Camp"
 flavour_text = "We can sell these logs on export."
 revenue = 5000

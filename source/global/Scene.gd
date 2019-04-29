@@ -11,7 +11,7 @@ var loader: ResourceInteractiveLoader = null
 
 onready var anim := $AnimationPlayer as AnimationPlayer
 onready var fps_label := $FPS as Label
-onready var loading_bar := $LoadProgress as ProgressBar
+onready var loading_bar := $LoadProgress as TextureProgress
 
 func _process(delta):
 	fps_label.text = "%d FPS" % Engine.get_frames_per_second()
