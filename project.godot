@@ -38,7 +38,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="LudumDare44"
+config/name="Vital Investments"
 run/main_scene="res://source/interface/menu/TitleScreen.tscn"
 config/icon="res://icon.png"
 
