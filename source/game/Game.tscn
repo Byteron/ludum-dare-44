@@ -165,9 +165,27 @@ position = Vector2( -40, 72 )
 
 [node name="CityBank" parent="BuildingContainer" instance=ExtResource( 17 )]
 position = Vector2( 72, 152 )
+flavour_text = "Makes money from money"
+revenue_per_housing = false
+
+[node name="CityBank2" parent="BuildingContainer" instance=ExtResource( 17 )]
+position = Vector2( 120, 216 )
+flavour_text = "Makes money from money"
+revenue_per_housing = false
+
+[node name="CityBank3" parent="BuildingContainer" instance=ExtResource( 17 )]
+position = Vector2( 168, 56 )
+flavour_text = "Makes money from money"
+revenue_per_housing = false
+
+[node name="CityBank4" parent="BuildingContainer" instance=ExtResource( 17 )]
+position = Vector2( -56, 8 )
+flavour_text = "Makes money from money"
+revenue_per_housing = false
 
 [node name="Airport" parent="BuildingContainer" instance=ExtResource( 18 )]
 position = Vector2( 168, 216 )
+tick = true
 
 [node name="Cafe" parent="BuildingContainer" instance=ExtResource( 19 )]
 position = Vector2( -8, 119.5 )
