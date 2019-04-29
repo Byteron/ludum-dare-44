@@ -6,7 +6,15 @@ var cost_per_hint = 1000
 var queue
 var hint_list = [
 	"Supermarkets need nearby residents to make profit. This should be obvious.",
-	"Some investments may be a bad idea... I can't tell, that's your job."
+	"Some investments may be a bad idea... I can't tell, that's your job.",
+	"cafe",
+	"Tourism can bring in lots of revenue.. if you meet the tourists needs!",
+	"Who cares for the cost of a space program, the neighbours will admire us!",
+	"Research has found no logical reasons to build a church.",
+	"I have caught the bee in your bureau as you requested me to.",
+	"Can we build a fire station? I love the sound of their sirens.",
+	"Building a statue will provide prestige and might attract tourists.",
+	"Hospitals generate no income, why were they even invented!",
 	]
 	
 func _ready():
