@@ -153,6 +153,7 @@ position = Vector2( 230.833, 56 )
 
 [node name="NewsTower" parent="BuildingContainer" instance=ExtResource( 15 )]
 position = Vector2( 100, 24 )
+build_on_startup = true
 
 [node name="LumberCamp" parent="BuildingContainer" instance=ExtResource( 16 )]
 position = Vector2( -24, -72 )
