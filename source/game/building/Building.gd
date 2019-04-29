@@ -92,7 +92,7 @@ func _calculate_income():
 	if not penalty_requirements_satisfied():
 		income -= penalty
 
-	if boost_requirements_satisfied():
+	elif boost_requirements_satisfied():
 		income += boost
 
 	return income
