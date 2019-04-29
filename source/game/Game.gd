@@ -8,8 +8,9 @@ export(int) var budget = 85000 setget _set_budget
 
 onready var map = $Map
 onready var hud = $HUD
+onready var building_container = $BuildingContainer
 
-func _input(event):
+func _unhandled_input(event):
 	if event.is_action_pressed("click_left"):
 		var mouse_cell = map.world_to_map(get_global_mouse_position())
 		var cell_tile = map.get_cellv(mouse_cell)

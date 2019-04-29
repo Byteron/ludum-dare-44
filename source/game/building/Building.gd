@@ -44,6 +44,7 @@ onready var sprite = $Sprite
 onready var building_progress = $BuildingProgress
 
 func _ready():
+	building_name = name
 	_randomize_lot()
 	build_timer.wait_time = build_time
 	if build_on_startup:
