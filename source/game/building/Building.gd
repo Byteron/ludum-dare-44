@@ -8,7 +8,7 @@ signal build(building_name)
 signal mouse_entered(building_name)
 signal mouse_exited
 
-enum TYPE { LIVING_UNIT, SELLING_UNIT, PRODUCTION_UNIT, DECORATION_UNIT, PUBLISHER }
+enum TYPE { LIVING_UNIT, SELLING_UNIT, PRODUCTION_UNIT, DECORATION_UNIT, PUBLISHER, BANK }
 
 var type = TYPE.DECORATION_UNIT
 var neighbours = []
@@ -100,14 +100,29 @@ func _calculate_income():
 
 	return income
 
+func per_minute(value):
+	return int(value * (60 / tick_time))
+
+func income_per_minute():
+	return per_minute(_calculate_income())
+
+func upkeep_per_minute():
+	return per_minute(upkeep)
+
+func revenue_per_minute():
+	if revenue_per_housing:
+		return per_minute(revenue * 8)
+	return per_minute(revenue)
+
 func _on_TickTimer_timeout():
 	var income = _calculate_income()
 	emit_signal("ticked", income)
 	var label = PopLabel.instance()
-	label.text = "+" + str(income) + "$"
 	if income < 0:
+		label.text = str(income) + "$"
 		label.tint = Color("FF0000")
 	else:
+		label.text = "+" + str(income) + "$"
 		label.tint = Color("00FF00")
 	add_child(label)
 	Audio.play("cash")
