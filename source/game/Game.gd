@@ -71,8 +71,8 @@ func _on_mouse_entered_building(building_name):
 func _on_mouse_exited_building():
 	hud.clear_name_panel()
 
-func _on_building_build(building_name):
-	if building_name == "News Publishing":
+func _on_building_build(building):
+	if building.type == Building.TYPE.PUBLISHER:
 		event_handler.start_events()
 
 func _on_building_ticked(income):

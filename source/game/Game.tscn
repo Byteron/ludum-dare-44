@@ -14,7 +14,7 @@
 [ext_resource path="res://source/game/building/buildings/Police.tscn" type="PackedScene" id=12]
 [ext_resource path="res://source/game/building/buildings/Hospital.tscn" type="PackedScene" id=13]
 [ext_resource path="res://source/game/building/buildings/FireStation.tscn" type="PackedScene" id=14]
-[ext_resource path="res://source/game/building/buildings/Newspaper.tscn" type="PackedScene" id=15]
+[ext_resource path="res://source/game/building/buildings/NewsTower.tscn" type="PackedScene" id=15]
 [ext_resource path="res://source/game/building/buildings/LumberCamp.tscn" type="PackedScene" id=16]
 [ext_resource path="res://source/game/building/buildings/Cafe.tscn" type="PackedScene" id=17]
 [ext_resource path="res://source/interface/hud/HUD.tscn" type="PackedScene" id=18]
@@ -136,7 +136,7 @@ position = Vector2( 168, -16 )
 [node name="FireStation" parent="BuildingContainer" instance=ExtResource( 14 )]
 position = Vector2( 230.833, 56 )
 
-[node name="Newspaper" parent="BuildingContainer" instance=ExtResource( 15 )]
+[node name="NewsTower" parent="BuildingContainer" instance=ExtResource( 15 )]
 position = Vector2( 100, 24 )
 
 [node name="LumberCamp" parent="BuildingContainer" instance=ExtResource( 16 )]

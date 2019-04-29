@@ -8,7 +8,7 @@ signal build(building_name)
 signal mouse_entered(building_name)
 signal mouse_exited
 
-enum TYPE { LIVING_UNIT, SELLING_UNIT, PRODUCTION_UNIT, DECORATION_UNIT }
+enum TYPE { LIVING_UNIT, SELLING_UNIT, PRODUCTION_UNIT, DECORATION_UNIT, PUBLISHER }
 
 var type = TYPE.DECORATION_UNIT
 var neighbours = []
@@ -124,7 +124,7 @@ func _on_BuildTimer_timeout():
 		tick_timer.wait_time = tick_time
 		tick_timer.start()
 
-	emit_signal("build", building_name)
+	emit_signal("build", self)
 
 func _on_MouseArea_mouse_entered():
 	emit_signal("mouse_entered", building_name)
