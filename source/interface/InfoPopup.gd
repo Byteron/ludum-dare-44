@@ -14,14 +14,11 @@ func _set_building(slug):
 	name_label.text = str(building.building_name)
 	cost_label.text = "Investment: %s$" % Helper.beautify_number(building.cost)
 
-	if building.type == building.TYPE.LIVING_UNIT:
-		revenue_label.text = "Max Revenue: %s$" % "-"
-		income_label.text = "Current Income: %s$" % "-"
-		upkeep_label.text = "Upkeep: %s$" % "-"
-
-	elif building.type == building.TYPE.SELLING_UNIT:
+	if building.revenue_per_housing:
 		revenue_label.text = "Max Revenue: %s$" % Helper.beautify_number(building.revenue * 8)
-		income_label.text = "Current Income: %s$" % Helper.beautify_number(building._calculate_income())
-		upkeep_label.text = "Upkeep: %s$" % Helper.beautify_number(building.upkeep)
+	else:
+		revenue_label.text = "Max Revenue: %s$" % Helper.beautify_number(building.revenue)
+	income_label.text = "Current Income: %s$" % Helper.beautify_number(building._calculate_income())
+	upkeep_label.text = "Upkeep: %s$" % Helper.beautify_number(building.upkeep)
 
 	flavour_label.text = str(building.flavour_text)

@@ -15,21 +15,21 @@ var neighbours = []
 
 var is_build = false
 
-export(String) var building_name = "Building Name"
-export(String) var flavour_text = ""
+export(String) var building_name = "Building"
+export(String) var flavour_text = "This is a Building"
 
 
 export(bool) var build_on_startup = false
 export(bool) var revenue_tick = false
 export(bool) var revenue_per_housing = true
 
-export(int) var cost = 10000
-export(int) var build_time = 4.0
+export(int) var cost = 15000
+export(int) var build_time = 10
 
-export(int) var penalty = 1000
-export(int) var boost = 1000
-export(int) var revenue = 20
-export(int) var upkeep = 10
+export(int) var penalty = 0
+export(int) var boost = 0
+export(int) var revenue = 0
+export(int) var upkeep = 0
 export(float) var tick_time = 10
 
 export(Array, String) var required_buildings = []
@@ -43,6 +43,7 @@ onready var sprite = $Sprite
 onready var building_progress = $BuildingProgress
 
 func _ready():
+	_randomize_lot()
 	build_timer.wait_time = build_time
 	if build_on_startup:
 		is_build = true
@@ -62,6 +63,14 @@ func build():
 	tween.interpolate_property(building_progress, "value", 0, building_progress.max_value, build_time, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	tween.start()
 
+func _randomize_lot():
+	randomize()
+	sprite.texture = sprite.texture.duplicate(true)
+	var steps = [0, 16, 32]
+	print(sprite.texture.region)
+	sprite.texture.region.position.x += steps[randi() % steps.size()]
+	print(sprite.texture.region)
+
 func _calculate_income():
 	var income = 0
 	if revenue_per_housing:
@@ -71,7 +80,7 @@ func _calculate_income():
 	else:
 		income = revenue
 
-	income - upkeep
+	income -= upkeep
 
 	if requirement_satisfied():
 		income += boost
