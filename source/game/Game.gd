@@ -4,7 +4,7 @@ var discount = 1.0
 var discount_type = null
 
 export(int) var max_budget = 100000 setget _set_max_budget
-export(int) var budget = 50000 setget _set_budget
+export(int) var budget = 45000 setget _set_budget
 
 onready var map = $Map
 onready var hud = $HUD
@@ -77,7 +77,7 @@ func _set_budget(new_budget):
 	budget = new_budget
 	if budget > max_budget:
 		budget = max_budget
-	hud.update_budget(new_budget)
+	hud.update_budget(budget)
 
 func _on_mouse_entered_building(building_name):
 	hud.show_name_panel(building_name)
@@ -92,7 +92,7 @@ func _on_building_build(building):
 		_set_max_budget(max_budget + 100000)
 
 func _on_building_ticked(income):
-	_set_budget(budget + income)
+	earn(income)
 
 func _on_EventHandler_event_happened(event):
 	hud.show_article(event)

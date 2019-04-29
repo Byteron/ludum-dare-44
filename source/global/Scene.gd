@@ -3,7 +3,7 @@ extends CanvasLayer
 signal scene_loading_done
 
 # Scenes
-const TitleScreen := "res://source/interface/menu/Titlescreen.tscn"
+const TitleScreen := "res://source/interface/menu/TitleScreen.tscn"
 const Game := "res://source/game/Game.tscn"
 
 var next_scene := ""

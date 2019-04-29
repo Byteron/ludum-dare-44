@@ -10,8 +10,8 @@ region = Rect2( 96, 32, 16, 16 )
 [node name="CityBank" index="0" instance=ExtResource( 1 )]
 building_name = "City Bank"
 flavour_text = "Money Money Money"
-cost = 100000
-build_time = 180
+cost = 80000
+build_time = 60
 upkeep = 1000
 tick_time = 30
 building_texture = SubResource( 1 )
