@@ -11,6 +11,10 @@ func _input(event):
 	if event.is_action_pressed("click_left"):
 		var mouse_cell = map.world_to_map(get_global_mouse_position())
 		var cell_tile = map.get_cellv(mouse_cell)
+
+		if cell_tile == TileMap.INVALID_CELL:
+			return
+
 		var tile_name = map.tile_set.tile_get_name(cell_tile)
 
 		if tile_name == "ground":
