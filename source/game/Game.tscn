@@ -36,6 +36,9 @@ tile_data = PoolIntArray( -1245187, 3, 65536, -1179651, 3, 131072, -1114115, 3, 
 
 [node name="BuildingContainer" type="Node2D" parent="."]
 
+[node name="Housings" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 8, 72 )
+
 [node name="Housings3" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 104, 56 )
 
@@ -64,20 +67,45 @@ position = Vector2( 120, 72 )
 [node name="Housings13" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 104, 72 )
 
+[node name="Housings5" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 8, 56 )
+
+[node name="Housings9" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 8, 40 )
+
+[node name="Housings2" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 24, 72 )
+build_on_startup = true
+
+[node name="Housings4" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 24, 56 )
+build_on_startup = true
+
+[node name="Housings7" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 24, 40 )
+
+[node name="Housings6" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 40, 56 )
+build_on_startup = true
+
 [node name="Housings14" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 72, 88 )
 
 [node name="Housings15" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 104, 88 )
 
+[node name="Housings8" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 40, 40 )
+
+[node name="SuperMarket" parent="BuildingContainer" instance=ExtResource( 6 )]
+position = Vector2( 40, 72 )
+build_on_startup = true
+
 [node name="SuperMarket2" parent="BuildingContainer" instance=ExtResource( 6 )]
 position = Vector2( 136, 72 )
 
 [node name="SuperMarket3" parent="BuildingContainer" instance=ExtResource( 6 )]
 position = Vector2( 88, 88 )
-
-[node name="SuperMarket4" parent="BuildingContainer" instance=ExtResource( 6 )]
-position = Vector2( -8, 56 )
 
 [node name="Townhall" parent="BuildingContainer" instance=ExtResource( 7 )]
 position = Vector2( 71, 134 )
@@ -93,58 +121,6 @@ position = Vector2( 278.833, 248 )
 
 [node name="Airport" parent="BuildingContainer" instance=ExtResource( 11 )]
 position = Vector2( 120, 224 )
-
-[node name="Housings" parent="BuildingContainer" instance=ExtResource( 5 )]
-position = Vector2( 8, 72 )
-
-[node name="Housings4" parent="BuildingContainer" instance=ExtResource( 5 )]
-position = Vector2( -8, 72 )
-
-[node name="Housings20" parent="BuildingContainer" instance=ExtResource( 5 )]
-position = Vector2( -8, 40 )
-
-[node name="Housings21" parent="BuildingContainer" instance=ExtResource( 5 )]
-position = Vector2( -24, 40 )
-
-[node name="Housings22" parent="BuildingContainer" instance=ExtResource( 5 )]
-position = Vector2( -24, 56 )
-
-[node name="Housings23" parent="BuildingContainer" instance=ExtResource( 5 )]
-position = Vector2( -40, 72 )
-
-[node name="Housings24" parent="BuildingContainer" instance=ExtResource( 5 )]
-position = Vector2( -40, 56 )
-
-[node name="Housings25" parent="BuildingContainer" instance=ExtResource( 5 )]
-position = Vector2( -40, 40 )
-
-[node name="Housings5" parent="BuildingContainer" instance=ExtResource( 5 )]
-position = Vector2( 8, 56 )
-
-[node name="Housings9" parent="BuildingContainer" instance=ExtResource( 5 )]
-position = Vector2( 8, 40 )
-
-[node name="Housings2" parent="BuildingContainer" instance=ExtResource( 5 )]
-position = Vector2( 40, 72 )
-build_on_startup = true
-
-[node name="Housings6" parent="BuildingContainer" instance=ExtResource( 5 )]
-position = Vector2( 24, 56 )
-build_on_startup = true
-
-[node name="Housings7" parent="BuildingContainer" instance=ExtResource( 5 )]
-position = Vector2( 24, 40 )
-
-[node name="Housings8" parent="BuildingContainer" instance=ExtResource( 5 )]
-position = Vector2( 40, 56 )
-build_on_startup = true
-
-[node name="Housings26" parent="BuildingContainer" instance=ExtResource( 5 )]
-position = Vector2( 40, 40 )
-
-[node name="SuperMarket" parent="BuildingContainer" instance=ExtResource( 6 )]
-position = Vector2( 24, 72 )
-build_on_startup = true
 
 [node name="Police" parent="BuildingContainer" instance=ExtResource( 12 )]
 position = Vector2( -24, 72 )
