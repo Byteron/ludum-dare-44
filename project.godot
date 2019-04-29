@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "Building",
 "language": "GDScript",
-"path": "res://source/game/buildings/Building.gd"
+"path": "res://source/game/building/Building.gd"
 }, {
 "base": "Reference",
 "class": "Location",

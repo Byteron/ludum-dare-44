@@ -4,10 +4,13 @@
 [ext_resource path="res://source/game/EventHandler.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/tilesets/tileset.tres" type="TileSet" id=3]
 [ext_resource path="res://source/game/map/Map.tscn" type="PackedScene" id=4]
-[ext_resource path="res://source/game/buildings/Housings.tscn" type="PackedScene" id=5]
-[ext_resource path="res://source/game/buildings/SuperMarket.tscn" type="PackedScene" id=6]
+[ext_resource path="res://source/game/building/buildings/Housings.tscn" type="PackedScene" id=5]
+[ext_resource path="res://source/game/building/buildings/SuperMarket.tscn" type="PackedScene" id=6]
 [ext_resource path="res://source/interface/hud/HUD.tscn" type="PackedScene" id=7]
 [ext_resource path="res://source/interface/camera/Camera.tscn" type="PackedScene" id=8]
+
+
+
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
