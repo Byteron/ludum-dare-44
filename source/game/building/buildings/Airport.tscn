@@ -7,14 +7,9 @@ load_path = "res://.import/tilemap.png-97bf26cbe4098c4ccdc8ca24f9406864.stex"
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = SubResource( 1 )
-region = Rect2( 160, 48, 16, 16 )
+region = Rect2( 176, 48, 16, 16 )
 
-[node name="Statue" instance=ExtResource( 1 )]
-building_name = "Statue of Godot"
-flavour_text = "A symbol of wealth, prestige and bad budgeting"
-cost = 50000
-build_time = 6
-penalty = 0
-boost = 0
-upkeep = 2000
+[node name="Airport" instance=ExtResource( 1 )]
+building_name = "Airport"
+flavour_text = "Can bring people into our town.. and out ouf it!"
 building_texture = SubResource( 2 )
