@@ -15,21 +15,21 @@ var neighbours = []
 
 var is_build = false
 
-export(String) var building_name = "Building Name"
-export(String) var flavour_text = ""
+export(String) var building_name = "Building"
+export(String) var flavour_text = "This is a Building"
 
 
 export(bool) var build_on_startup = false
 export(bool) var revenue_tick = false
 export(bool) var revenue_per_housing = true
 
-export(int) var cost = 10000
-export(int) var build_time = 4.0
+export(int) var cost = 15000
+export(int) var build_time = 10
 
-export(int) var penalty = 1000
-export(int) var boost = 1000
-export(int) var revenue = 20
-export(int) var upkeep = 10
+export(int) var penalty = 0
+export(int) var boost = 0
+export(int) var revenue = 0
+export(int) var upkeep = 0
 export(float) var tick_time = 10
 
 export(Array, String) var required_buildings = []
@@ -80,7 +80,7 @@ func _calculate_income():
 	else:
 		income = revenue
 
-	income - upkeep
+	income -= upkeep
 
 	if requirement_satisfied():
 		income += boost
