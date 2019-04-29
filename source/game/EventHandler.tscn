@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://source/game/EventHandler.gd" type="Script" id=1]
-[ext_resource path="res://source/game/event/DonationEvent.tscn" type="PackedScene" id=2]
-[ext_resource path="res://source/game/event/Event.tscn" type="PackedScene" id=3]
-[ext_resource path="res://source/game/event/PaymentEvent.tscn" type="PackedScene" id=4]
-[ext_resource path="res://source/game/event/RandomTextEvent.tscn" type="PackedScene" id=5]
-[ext_resource path="res://source/game/event/DiscountEvent.tscn" type="PackedScene" id=6]
+[ext_resource path="res://source/game/event/Event.tscn" type="PackedScene" id=2]
+[ext_resource path="res://source/game/event/PaymentEvent.tscn" type="PackedScene" id=3]
+[ext_resource path="res://source/game/event/RandomTextEvent.tscn" type="PackedScene" id=4]
+[ext_resource path="res://source/game/event/DiscountEvent.tscn" type="PackedScene" id=5]
+[ext_resource path="res://source/game/event/DonationEvent.tscn" type="PackedScene" id=6]
 [ext_resource path="res://source/game/event/VictoryEvent.tscn" type="PackedScene" id=7]
 [ext_resource path="res://source/game/event/DefeatEvent.tscn" type="PackedScene" id=8]
 
@@ -14,25 +14,16 @@ script = ExtResource( 1 )
 
 [node name="Events" type="Node" parent="."]
 
-[node name="HappyVillage" parent="Events" instance=ExtResource( 2 )]
-tick_time = 600
-probability = 0.5
-title = "Happy Village"
-button_text = "woho!"
-description = "The people are happy and donated %d$ to the city council!"
-required_build = [ "Church" ]
-value = 10000
-
-[node name="Newspapers" parent="Events" instance=ExtResource( 3 )]
+[node name="Newspapers" parent="Events" instance=ExtResource( 2 )]
 one_time_event = true
 tick_time = 5
 probability = 1.0
-title = "Newspapers!"
-button_text = "cool!"
-description = "New newspapers in town! 
-We'll keep you informed about both good and bad news!"
+title = "Ludum Investments"
+button_text = "that's me!"
+description = "New company in town!
+what is their goal? Making money of course!"
 
-[node name="Mafia" parent="Events" instance=ExtResource( 4 )]
+[node name="Mafia" parent="Events" instance=ExtResource( 3 )]
 tick_time = 300
 probability = 1.0
 title = "Mafia"
@@ -40,7 +31,7 @@ button_text = "hmnn..."
 description = "Once again the Mafia came to town and took %d$ with them."
 value = 10000
 
-[node name="Fire" parent="Events" instance=ExtResource( 4 )]
+[node name="Fire" parent="Events" instance=ExtResource( 3 )]
 tick_time = 60
 probability = 0.25
 title = "Fire!"
@@ -48,7 +39,7 @@ button_text = "maybe a fire station?"
 description = "A fire caused devastating damage to the neigbourhood. %d$ repairings!"
 required_unbuild = [ "FireStation" ]
 
-[node name="Robbery" parent="Events" instance=ExtResource( 4 )]
+[node name="Robbery" parent="Events" instance=ExtResource( 3 )]
 tick_time = 300
 probability = 0.25
 title = "Banks got robbed!"
@@ -57,7 +48,7 @@ description = "Once more robbers made it into highly secored banks and stole %d$
 required_unbuild = [ "Police" ]
 value = 10000
 
-[node name="Weather" parent="Events" instance=ExtResource( 5 )]
+[node name="Weather" parent="Events" instance=ExtResource( 4 )]
 tick_time = 180
 probability = 1.0
 title = "Weather Report"
@@ -65,7 +56,7 @@ button_text = "interesting..."
 description = "Perfect wheather to go outside!"
 variants = [ "On such rainy days Netflix certainly is something!", "Hurricane! Hurricane! Hurricane!" ]
 
-[node name="EasyLiving" parent="Events" instance=ExtResource( 6 )]
+[node name="EasyLiving" parent="Events" instance=ExtResource( 5 )]
 tick_time = 350
 probability = 0.25
 title = "Easy Living!"
@@ -74,7 +65,7 @@ description = "Housings are now %d%% cheaper for %d seconds! Buy now!"
 discount = 0.5
 discount_time = 120
 
-[node name="EasySelling" parent="Events" instance=ExtResource( 6 )]
+[node name="EasySelling" parent="Events" instance=ExtResource( 5 )]
 tick_time = 250
 probability = 0.3
 title = "Easy Selling!"
@@ -83,6 +74,15 @@ description = "All Sellers are now %d%% cheaper for %d seconds! Buy now!"
 affected_type = 1
 discount = 0.5
 discount_time = 120
+
+[node name="HappyVillage" parent="Events" instance=ExtResource( 6 )]
+tick_time = 600
+probability = 0.5
+title = "Happy Village"
+button_text = "woho!"
+description = "The people are happy and donated %d$ to the city council!"
+required_build = [ "Church" ]
+value = 10000
 
 [node name="VictoryEvent" parent="Events" instance=ExtResource( 7 )]
 tick_time = 30
