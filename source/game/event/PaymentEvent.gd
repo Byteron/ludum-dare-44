@@ -5,5 +5,5 @@ export(int) var value = 5000
 func _ready():
 	description = description % value
 
-func _exectute():
+func _execute():
 	Global.Game.pay(value)

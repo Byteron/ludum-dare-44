@@ -37,7 +37,7 @@ func slide_out():
 
 func _on_Button_pressed():
 	if not $Tween.is_active():
-		event._exectute()
+		event._execute()
 		accept_timer.stop()
 		slide_out()
 

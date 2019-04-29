@@ -15,7 +15,7 @@ func _ready():
 	tick_timer.wait_time = tick_time
 	tick_timer.start()
 
-func _exectute():
+func _execute():
 	print("OVERWRITE")
 
 func _on_TickTimer_timeout() -> void:
