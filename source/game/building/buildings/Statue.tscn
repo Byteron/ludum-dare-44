@@ -14,7 +14,5 @@ building_name = "Statue of Godot"
 flavour_text = "A symbol of wealth, prestige and bad budgeting"
 cost = 50000
 build_time = 6
-penalty = 0
-boost = 0
 upkeep = 2000
 building_texture = SubResource( 2 )

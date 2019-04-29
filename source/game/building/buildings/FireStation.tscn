@@ -12,6 +12,7 @@ region = Rect2( 96, 48, 16, 16 )
 [node name="FireStation" instance=ExtResource( 1 )]
 building_name = "Fire Station"
 flavour_text = "Helps with fires."
+revenue_tick = true
 cost = 25000
 upkeep = 1000
 building_texture = SubResource( 2 )

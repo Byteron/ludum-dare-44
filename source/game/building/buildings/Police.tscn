@@ -12,6 +12,8 @@ region = Rect2( 112, 48, 16, 16 )
 [node name="Police" instance=ExtResource( 1 )]
 building_name = "Police Station"
 flavour_text = "Provides a feeling of security to our residents"
+revenue_tick = true
 cost = 25000
+build_time = 60
 upkeep = 1000
 building_texture = SubResource( 2 )

@@ -4,7 +4,6 @@
 [ext_resource path="res://source/game/building/LivingUnit.gd" type="Script" id=2]
 [ext_resource path="res://assets/sprites/living_unit_red.tres" type="Texture" id=3]
 
-
 [node name="LivingUnit" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 building_name = "Housings"

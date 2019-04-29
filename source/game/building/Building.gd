@@ -30,7 +30,7 @@ export(int) var penalty = 0
 export(int) var boost = 0
 export(int) var revenue = 0
 export(int) var upkeep = 0
-export(float) var tick_time = 10
+export(int, 1, 60) var tick_time = 10
 
 export(Array, String) var penalty_requirements = []
 export(Array, String) var boost_requirements = []

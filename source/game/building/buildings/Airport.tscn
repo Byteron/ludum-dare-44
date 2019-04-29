@@ -9,11 +9,11 @@ load_path = "res://.import/tilemap.png-97bf26cbe4098c4ccdc8ca24f9406864.stex"
 atlas = SubResource( 1 )
 region = Rect2( 176, 48, 16, 16 )
 
-[node name="Airport" instance=ExtResource( 1 )]
+[node name="Airport" index="0" instance=ExtResource( 1 )]
 building_name = "Airport"
 flavour_text = "Can bring people into our town.. and out ouf it!"
 revenue_tick = true
 cost = 50000
 revenue = 5000
-tick_time = 10.0
+upkeep = 3500
 building_texture = SubResource( 2 )

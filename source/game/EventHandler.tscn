@@ -27,12 +27,19 @@ description = "Once again the Mafia came to town and took %d$ with them."
 value = 10000
 
 [node name="Fire" parent="Events" instance=ExtResource( 3 )]
-tick_time = 30
-probability = 1.0
+tick_time = 60
+probability = 0.5
 title = "Fire!"
 description = "A fire caused devastating damage to the neigbourhood. %d$ repairings!"
 required_unbuild = [ "FireStation" ]
-value = 1000
+value = 10000
+
+[node name="Robbery" parent="Events" instance=ExtResource( 3 )]
+tick_time = 300
+title = "Banks got robbed!"
+description = "Once more robbers made it into highly secored banks and stole %d$. Damned, you!!"
+required_unbuild = [ "Police" ]
+value = 20000
 
 [node name="Weather" parent="Events" instance=ExtResource( 4 )]
 tick_time = 180
