@@ -56,14 +56,14 @@ align = 1
 
 [node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
 margin_left = 39.0
-margin_right = 107.0
+margin_right = 127.0
 margin_bottom = 18.0
 size_flags_horizontal = 3
 custom_styles/separator = SubResource( 3 )
 
-[node name="Button" type="Button" parent="HBoxContainer"]
-margin_left = 111.0
+[node name="HintButton" type="Button" parent="HBoxContainer"]
+margin_left = 131.0
 margin_right = 185.0
 margin_bottom = 18.0
-disabled = true
-text = "Buy Hint (1000$)"
+text = "Hint (1000$)"
+[connection signal="pressed" from="HBoxContainer/HintButton" to="." method="_on_HintButton_pressed"]

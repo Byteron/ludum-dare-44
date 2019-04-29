@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 signal building_invested(building)
+signal hint_purchased
 
 onready var top_panel = $TopPanel
 onready var building_popup = $BuildingPopup
@@ -35,3 +36,9 @@ func clear_name_panel():
 
 func _on_BuildingPopup_invested(building):
 	emit_signal("building_invested", building)
+
+
+func _on_TopPanel_hint_purchased():
+	emit_signal("hint_purchased")
+	var next_hint = Hints.get_next_hint()
+	$Letter.show_article(next_hint)

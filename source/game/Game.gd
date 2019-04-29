@@ -62,3 +62,6 @@ func _on_EventHandler_event_happened(event):
 
 func _on_HUD_building_invested(building):
 	_build(building)
+
+func _on_HUD_hint_purchased():
+	_set_budget(budget - Hints.cost_per_hint)
