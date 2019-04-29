@@ -3,6 +3,7 @@ class_name Building
 
 const PopLabel = preload("res://source/interface/PopLabel.tscn")
 
+const TICK_TIME = 60
 signal ticked(income)
 signal build(building_name)
 signal mouse_entered(building_name)
@@ -30,7 +31,6 @@ export(int) var penalty = 0
 export(int) var boost = 0
 export(int) var revenue = 0
 export(int) var upkeep = 0
-export(int, 1, 60) var tick_time = 10
 
 export(Array, String) var penalty_requirements = []
 export(Array, String) var boost_requirements = []
@@ -121,7 +121,7 @@ func _on_BuildTimer_timeout():
 	sprite.texture = building_texture
 
 	if revenue_tick:
-		tick_timer.wait_time = tick_time
+		tick_timer.wait_time = TICK_TIME
 		tick_timer.start()
 
 	emit_signal("build", self)
