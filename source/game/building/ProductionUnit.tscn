@@ -6,6 +6,5 @@
 [node name="ProductionUnit" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 building_name = "Production Unit"
-revenue_tick = true
 revenue_per_housing = false
 upkeep = 1000

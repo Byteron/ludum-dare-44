@@ -3,7 +3,7 @@ extends Node2D
 var discount = 1.0
 var discount_type = null
 
-export(int) var max_budget = 100000
+export(int) var max_budget = 100000 setget _set_max_budget
 export(int) var budget = 85000 setget _set_budget
 
 onready var map = $Map
@@ -59,6 +59,10 @@ func earn(amount):
 	var new_budget = budget + amount
 	_set_budget(new_budget)
 
+func _set_max_budget(new_max_budget):
+	max_budget = new_max_budget
+	hud.set_max_budget(max_budget)
+
 func _set_budget(new_budget):
 	budget = new_budget
 	hud.update_budget(new_budget)
@@ -72,6 +76,8 @@ func _on_mouse_exited_building():
 func _on_building_build(building):
 	if building.type == Building.TYPE.PUBLISHER:
 		event_handler.start_events()
+	if building.type == Building.TYPE.BANK:
+		max_budget += 100000
 
 func _on_building_ticked(income):
 	_set_budget(budget + income)

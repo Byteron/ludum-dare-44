@@ -8,7 +8,7 @@ signal build(building_name)
 signal mouse_entered(building_name)
 signal mouse_exited
 
-enum TYPE { LIVING_UNIT, SELLING_UNIT, PRODUCTION_UNIT, DECORATION_UNIT, PUBLISHER }
+enum TYPE { LIVING_UNIT, SELLING_UNIT, PRODUCTION_UNIT, DECORATION_UNIT, PUBLISHER, BANK }
 
 var type = TYPE.DECORATION_UNIT
 var neighbours = []
