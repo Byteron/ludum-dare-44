@@ -10,13 +10,13 @@
 [ext_resource path="res://source/game/building/buildings/Church.tscn" type="PackedScene" id=8]
 [ext_resource path="res://source/game/building/buildings/Statue.tscn" type="PackedScene" id=9]
 [ext_resource path="res://source/game/building/buildings/Rocket.tscn" type="PackedScene" id=10]
-[ext_resource path="res://source/game/building/buildings/CityBank.tscn" type="PackedScene" id=11]
-[ext_resource path="res://source/game/building/buildings/Police.tscn" type="PackedScene" id=12]
-[ext_resource path="res://source/game/building/buildings/Hospital.tscn" type="PackedScene" id=13]
-[ext_resource path="res://source/game/building/buildings/FireStation.tscn" type="PackedScene" id=14]
-[ext_resource path="res://source/game/building/buildings/NewsTower.tscn" type="PackedScene" id=15]
-[ext_resource path="res://source/game/building/buildings/LumberCamp.tscn" type="PackedScene" id=16]
-[ext_resource path="res://source/game/building/buildings/ElectroMarket.tscn" type="PackedScene" id=17]
+[ext_resource path="res://source/game/building/buildings/Police.tscn" type="PackedScene" id=11]
+[ext_resource path="res://source/game/building/buildings/Hospital.tscn" type="PackedScene" id=12]
+[ext_resource path="res://source/game/building/buildings/FireStation.tscn" type="PackedScene" id=13]
+[ext_resource path="res://source/game/building/buildings/NewsTower.tscn" type="PackedScene" id=14]
+[ext_resource path="res://source/game/building/buildings/LumberCamp.tscn" type="PackedScene" id=15]
+[ext_resource path="res://source/game/building/buildings/ElectroMarket.tscn" type="PackedScene" id=16]
+[ext_resource path="res://source/game/building/buildings/CityBank.tscn" type="PackedScene" id=17]
 [ext_resource path="res://source/interface/hud/HUD.tscn" type="PackedScene" id=18]
 [ext_resource path="res://source/interface/camera/Camera.tscn" type="PackedScene" id=19]
 
@@ -140,38 +140,26 @@ position = Vector2( 296, 119.942 )
 [node name="Rocket" parent="BuildingContainer" instance=ExtResource( 10 )]
 position = Vector2( 278.833, 248 )
 
-[node name="Airport" parent="BuildingContainer" instance=ExtResource( 11 )]
-position = Vector2( 120, 224 )
-
-[node name="Police" parent="BuildingContainer" instance=ExtResource( 12 )]
+[node name="Police" parent="BuildingContainer" instance=ExtResource( 11 )]
 position = Vector2( -24, 72 )
 
-[node name="Hospital" parent="BuildingContainer" instance=ExtResource( 13 )]
+[node name="Hospital" parent="BuildingContainer" instance=ExtResource( 12 )]
 position = Vector2( 168, -16 )
 
-[node name="FireStation" parent="BuildingContainer" instance=ExtResource( 14 )]
+[node name="FireStation" parent="BuildingContainer" instance=ExtResource( 13 )]
 position = Vector2( 230.833, 56 )
 
-[node name="NewsTower" parent="BuildingContainer" instance=ExtResource( 15 )]
+[node name="NewsTower" parent="BuildingContainer" instance=ExtResource( 14 )]
 position = Vector2( 100, 24 )
 build_on_startup = true
 
-[node name="LumberCamp" parent="BuildingContainer" instance=ExtResource( 16 )]
+[node name="LumberCamp" parent="BuildingContainer" instance=ExtResource( 15 )]
 position = Vector2( -24, -72 )
 
-[node name="Cafe" parent="BuildingContainer" instance=ExtResource( 11 )]
-position = Vector2( 8, 136 )
-
-[node name="Cafe3" parent="BuildingContainer" instance=ExtResource( 11 )]
-position = Vector2( -40, 40 )
-
-[node name="Cafe2" parent="BuildingContainer" instance=ExtResource( 11 )]
-position = Vector2( 88, 72 )
-
-[node name="ElectroMarket" parent="BuildingContainer" instance=ExtResource( 17 )]
+[node name="ElectroMarket" parent="BuildingContainer" instance=ExtResource( 16 )]
 position = Vector2( -40, 72 )
 
-[node name="CityBank" parent="BuildingContainer" instance=ExtResource( 11 )]
+[node name="CityBank" parent="BuildingContainer" instance=ExtResource( 17 )]
 position = Vector2( 72, 152 )
 
 [node name="HUD" parent="." instance=ExtResource( 18 )]
