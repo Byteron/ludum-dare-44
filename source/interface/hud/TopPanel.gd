@@ -23,9 +23,9 @@ func update_budget(new_budget):
 	tween.interpolate_property(budget_progress, "modulate", color, Color("FFFFFF"), 0.25, Tween.TRANS_SINE, Tween.EASE_OUT)
 	tween.interpolate_property(budget_label, "modulate", color, Color("FFFFFF"), 0.25, Tween.TRANS_SINE, Tween.EASE_OUT)
 	tween.start()
-	
+
 	$HBoxContainer/HintButton.disabled = (new_budget < Hints.cost_per_hint)
-		
+
 
 func _on_HintButton_pressed():
 	emit_signal("hint_purchased")

@@ -35,7 +35,7 @@ func _on_TickTimer_timeout():
 		label.tint = Color("00FF00")
 	add_child(label)
 	Audio.play("cash")
-	
+
 func _on_BuildTimer_timeout():
 	._on_BuildTimer_timeout()
 	tick_timer.wait_time = tick_time
