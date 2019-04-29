@@ -22,15 +22,18 @@ export(String) var flavour_text = ""
 export(bool) var build_on_startup = false
 export(bool) var revenue_tick = false
 export(bool) var revenue_per_housing = true
+export(bool) var requirement_penalty = false
+export(bool) var requirement_boost = false
 
 export(int) var cost = 10000
 export(int) var build_time = 4.0
 
+export(int) var penalty = 1000
+export(int) var boost = 1000
 export(int) var revenue = 20
 export(int) var upkeep = 10
 export(float) var tick_time = 10
 
-export(int) var requirement_penalty = 1000
 export(Array, String) var required_buildings = []
 export(Texture) var building_texture = null
 
@@ -69,7 +72,15 @@ func _calculate_income():
 				income += revenue
 	else:
 		income = revenue
-	return income - upkeep if requirement_satisfied() else income - upkeep - requirement_penalty
+
+	income - upkeep
+
+	if requirement_satisfied() and requirement_boost:
+		income += boost
+	elif not requirement_satisfied() and requirement_penalty:
+		income -= penalty
+
+	return income
 
 func _on_TickTimer_timeout():
 	var income = _calculate_income()
