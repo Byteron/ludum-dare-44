@@ -43,64 +43,82 @@ tile_data = PoolIntArray( -1245187, 3, 65536, -1179651, 3, 131072, -1114115, 3, 
 
 [node name="Housings" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 8, 72 )
+tick_time = 10
 
 [node name="Housings3" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 104, 56 )
+tick_time = 10
 
 [node name="Housings16" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 72, 104 )
+tick_time = 10
 
 [node name="Housings10" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 120, 56 )
 build_on_startup = true
+tick_time = 10
 
 [node name="Housings17" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 88, 104 )
 build_on_startup = true
+tick_time = 10
 
 [node name="Housings11" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 136, 56 )
 build_on_startup = true
+tick_time = 10
 
 [node name="Housings18" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 104, 104 )
 build_on_startup = true
+tick_time = 10
 
 [node name="Housings12" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 120, 72 )
+tick_time = 10
 
 [node name="Housings13" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 104, 72 )
+tick_time = 10
 
 [node name="Housings5" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 8, 56 )
+tick_time = 10
 
 [node name="Housings9" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 8, 40 )
+tick_time = 10
 
 [node name="Housings2" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 24, 72 )
 build_on_startup = true
+tick_time = 10
 
 [node name="Housings4" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 24, 56 )
 build_on_startup = true
+tick_time = 10
 
 [node name="Housings7" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 24, 40 )
+tick_time = 10
 
 [node name="Housings6" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 40, 56 )
 build_on_startup = true
+tick_time = 10
 
 [node name="Housings14" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 72, 88 )
+tick_time = 10
 
 [node name="Housings15" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 104, 88 )
+tick_time = 10
 
 [node name="Housings8" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 40, 40 )
+tick_time = 10
 
 [node name="SuperMarket" parent="BuildingContainer" groups=[
 "Building",
@@ -118,44 +136,28 @@ position = Vector2( 136, 72 )
 ] instance=ExtResource( 6 )]
 position = Vector2( 88, 88 )
 
-[node name="Townhall" parent="BuildingContainer" groups=[
-"Building",
-] instance=ExtResource( 7 )]
+[node name="Townhall" parent="BuildingContainer" instance=ExtResource( 7 )]
 position = Vector2( 71, 134 )
 
-[node name="Church" parent="BuildingContainer" groups=[
-"Building",
-] instance=ExtResource( 8 )]
+[node name="Church" parent="BuildingContainer" instance=ExtResource( 8 )]
 position = Vector2( 33, 176 )
 
-[node name="Statue" parent="BuildingContainer" groups=[
-"Building",
-] instance=ExtResource( 9 )]
+[node name="Statue" parent="BuildingContainer" instance=ExtResource( 9 )]
 position = Vector2( 296, 119.942 )
 
-[node name="Rocket" parent="BuildingContainer" groups=[
-"Building",
-] instance=ExtResource( 10 )]
+[node name="Rocket" parent="BuildingContainer" instance=ExtResource( 10 )]
 position = Vector2( 278.833, 248 )
 
-[node name="Airport" parent="BuildingContainer" groups=[
-"Building",
-] instance=ExtResource( 11 )]
+[node name="Airport" parent="BuildingContainer" instance=ExtResource( 11 )]
 position = Vector2( 120, 224 )
 
-[node name="Police" parent="BuildingContainer" groups=[
-"Building",
-] instance=ExtResource( 12 )]
+[node name="Police" parent="BuildingContainer" instance=ExtResource( 12 )]
 position = Vector2( -24, 72 )
 
-[node name="Hospital" parent="BuildingContainer" groups=[
-"Building",
-] instance=ExtResource( 13 )]
+[node name="Hospital" parent="BuildingContainer" instance=ExtResource( 13 )]
 position = Vector2( 168, -16 )
 
-[node name="FireStation" parent="BuildingContainer" groups=[
-"Building",
-] instance=ExtResource( 14 )]
+[node name="FireStation" parent="BuildingContainer" instance=ExtResource( 14 )]
 position = Vector2( 230.833, 56 )
 
 [node name="NewsTower" parent="BuildingContainer" groups=[
