@@ -27,7 +27,6 @@ func _build_requirements_satisfied():
 	for building_name in required_build:
 		var building = buildings.get_node(building_name)
 		if not building.is_build:
-			print(building_name, " is not build")
 			return false
 	return true
 
@@ -36,16 +35,13 @@ func _unbuild_requirements_satisfied():
 	for building_name in required_unbuild:
 		var building = buildings.get_node(building_name)
 		if building.is_build:
-			print(building_name, " is build")
 			return false
 	return true
 
 func _execute():
-	print("OVERWRITE")
+	pass
 
 func _on_TickTimer_timeout() -> void:
 	randomize()
-	print(name, ": Build: ", required_build, " - ", _build_requirements_satisfied())
-	print(name, ": Unbuild: ", required_unbuild, " - ", _unbuild_requirements_satisfied())
 	if randf() < probability and _build_requirements_satisfied() and _unbuild_requirements_satisfied():
 		emit_signal("happened", self)
