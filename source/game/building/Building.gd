@@ -43,6 +43,7 @@ onready var sprite = $Sprite
 onready var building_progress = $BuildingProgress
 
 func _ready():
+	_randomize_lot()
 	build_timer.wait_time = build_time
 	if build_on_startup:
 		is_build = true
@@ -61,6 +62,14 @@ func build():
 
 	tween.interpolate_property(building_progress, "value", 0, building_progress.max_value, build_time, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	tween.start()
+
+func _randomize_lot():
+	randomize()
+	sprite.texture = sprite.texture.duplicate(true)
+	var steps = [0, 16, 32]
+	print(sprite.texture.region)
+	sprite.texture.region.position.x += steps[randi() % steps.size()]
+	print(sprite.texture.region)
 
 func _calculate_income():
 	var income = 0
