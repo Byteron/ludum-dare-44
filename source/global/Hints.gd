@@ -5,6 +5,7 @@ var cost_per_hint = 1000
 
 var queue
 var hint_list = [
+	"Lumbercamp good Investment",
 	"Supermarkets need nearby residents to make profit. This should be obvious.",
 	"Some investments may be a bad idea... I can't tell, that's your job.",
 	"cafe",

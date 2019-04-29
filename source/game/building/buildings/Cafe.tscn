@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://source/game/building/SellingUnit.tscn" type="PackedScene" id=1]
+
+[sub_resource type="StreamTexture" id=1]
+load_path = "res://.import/tilemap.png-97bf26cbe4098c4ccdc8ca24f9406864.stex"
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = SubResource( 1 )
+region = Rect2( 192, 32, 16, 16 )
+
+[node name="Cafe" index="0" instance=ExtResource( 1 )]
+building_name = "Cafe"
+flavour_text = "Provides a place to relax a sozialize"
+cost = 15000
+build_time = 10
+penalty = 0
+boost = 0
+revenue = 3000
+upkeep = 500
+required_buildings = [ "Factory" ]
+building_texture = SubResource( 2 )
