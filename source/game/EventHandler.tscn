@@ -17,7 +17,9 @@ description = "50% Discount on Production Units"
 probability = 0.05
 description = "Event 2 happened"
 
-[node name="PaymentEvent" parent="Events" instance=ExtResource( 3 )]
+[node name="Mafia" parent="Events" instance=ExtResource( 3 )]
+tick_time = 300
 probability = 1.0
-title = "Pay!"
-description = "\"You gotta pay %d$ to keep living!\""
+title = "Mafia"
+description = "Once again the Mafia came to town and took %d$ with them."
+value = 10000

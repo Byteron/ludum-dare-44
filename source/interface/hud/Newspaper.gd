@@ -6,6 +6,12 @@ var hidden_pos
 
 var event = null
 
+onready var accept_timer = $AcceptTimer
+onready var button = $VBoxContainer/Button
+
+onready var title_label = $VBoxContainer/VBoxContainer/Title
+onready var description_label = $VBoxContainer/VBoxContainer/Description
+
 func _ready():
 	visible = true
 	visible_pos = rect_position
@@ -14,8 +20,10 @@ func _ready():
 	hidden_pos.y += slide_distance
 	rect_position = hidden_pos
 
-func show_article(text):
-	$Label.text = text
+func show_article():
+	accept_timer.start()
+	title_label.text = event.title
+	description_label.text = event.description
 	slide_in()
 
 func slide_in():
@@ -28,6 +36,10 @@ func slide_out():
 	$Tween.start()
 
 func _on_Button_pressed():
-	event._exectute()
 	if not $Tween.is_active():
+		event._exectute()
+		accept_timer.stop()
 		slide_out()
+
+func _on_AcceptTimer_timeout():
+	button.emit_signal("pressed")
