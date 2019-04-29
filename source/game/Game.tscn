@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://source/game/Game.gd" type="Script" id=1]
 [ext_resource path="res://source/game/EventHandler.tscn" type="PackedScene" id=2]
@@ -10,17 +10,15 @@
 [ext_resource path="res://source/game/building/buildings/Church.tscn" type="PackedScene" id=8]
 [ext_resource path="res://source/game/building/buildings/Statue.tscn" type="PackedScene" id=9]
 [ext_resource path="res://source/game/building/buildings/Rocket.tscn" type="PackedScene" id=10]
-[ext_resource path="res://source/game/building/buildings/Airport.tscn" type="PackedScene" id=11]
+[ext_resource path="res://source/game/building/buildings/CityBank.tscn" type="PackedScene" id=11]
 [ext_resource path="res://source/game/building/buildings/Police.tscn" type="PackedScene" id=12]
 [ext_resource path="res://source/game/building/buildings/Hospital.tscn" type="PackedScene" id=13]
 [ext_resource path="res://source/game/building/buildings/FireStation.tscn" type="PackedScene" id=14]
 [ext_resource path="res://source/game/building/buildings/NewsTower.tscn" type="PackedScene" id=15]
 [ext_resource path="res://source/game/building/buildings/LumberCamp.tscn" type="PackedScene" id=16]
-[ext_resource path="res://source/game/building/buildings/Cafe.tscn" type="PackedScene" id=17]
-[ext_resource path="res://source/game/building/buildings/ElectroMarket.tscn" type="PackedScene" id=18]
-[ext_resource path="res://source/game/building/buildings/CityBank.tscn" type="PackedScene" id=19]
-[ext_resource path="res://source/interface/hud/HUD.tscn" type="PackedScene" id=20]
-[ext_resource path="res://source/interface/camera/Camera.tscn" type="PackedScene" id=21]
+[ext_resource path="res://source/game/building/buildings/ElectroMarket.tscn" type="PackedScene" id=17]
+[ext_resource path="res://source/interface/hud/HUD.tscn" type="PackedScene" id=18]
+[ext_resource path="res://source/interface/camera/Camera.tscn" type="PackedScene" id=19]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
@@ -161,24 +159,24 @@ build_on_startup = true
 [node name="LumberCamp" parent="BuildingContainer" instance=ExtResource( 16 )]
 position = Vector2( -24, -72 )
 
-[node name="Cafe" parent="BuildingContainer" instance=ExtResource( 17 )]
+[node name="Cafe" parent="BuildingContainer" instance=ExtResource( 11 )]
 position = Vector2( 8, 136 )
 
-[node name="Cafe3" parent="BuildingContainer" instance=ExtResource( 17 )]
+[node name="Cafe3" parent="BuildingContainer" instance=ExtResource( 11 )]
 position = Vector2( -40, 40 )
 
-[node name="Cafe2" parent="BuildingContainer" instance=ExtResource( 17 )]
+[node name="Cafe2" parent="BuildingContainer" instance=ExtResource( 11 )]
 position = Vector2( 88, 72 )
 
-[node name="ElectroMarket" parent="BuildingContainer" instance=ExtResource( 18 )]
+[node name="ElectroMarket" parent="BuildingContainer" instance=ExtResource( 17 )]
 position = Vector2( -40, 72 )
 
-[node name="CityBank" parent="BuildingContainer" instance=ExtResource( 19 )]
+[node name="CityBank" parent="BuildingContainer" instance=ExtResource( 11 )]
 position = Vector2( 72, 152 )
 
-[node name="HUD" parent="." instance=ExtResource( 20 )]
+[node name="HUD" parent="." instance=ExtResource( 18 )]
 
-[node name="Camera2D" parent="." instance=ExtResource( 21 )]
+[node name="Camera2D" parent="." instance=ExtResource( 19 )]
 position = Vector2( 96, 96 )
 speed = 350
 [connection signal="timeout" from="BalanceTimer" to="." method="_on_BalanceTimer_timeout"]
