@@ -10,7 +10,6 @@
 [ext_resource path="res://source/interface/camera/Camera.tscn" type="PackedScene" id=8]
 
 [node name="Game" type="Node2D"]
-position = Vector2( 857.751, 592.836 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ],
