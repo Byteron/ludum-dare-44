@@ -7,13 +7,12 @@ load_path = "res://.import/tilemap.png-97bf26cbe4098c4ccdc8ca24f9406864.stex"
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = SubResource( 1 )
-region = Rect2( 192, 48, 16, 16 )
+region = Rect2( 176, 48, 16, 16 )
 
-[node name="Rocket" index="0" instance=ExtResource( 1 )]
-building_name = "Space Station"
-flavour_text = "Expensive, but will certainly advance our society!"
+[node name="Airport" index="0" instance=ExtResource( 1 )]
+building_name = "Airport"
+flavour_text = "Brings people into our town.. and out of it!"
 tick = false
-cost = 80000
-build_time = 20
-upkeep = 4000
+cost = 60000
+revenue = 8000
 building_texture = SubResource( 2 )
