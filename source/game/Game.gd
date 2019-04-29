@@ -75,6 +75,8 @@ func _set_max_budget(new_max_budget):
 
 func _set_budget(new_budget):
 	budget = new_budget
+	if budget > max_budget:
+		budget = max_budget
 	hud.update_budget(new_budget)
 
 func _on_mouse_entered_building(building_name):
