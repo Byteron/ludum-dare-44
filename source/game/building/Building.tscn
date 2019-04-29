@@ -8,7 +8,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6, 6 )
 
-[node name="Building" type="Node2D"]
+[node name="Building" type="Node2D" groups=[
+"Building",
+]]
 script = ExtResource( 1 )
 building_texture = ExtResource( 2 )
 

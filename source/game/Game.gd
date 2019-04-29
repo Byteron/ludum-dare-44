@@ -4,7 +4,6 @@ export(int) var max_budget = 100000
 export(int) var budget = 85000 setget _set_budget
 
 onready var map = $Map
-onready var building_container = $BuildingContainer
 onready var hud = $HUD
 
 func _input(event):
@@ -31,7 +30,8 @@ func _build(building):
 	building.build()
 
 func _setup_buildings():
-	for building in building_container.get_children():
+	var buildings = get_tree().get_nodes_in_group("Building")
+	for building in buildings:
 		building.connect("mouse_entered", self, "_on_mouse_entered_building")
 		building.connect("mouse_exited", self, "_on_mouse_exited_building")
 
