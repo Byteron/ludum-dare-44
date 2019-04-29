@@ -74,9 +74,7 @@ func _randomize_lot():
 	randomize()
 	sprite.texture = sprite.texture.duplicate(true)
 	var steps = [0, 16, 32]
-	print(sprite.texture.region)
 	sprite.texture.region.position.x += steps[randi() % steps.size()]
-	print(sprite.texture.region)
 
 func _calculate_income():
 	var income = 0
