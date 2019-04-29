@@ -69,6 +69,7 @@ to relax and socialize"
 align = 1
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+visible = false
 margin_top = 78.0
 margin_right = 108.0
 margin_bottom = 82.0
