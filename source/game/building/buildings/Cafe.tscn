@@ -9,11 +9,12 @@ atlas = ExtResource( 3 )
 region = Rect2( 192, 32, 16, 16 )
 
 [node name="Cafe" index="0" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
 building_name = "Cafe"
-flavour_text = "Provides a place to relax a sozialize"
-cost = 28000
-build_time = 45
-revenue = 1200
-upkeep = 3000
-tick_time = 15
-building_texture = SubResource( 2 )
+flavour_text = "A place to relax and sozialize"
+revenue_per_housing = false
+cost = 10000
+build_time = 5
+revenue = 3000
+upkeep = 500
+building_texture = SubResource( 1 )

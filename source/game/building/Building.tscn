@@ -16,12 +16,6 @@ building_texture = ExtResource( 2 )
 
 [node name="Tween" type="Tween" parent="."]
 
-[node name="MouseArea" type="Area2D" parent="."]
-editor/display_folded = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea"]
-shape = SubResource( 1 )
-
 [node name="TickTimer" type="Timer" parent="."]
 
 [node name="BuildTimer" type="Timer" parent="."]
@@ -33,16 +27,20 @@ texture = ExtResource( 3 )
 [node name="BuildingProgress" type="TextureProgress" parent="."]
 visible = false
 margin_left = -7.0
-margin_top = -7.0
+margin_top = -9.0
 margin_right = 7.0
-margin_bottom = 7.0
-value = 50.0
+margin_bottom = -8.0
 texture_under = ExtResource( 4 )
 texture_progress = ExtResource( 4 )
-tint_under = Color( 0, 0, 0, 0.470588 )
-tint_progress = Color( 0.984314, 0.85098, 0.592157, 0.54902 )
+tint_under = Color( 0, 0, 0, 0.54902 )
+tint_progress = Color( 0.435294, 0.309804, 0.137255, 1 )
 nine_patch_stretch = true
-[connection signal="mouse_entered" from="MouseArea" to="." method="_on_MouseArea_mouse_entered"]
-[connection signal="mouse_exited" from="MouseArea" to="." method="_on_MouseArea_mouse_exited"]
+
+[node name="MouseArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea"]
+shape = SubResource( 1 )
 [connection signal="timeout" from="TickTimer" to="." method="_on_TickTimer_timeout"]
 [connection signal="timeout" from="BuildTimer" to="." method="_on_BuildTimer_timeout"]
+[connection signal="mouse_entered" from="MouseArea" to="." method="_on_MouseArea_mouse_entered"]
+[connection signal="mouse_exited" from="MouseArea" to="." method="_on_MouseArea_mouse_exited"]

@@ -28,9 +28,6 @@ func show_info_popup(building):
 func set_max_budget(max_budget):
 	top_panel.set_max_budget(max_budget)
 
-func update_balance(balance):
-	top_panel.update_balance(balance)
-
 func update_budget(new_budget):
 	top_panel.update_budget(new_budget)
 

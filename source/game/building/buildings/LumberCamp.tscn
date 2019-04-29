@@ -8,15 +8,11 @@
 atlas = ExtResource( 3 )
 region = Rect2( 144, 48, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=2]
-atlas = SubResource( 1 )
-region = Rect2( 128, 48, 16, 16 )
-
 [node name="LumberCamp" index="0" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
 building_name = "Lumber Camp"
-flavour_text = "We can sell these logs on export."
-build_time = 60
-revenue = 5000
+flavour_text = "Logs for export. A simple business"
+revenue_per_housing = false
+revenue = 2000
 upkeep = 500
-tick_time = 15
-building_texture = SubResource( 2 )
+building_texture = SubResource( 1 )

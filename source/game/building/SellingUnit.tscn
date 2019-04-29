@@ -5,4 +5,5 @@
 
 [node name="SellingUnit" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+revenue_tick = true
 building_texture = null

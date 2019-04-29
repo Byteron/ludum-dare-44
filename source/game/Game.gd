@@ -3,8 +3,8 @@ extends Node2D
 var discount = 1.0
 var discount_type = null
 
-export(int) var max_budget = 100000 setget _set_max_budget
-export(int) var budget = 35000 setget _set_budget
+export(int) var max_budget = 100000
+export(int) var budget = 85000 setget _set_budget
 
 onready var map = $Map
 onready var hud = $HUD
@@ -59,20 +59,6 @@ func earn(amount):
 	var new_budget = budget + amount
 	_set_budget(new_budget)
 
-func _get_balance():
-	var balance = 0
-	var buildings = get_tree().get_nodes_in_group("Building")
-	for building in buildings:
-		if not building.is_build or not building.tick:
-			continue
-
-		balance += building.income_per_minute()
-	return balance
-
-func _set_max_budget(new_max_budget):
-	max_budget = new_max_budget
-	hud.set_max_budget(max_budget)
-
 func _set_budget(new_budget):
 	budget = new_budget
 	hud.update_budget(new_budget)
@@ -86,8 +72,6 @@ func _on_mouse_exited_building():
 func _on_building_build(building):
 	if building.type == Building.TYPE.PUBLISHER:
 		event_handler.start_events()
-	if building.type == Building.TYPE.BANK:
-		_set_max_budget(max_budget + 100000)
 
 func _on_building_ticked(income):
 	_set_budget(budget + income)
@@ -100,6 +84,3 @@ func _on_HUD_building_invested(building):
 
 func _on_HUD_hint_purchased():
 	_set_budget(budget - Hints.cost_per_hint)
-
-func _on_BalanceTimer_timeout():
-	hud.update_balance(_get_balance())

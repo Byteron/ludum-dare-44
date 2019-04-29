@@ -1,4 +1,4 @@
 extends Building
 
-func _init():
+func _ready():
 	type = TYPE.PUBLISHER
