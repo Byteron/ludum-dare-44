@@ -44,9 +44,7 @@ func _setup_buildings():
 		building.connect("build", self, "_on_building_build")
 		building.connect("mouse_entered", self, "_on_mouse_entered_building")
 		building.connect("mouse_exited", self, "_on_mouse_exited_building")
-
-		if building.revenue_tick:
-			building.connect("ticked", self, "_on_building_ticked")
+		building.connect("ticked", self, "_on_building_ticked")
 
 		var cell = map.world_to_map(building.position)
 		var location = map.get_location(cell)
@@ -58,7 +56,7 @@ func pay(amount):
 	_set_budget(new_budget)
 
 func earn(amount):
-	var new_budget = budget - amount
+	var new_budget = budget + amount
 	_set_budget(new_budget)
 
 func _set_budget(new_budget):

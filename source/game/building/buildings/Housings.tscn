@@ -8,5 +8,6 @@
 script = ExtResource( 2 )
 building_name = "Housings"
 flavour_text = "Cosy and Warm"
+tick = false
 revenue_per_housing = false
 building_texture = ExtResource( 3 )

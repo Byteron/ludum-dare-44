@@ -20,7 +20,7 @@ export(String) var flavour_text = "This is a Building"
 
 
 export(bool) var build_on_startup = false
-export(bool) var revenue_tick = false
+export(bool) var tick = true
 export(bool) var revenue_per_housing = true
 
 export(int) var cost = 15000
@@ -120,7 +120,7 @@ func _on_BuildTimer_timeout():
 
 	sprite.texture = building_texture
 
-	if revenue_tick:
+	if tick:
 		tick_timer.wait_time = tick_time
 		tick_timer.start()
 

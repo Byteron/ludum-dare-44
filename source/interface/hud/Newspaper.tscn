@@ -5,11 +5,11 @@
 [ext_resource path="res://assets/interface/news.png" type="Texture" id=3]
 [ext_resource path="res://fonts/poco/Poco.ttf" type="DynamicFontData" id=4]
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 3 )
 region = Rect2( 1, 1, 143, 79 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 10
 outline_size = 1
 outline_color = Color( 0.752941, 0.752941, 0.752941, 1 )
@@ -18,7 +18,7 @@ extra_spacing_bottom = -1
 extra_spacing_space = -2
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=3]
 size = 10
 use_mipmaps = true
 extra_spacing_top = -5
@@ -47,7 +47,7 @@ anchor_bottom = 1.0
 mouse_filter = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = SubResource( 2 )
+texture = SubResource( 1 )
 expand = true
 stretch_mode = 1
 
@@ -68,7 +68,7 @@ custom_constants/separation = 8
 [node name="Title" type="Label" parent="VBoxContainer/VBoxContainer"]
 margin_right = 113.0
 margin_bottom = 6.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Title Pending"
 align = 1
@@ -78,7 +78,7 @@ autowrap = true
 margin_top = 14.0
 margin_right = 113.0
 margin_bottom = 65.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Newspaper building built!
 

@@ -13,8 +13,7 @@ func _ready():
 	newspaper.show()
 
 func show_article(event):
-	newspaper.event = event
-	newspaper.show_article()
+	newspaper.show_article(event)
 	name_panel.text = ""
 	name_panel.fade_out()
 

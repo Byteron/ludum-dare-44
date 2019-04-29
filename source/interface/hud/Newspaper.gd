@@ -20,7 +20,10 @@ func _ready():
 	hidden_pos.y += slide_distance
 	rect_position = hidden_pos
 
-func show_article():
+func show_article(event):
+	if self.event:
+		button.emit_signal("pressed")
+	self.event = event
 	accept_timer.start()
 	title_label.text = event.title
 	description_label.text = event.description
@@ -42,6 +45,7 @@ func _on_Button_pressed():
 		slide_out()
 		if event.one_time_event:
 			event.queue_free()
+			event = null
 
 func _on_AcceptTimer_timeout():
 	button.emit_signal("pressed")
