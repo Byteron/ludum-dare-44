@@ -77,7 +77,7 @@ func _on_building_build(building):
 	if building.type == Building.TYPE.PUBLISHER:
 		event_handler.start_events()
 	if building.type == Building.TYPE.BANK:
-		max_budget += 100000
+		_set_max_budget(max_budget + 100000)
 
 func _on_building_ticked(income):
 	_set_budget(budget + income)
