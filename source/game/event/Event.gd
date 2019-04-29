@@ -7,6 +7,7 @@ export(int) var tick_time = 10
 export(float, 0.0, 1.0) var probability = 0.1
 
 export(String) var title = "Event Title"
+export(String) var button_text = "Hmnn..."
 export(String, MULTILINE) var description = "An event happened this week!"
 
 export(Array, String) var required_unbuild = []

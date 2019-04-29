@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://source/game/EventHandler.gd" type="Script" id=1]
 [ext_resource path="res://source/game/event/DonationEvent.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://source/game/event/PaymentEvent.tscn" type="PackedScene" id=4]
 [ext_resource path="res://source/game/event/RandomTextEvent.tscn" type="PackedScene" id=5]
 [ext_resource path="res://source/game/event/DiscountEvent.tscn" type="PackedScene" id=6]
+[ext_resource path="res://source/game/event/VictoryEvent.tscn" type="PackedScene" id=7]
+[ext_resource path="res://source/game/event/DefeatEvent.tscn" type="PackedScene" id=8]
 
 [node name="EventHandler" type="Node"]
 script = ExtResource( 1 )
@@ -16,6 +18,7 @@ script = ExtResource( 1 )
 tick_time = 600
 probability = 0.5
 title = "Happy Village"
+button_text = "woho!"
 description = "The people are happy and donated %d$ to the city council!"
 required_build = [ "Church" ]
 value = 10000
@@ -25,6 +28,7 @@ one_time_event = true
 tick_time = 5
 probability = 1.0
 title = "Newspapers!"
+button_text = "cool!"
 description = "New newspapers in town! 
 We'll keep you informed about both good and bad news!"
 
@@ -32,43 +36,62 @@ We'll keep you informed about both good and bad news!"
 tick_time = 300
 probability = 1.0
 title = "Mafia"
+button_text = "hmnn..."
 description = "Once again the Mafia came to town and took %d$ with them."
 value = 10000
 
 [node name="Fire" parent="Events" instance=ExtResource( 4 )]
 tick_time = 60
-probability = 0.5
+probability = 0.25
 title = "Fire!"
+button_text = "maybe a fire station?"
 description = "A fire caused devastating damage to the neigbourhood. %d$ repairings!"
 required_unbuild = [ "FireStation" ]
-value = 10000
 
 [node name="Robbery" parent="Events" instance=ExtResource( 4 )]
 tick_time = 300
+probability = 0.25
 title = "Banks got robbed!"
+button_text = "oh no..."
 description = "Once more robbers made it into highly secored banks and stole %d$. Damned, you!!"
 required_unbuild = [ "Police" ]
-value = 20000
+value = 10000
 
 [node name="Weather" parent="Events" instance=ExtResource( 5 )]
 tick_time = 180
 probability = 1.0
 title = "Weather Report"
+button_text = "interesting..."
 description = "Perfect wheather to go outside!"
 variants = [ "On such rainy days Netflix certainly is something!", "Hurricane! Hurricane! Hurricane!" ]
 
 [node name="EasyLiving" parent="Events" instance=ExtResource( 6 )]
-tick_time = 300
-probability = 0.2
+tick_time = 350
+probability = 0.25
 title = "Easy Living!"
+button_text = "I should by housings!"
 description = "Housings are now %d%% cheaper for %d seconds! Buy now!"
 discount = 0.5
 discount_time = 120
 
 [node name="EasySelling" parent="Events" instance=ExtResource( 6 )]
 tick_time = 250
+probability = 0.3
 title = "Easy Selling!"
+button_text = "good time to invest..."
 description = "All Sellers are now %d%% cheaper for %d seconds! Buy now!"
 affected_type = 1
-discount = 0.4
-discount_time = 180
+discount = 0.5
+discount_time = 120
+
+[node name="VictoryEvent" parent="Events" instance=ExtResource( 7 )]
+tick_time = 30
+probability = 1.0
+button_text = "that sounds good."
+
+[node name="DefeatEvent" parent="Events" instance=ExtResource( 8 )]
+one_time_event = false
+probability = 1.0
+title = "Ludum Investment declares BANCRUPTCY"
+button_text = "I shall try again..."
+description = "After a series of unhealthy investments, the company had to close its doors."

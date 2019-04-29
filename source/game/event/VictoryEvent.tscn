@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://source/game/event/Event.tscn" type="PackedScene" id=1]
+[ext_resource path="res://source/game/event/VictoryEvent.gd" type="Script" id=2]
+
+[node name="VictoryEvent" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+title = "Congratulations!"
+description = "Only with your help, we were able to build this wonderful city!
+You can retire now, bye."

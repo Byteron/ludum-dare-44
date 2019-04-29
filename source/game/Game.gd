@@ -4,7 +4,7 @@ var discount = 1.0
 var discount_type = null
 
 export(int) var max_budget = 100000 setget _set_max_budget
-export(int) var budget = 35000 setget _set_budget
+export(int) var budget = 50000 setget _set_budget
 
 onready var map = $Map
 onready var hud = $HUD

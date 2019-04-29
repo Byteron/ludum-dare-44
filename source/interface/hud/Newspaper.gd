@@ -25,6 +25,7 @@ func show_article(event):
 		button.emit_signal("pressed")
 	self.event = event
 	accept_timer.start()
+	button.text = event.button_text
 	title_label.text = event.title
 	description_label.text = event.description
 	slide_in()
