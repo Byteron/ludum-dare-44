@@ -2,29 +2,31 @@
 
 [ext_resource path="res://source/interface/hud/HUD.gd" type="Script" id=1]
 [ext_resource path="res://source/interface/hud/TopPanel.tscn" type="PackedScene" id=2]
-[ext_resource path="res://source/interface/BuildingPopup.tscn" type="PackedScene" id=3]
-[ext_resource path="res://source/interface/InfoPopup.tscn" type="PackedScene" id=4]
-[ext_resource path="res://source/interface/Newspaper.tscn" type="PackedScene" id=5]
-[ext_resource path="res://source/interface/NamePanel.tscn" type="PackedScene" id=6]
-[ext_resource path="res://source/interface/Letter.tscn" type="PackedScene" id=7]
+[ext_resource path="res://source/interface/hud/InvestmentPopup.tscn" type="PackedScene" id=3]
+[ext_resource path="res://source/interface/hud/InfoPopup.tscn" type="PackedScene" id=4]
+[ext_resource path="res://source/interface/hud/Newspaper.tscn" type="PackedScene" id=5]
+[ext_resource path="res://source/interface/hud/NamePanel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://source/interface/hud/Letter.tscn" type="PackedScene" id=7]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 1 )
 
 [node name="TopPanel" parent="." instance=ExtResource( 2 )]
 
-[node name="BuildingPopup" parent="." instance=ExtResource( 3 )]
+[node name="InvestmentPopup" parent="." instance=ExtResource( 3 )]
 visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -57.0
+margin_left = -56.5
 margin_top = -58.0
-margin_right = 57.0
+margin_right = 56.5
 margin_bottom = 58.0
+size_flags_horizontal = 1
 
 [node name="InfoPopup" parent="." instance=ExtResource( 4 )]
+visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -33,13 +35,18 @@ margin_left = -56.5
 margin_top = -46.0
 margin_right = 56.5
 margin_bottom = 46.0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 
 [node name="Newspaper" parent="." instance=ExtResource( 5 )]
-visible = false
-margin_left = 22.8334
-margin_top = 41.2559
-margin_right = -25.1666
-margin_bottom = -22.7441
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -72.0
+margin_top = -48.5
+margin_right = 72.0
+margin_bottom = 48.5
 
 [node name="NamePanel" parent="." instance=ExtResource( 6 )]
 anchor_left = 0.5
@@ -61,4 +68,4 @@ margin_top = -56.5
 margin_right = 40.0
 margin_bottom = 56.5
 [connection signal="hint_purchased" from="TopPanel" to="." method="_on_TopPanel_hint_purchased"]
-[connection signal="invested" from="BuildingPopup" to="." method="_on_BuildingPopup_invested"]
+[connection signal="invested" from="InvestmentPopup" to="." method="_on_InvestmentPopup_invested"]

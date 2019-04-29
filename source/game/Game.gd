@@ -13,9 +13,9 @@ func _input(event):
 		var cell_tile = map.get_cellv(mouse_cell)
 		var location = map.get_location(mouse_cell)
 		if location.building and not location.building.is_build:
-			hud.show_building_popup(location.building)
+			hud.show_investment_popup(location.building)
 		elif location.building:
-			hud.show_building_info_popup(location.building)
+			hud.show_info_popup(location.building)
 
 func _ready():
 	Global.Game = self

@@ -1,0 +1,92 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/interface/theme.tres" type="Theme" id=1]
+[ext_resource path="res://source/interface/hud/BuildingPopup.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxLine" id=1]
+color = Color( 1, 1, 1, 1 )
+
+[node name="BuildingPopup" type="PopupPanel"]
+margin_right = 113.0
+margin_bottom = 139.0
+size_flags_horizontal = 12
+size_flags_vertical = 12
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.0
+margin_top = 2.0
+margin_right = -2.0
+margin_bottom = -2.0
+size_flags_horizontal = 7
+size_flags_vertical = 13
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 11.0
+margin_top = 30.0
+margin_right = 96.0
+margin_bottom = 105.0
+size_flags_horizontal = 13
+size_flags_vertical = 13
+custom_constants/separation = 1
+
+[node name="Name" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_right = 98.0
+margin_bottom = 10.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Sternbucks"
+align = 1
+
+[node name="CostLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_top = 11.0
+margin_right = 98.0
+margin_bottom = 21.0
+text = "Investment 30.000$"
+align = 1
+
+[node name="HSeparator3" type="HSeparator" parent="CenterContainer/VBoxContainer"]
+margin_top = 22.0
+margin_right = 98.0
+margin_bottom = 26.0
+custom_styles/separator = SubResource( 1 )
+
+[node name="RevenueLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_top = 27.0
+margin_right = 98.0
+margin_bottom = 37.0
+text = "Max Income: 8.000$"
+align = 1
+
+[node name="IncomeLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_top = 38.0
+margin_right = 98.0
+margin_bottom = 48.0
+text = "Max Income: 8.000$"
+align = 1
+
+[node name="UpkeepLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_top = 49.0
+margin_right = 98.0
+margin_bottom = 59.0
+text = "Upkeep: 2.000$"
+align = 1
+
+[node name="HSeparator2" type="HSeparator" parent="CenterContainer/VBoxContainer"]
+margin_top = 60.0
+margin_right = 98.0
+margin_bottom = 64.0
+custom_styles/separator = SubResource( 1 )
+
+[node name="FlavourLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_top = 65.0
+margin_right = 98.0
+margin_bottom = 101.0
+size_flags_horizontal = 13
+size_flags_vertical = 12
+text = "Cool Description"
+align = 1
+valign = 1
+autowrap = true
