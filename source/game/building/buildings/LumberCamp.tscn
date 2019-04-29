@@ -12,11 +12,6 @@ region = Rect2( 128, 48, 16, 16 )
 [node name="LumberCamp" index="0" instance=ExtResource( 1 )]
 building_name = "Lumber Camp"
 flavour_text = "We can sell these logs on export."
-cost = 15000
-build_time = 10
-penalty = 0
-boost = 0
 revenue = 5000
 upkeep = 500
-required_buildings = [ "Factory" ]
 building_texture = SubResource( 2 )
