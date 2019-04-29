@@ -4,6 +4,8 @@
 [ext_resource path="res://source/game/building/building_atlas.tres" type="Texture" id=2]
 
 [node name="Church" instance=ExtResource( 1 )]
+building_name = "Church"
+flavour_text = "It helps with praying"
 cost = 20000
 penalty = 0
 boost = 0
