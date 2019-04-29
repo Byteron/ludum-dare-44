@@ -5,6 +5,7 @@ var visible_pos
 var hidden_pos
 
 func _ready():
+	visible = true
 	visible_pos = rect_position
 	hidden_pos = rect_position
 	slide_distance = - rect_size.y * 2 + 10
@@ -18,7 +19,7 @@ func show_article(text):
 func slide_in():
 	$Tween.interpolate_property(self, "rect_position", hidden_pos, visible_pos, 0.8, Tween.TRANS_BACK, Tween.EASE_OUT)
 	$Tween.start()
-	Audio.play("alert")
+	Audio.play("click")
 
 func slide_out():
 	$Tween.interpolate_property(self, "rect_position", visible_pos, hidden_pos, 0.8, Tween.TRANS_BACK, Tween.EASE_IN)

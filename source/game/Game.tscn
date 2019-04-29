@@ -126,10 +126,6 @@ position = Vector2( 278.833, 248 )
 
 [node name="Airport" parent="BuildingContainer" instance=ExtResource( 11 )]
 position = Vector2( 120, 224 )
-cost = 50000
-penalty = 0
-boost = 0
-revenue = 5000
 
 [node name="Police" parent="BuildingContainer" instance=ExtResource( 12 )]
 position = Vector2( -24, 72 )

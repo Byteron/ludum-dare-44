@@ -32,7 +32,8 @@ export(int) var revenue = 0
 export(int) var upkeep = 0
 export(float) var tick_time = 10
 
-export(Array, String) var required_buildings = []
+export(Array, String) var penalty_requirements = []
+export(Array, String) var boost_requirements = []
 export(Texture) var building_texture = null
 
 onready var tick_timer = $TickTimer
@@ -49,8 +50,14 @@ func _ready():
 		is_build = true
 		call_deferred("_on_BuildTimer_timeout")
 
-func requirement_satisfied():
-	for building_name in required_buildings:
+func penalty_requirements_satisfied():
+	for building_name in penalty_requirements:
+		if not Global.Game.building_container.has_node(building_name):
+			return false
+	return true
+
+func boost_requirements_satisfied():
+	for building_name in boost_requirements:
 		if not Global.Game.building_container.has_node(building_name):
 			return false
 	return true
@@ -82,10 +89,11 @@ func _calculate_income():
 
 	income -= upkeep
 
-	if requirement_satisfied():
-		income += boost
-	else:
+	if not penalty_requirements_satisfied():
 		income -= penalty
+
+	elif boost_requirements_satisfied():
+		income += boost
 
 	return income
 

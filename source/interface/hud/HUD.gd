@@ -4,8 +4,8 @@ signal building_invested(building)
 signal hint_purchased
 
 onready var top_panel = $TopPanel
-onready var building_popup = $BuildingPopup
-onready var building_info_popup = $InfoPopup
+onready var investment_popup = $InvestmentPopup
+onready var info_popup = $InfoPopup
 onready var newspaper = $Newspaper
 onready var name_panel = $NamePanel
 
@@ -17,13 +17,13 @@ func show_article(text):
 	name_panel.text = ""
 	name_panel.fade_out()
 
-func show_building_popup(building):
-	building_popup.building = building
-	building_popup.popup()
+func show_investment_popup(building):
+	investment_popup.building = building
+	investment_popup.popup_centered()
 
-func show_building_info_popup(building):
-	building_info_popup.building = building
-	building_info_popup.popup()
+func show_info_popup(building):
+	info_popup.building = building
+	info_popup.popup_centered()
 
 func set_max_budget(max_budget):
 	top_panel.set_max_budget(max_budget)
@@ -39,9 +39,8 @@ func clear_name_panel():
 	name_panel.text = ""
 	name_panel.fade_out()
 
-func _on_BuildingPopup_invested(building):
+func _on_InvestmentPopup_invested(building):
 	emit_signal("building_invested", building)
-
 
 func _on_TopPanel_hint_purchased():
 	emit_signal("hint_purchased")

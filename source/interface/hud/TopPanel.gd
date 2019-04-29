@@ -6,6 +6,9 @@ onready var tween = $Tween
 onready var budget_progress = $HBoxContainer/VBoxContainer/BudgetProgress
 onready var budget_label = $HBoxContainer/VBoxContainer/Label
 
+func _ready():
+	visible = true
+
 func set_max_budget(max_budget):
 	budget_progress.max_value = max_budget
 

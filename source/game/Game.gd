@@ -4,7 +4,6 @@ export(int) var max_budget = 100000
 export(int) var budget = 85000 setget _set_budget
 
 onready var map = $Map
-onready var building_container = $BuildingContainer
 onready var hud = $HUD
 
 func _input(event):
@@ -13,9 +12,9 @@ func _input(event):
 		var cell_tile = map.get_cellv(mouse_cell)
 		var location = map.get_location(mouse_cell)
 		if location.building and not location.building.is_build:
-			hud.show_building_popup(location.building)
+			hud.show_investment_popup(location.building)
 		elif location.building:
-			hud.show_building_info_popup(location.building)
+			hud.show_info_popup(location.building)
 
 func _ready():
 	Global.Game = self
@@ -31,11 +30,12 @@ func _build(building):
 	building.build()
 
 func _setup_buildings():
-	for building in building_container.get_children():
+	var buildings = get_tree().get_nodes_in_group("Building")
+	for building in buildings:
 		building.connect("mouse_entered", self, "_on_mouse_entered_building")
 		building.connect("mouse_exited", self, "_on_mouse_exited_building")
 
-		if building.type == building.TYPE.SELLING_UNIT:
+		if building.revenue_tick:
 			building.connect("ticked", self, "_on_building_ticked")
 
 		var cell = map.world_to_map(building.position)

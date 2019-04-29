@@ -12,4 +12,8 @@ region = Rect2( 176, 48, 16, 16 )
 [node name="Airport" instance=ExtResource( 1 )]
 building_name = "Airport"
 flavour_text = "Can bring people into our town.. and out ouf it!"
+revenue_tick = true
+cost = 50000
+revenue = 5000
+tick_time = 10.0
 building_texture = SubResource( 2 )

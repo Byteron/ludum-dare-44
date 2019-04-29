@@ -1,13 +1,14 @@
 extends PopupPanel
+class_name BuildingPopup
 
 var building setget _set_building
 
-onready var name_label = $VBoxContainer/Name
-onready var cost_label = $VBoxContainer/CostLabel
-onready var revenue_label = $VBoxContainer/RevenueLabel
-onready var income_label = $VBoxContainer/IncomeLabel
-onready var upkeep_label = $VBoxContainer/UpkeepLabel
-onready var flavour_label = $VBoxContainer/FlavourLabel
+onready var name_label = $CenterContainer/VBoxContainer/Name
+onready var cost_label = $CenterContainer/VBoxContainer/CostLabel
+onready var revenue_label = $CenterContainer/VBoxContainer/RevenueLabel
+onready var income_label = $CenterContainer/VBoxContainer/IncomeLabel
+onready var upkeep_label = $CenterContainer/VBoxContainer/UpkeepLabel
+onready var flavour_label = $CenterContainer/VBoxContainer/FlavourLabel
 
 func _set_building(slug):
 	building = slug
