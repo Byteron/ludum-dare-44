@@ -51,14 +51,20 @@ func _ready():
 		call_deferred("_on_BuildTimer_timeout")
 
 func penalty_requirements_satisfied():
+	var buildings = Global.Game.building_container
 	for building_name in penalty_requirements:
-		if not Global.Game.building_container.has_node(building_name):
+		if not buildings.has_node(building_name):
+			return false
+		if not buildings.get_node(building_name).is_build:
 			return false
 	return true
 
 func boost_requirements_satisfied():
+	var buildings = Global.Game.building_container
 	for building_name in boost_requirements:
-		if not Global.Game.building_container.has_node(building_name):
+		if not buildings.has_node(building_name):
+			return false
+		if not buildings.get_node(building_name).is_build:
 			return false
 	return true
 
