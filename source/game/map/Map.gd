@@ -1,11 +1,12 @@
 extends TileMap
 
-var size = Vector2()
+var map_rect = Vector2()
 
 var locations = {}
 
 func _ready():
-	size = get_used_rect().size
+	map_rect = get_used_rect()
+
 	_load_locations()
 	call_deferred("_update_neighbours")
 
@@ -50,8 +51,8 @@ func _update_neighbours():
 		loc.building.neighbours = neighbours
 
 func _load_locations():
-	for y in size.y:
-		for x in size.x:
+	for y in range(map_rect.position.y, map_rect.position.y + map_rect.size.y):
+		for x in range(map_rect.position.x, map_rect.position.x + map_rect.size.x):
 			var cell = Vector2(x, y)
 			var location = Location.new()
 
@@ -61,7 +62,7 @@ func _load_locations():
 			locations[_flatten(cell)] = location
 
 func _flatten(cell):
-	return int(cell.y) * int(size.x) + int(cell.x)
+	return int(cell.y) * int(map_rect.size.x) + int(cell.x)
 
 func _on_NeighbourTimer_timeout():
 	_update_neighbours()
