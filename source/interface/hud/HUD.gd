@@ -5,6 +5,7 @@ signal hint_purchased
 
 onready var top_panel = $TopPanel
 onready var building_popup = $BuildingPopup
+onready var building_info_popup = $InfoPopup
 onready var newspaper = $Newspaper
 onready var name_panel = $NamePanel
 
@@ -19,6 +20,10 @@ func show_article(text):
 func show_building_popup(building):
 	building_popup.building = building
 	building_popup.popup()
+
+func show_building_info_popup(building):
+	building_info_popup.building = building
+	building_info_popup.popup()
 
 func set_max_budget(max_budget):
 	top_panel.set_max_budget(max_budget)

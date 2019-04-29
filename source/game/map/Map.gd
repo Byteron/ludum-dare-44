@@ -1,6 +1,6 @@
 extends TileMap
 
-var map_rect = Vector2()
+var map_rect = Rect2()
 
 var locations = {}
 
@@ -45,7 +45,7 @@ func get_neighbour_cells(cell):
 
 func _update_neighbours():
 	for loc in locations.values():
-		if not loc.building or not loc.building.is_build:
+		if not loc.building:
 			continue
 		var neighbours = get_neighbour_buildings(loc.cell)
 		loc.building.neighbours = neighbours

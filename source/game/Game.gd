@@ -17,6 +17,8 @@ func _input(event):
 			var location = map.get_location(mouse_cell)
 			if location.building and not location.building.is_build:
 				hud.show_building_popup(location.building)
+			elif location.building:
+				hud.show_building_info_popup(location.building)
 
 func _ready():
 	Global.Game = self
@@ -36,7 +38,7 @@ func _setup_buildings():
 		building.connect("mouse_entered", self, "_on_mouse_entered_building")
 		building.connect("mouse_exited", self, "_on_mouse_exited_building")
 
-		if building.type == building.TYPE.PRODUCTION_UNIT:
+		if building.type == building.TYPE.SELLING_UNIT:
 			building.connect("ticked", self, "_on_building_ticked")
 
 		var cell = map.world_to_map(building.position)

@@ -1,7 +1,5 @@
 extends PopupPanel
 
-signal invested(building)
-
 var building setget _set_building
 
 onready var name_label = $VBoxContainer/Name
@@ -27,12 +25,3 @@ func _set_building(slug):
 		upkeep_label.text = "Upkeep: %s$" % Helper.beautify_number(building.upkeep)
 
 	flavour_label.text = str(building.flavour_text)
-
-func _on_InvestButton_pressed():
-	Audio.play("confirm")
-	emit_signal("invested", building)
-	building = null
-	hide()
-
-func _on_BuildingPopup_about_to_show():
-	$VBoxContainer/InvestButton.disabled = building.cost > Global.Game.budget

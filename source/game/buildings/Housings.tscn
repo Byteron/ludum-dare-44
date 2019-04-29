@@ -8,6 +8,10 @@
 script = ExtResource( 2 )
 building_name = "Housings"
 flavour_text = "Cosy and Warm"
-building_texture = ExtResource( 3 )
-build_time = 10
+revenue_per_housing = false
 cost = 15000
+build_time = 10
+revenue = 0
+upkeep = 0
+tick_time = 0.0
+building_texture = ExtResource( 3 )
