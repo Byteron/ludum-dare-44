@@ -36,7 +36,7 @@ tick_time = 300
 probability = 1.0
 title = "Mafia"
 button_text = "hmnn..."
-description = "Once again the Mafia came to town and took %d$ with them."
+description = "The Mafia blackmailed big companies into paying them %d$."
 value = 10000
 
 [node name="Fire" parent="Events" instance=ExtResource( 3 )]
@@ -62,7 +62,8 @@ probability = 1.0
 title = "Weather Report"
 button_text = "interesting..."
 description = "Perfect wheather to go outside!"
-variants = [ "On such rainy days Netflix certainly is something!", "Hurricane! Hurricane! Hurricane!" ]
+variants = [ "On such rainy days Netflix certainly is something!", "Hurricane! Hurricane! Hurricane!", "Is that snow? Hmn.. maybe it's ash...", "We're freezing like hell today!
+Altough, with all that fire, hell should be warm..." ]
 
 [node name="EasyLiving" parent="Events" instance=ExtResource( 5 )]
 tick_time = 350
