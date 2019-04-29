@@ -14,5 +14,6 @@ margin_bottom = 4.0
 [node name="InvestButton" type="Button" parent="CenterContainer/VBoxContainer" index="9"]
 margin_right = 4.0
 margin_bottom = 18.0
+text = "Invest"
 [connection signal="about_to_show" from="." to="." method="_on_InvestmentPopup_about_to_show"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/InvestButton" to="." method="_on_InvestButton_pressed"]
