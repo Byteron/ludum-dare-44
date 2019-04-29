@@ -4,6 +4,8 @@ var slide_distance
 var visible_pos
 var hidden_pos
 
+var event = null
+
 func _ready():
 	visible = true
 	visible_pos = rect_position
@@ -26,5 +28,6 @@ func slide_out():
 	$Tween.start()
 
 func _on_Button_pressed():
+	event._exectute()
 	if not $Tween.is_active():
 		slide_out()

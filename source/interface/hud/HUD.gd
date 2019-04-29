@@ -12,8 +12,9 @@ onready var name_panel = $NamePanel
 func _ready():
 	newspaper.show()
 
-func show_article(text):
-	newspaper.show_article(text)
+func show_article(event):
+	newspaper.event = event
+	newspaper.show_article(event.description)
 	name_panel.text = ""
 	name_panel.fade_out()
 

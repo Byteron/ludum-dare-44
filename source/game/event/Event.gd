@@ -1,4 +1,5 @@
 extends Node
+class_name Event
 
 signal happened(event)
 
@@ -13,6 +14,9 @@ onready var tick_timer = $TickTimer
 func _ready():
 	tick_timer.wait_time = tick_time
 	tick_timer.start()
+
+func _exectute():
+	print("OVERWRITE")
 
 func _on_TickTimer_timeout() -> void:
 	randomize()

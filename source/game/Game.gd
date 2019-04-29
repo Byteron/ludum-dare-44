@@ -43,6 +43,14 @@ func _setup_buildings():
 		building.position = location.position
 		location.building = building
 
+func pay(amount):
+	var new_budget = budget - amount
+	_set_budget(new_budget)
+
+func earn(amount):
+	var new_budget = budget - amount
+	_set_budget(new_budget)
+
 func _set_budget(new_budget):
 	budget = new_budget
 	hud.update_budget(new_budget)
@@ -57,7 +65,7 @@ func _on_building_ticked(income):
 	_set_budget(budget + income)
 
 func _on_EventHandler_event_happened(event):
-	hud.show_article(event.description)
+	hud.show_article(event)
 
 func _on_HUD_building_invested(building):
 	_build(building)
