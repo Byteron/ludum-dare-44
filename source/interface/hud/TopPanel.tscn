@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/interface/theme.tres" type="Theme" id=1]
 [ext_resource path="res://source/interface/hud/TopPanel.gd" type="Script" id=2]
@@ -11,6 +11,8 @@ region = Rect2( 32, 16, 32, 7 )
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 3 )
 region = Rect2( 32, 23, 32, 7 )
+
+[sub_resource type="StyleBoxEmpty" id=3]
 
 [node name="TopPanel" type="Control"]
 anchor_right = 1.0
@@ -31,13 +33,13 @@ margin_right = 188.0
 margin_bottom = 17.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
-margin_right = 32.0
-margin_bottom = 15.0
+margin_right = 35.0
+margin_bottom = 18.0
 custom_constants/separation = 0
 alignment = 1
 
 [node name="BudgetProgress" type="TextureProgress" parent="HBoxContainer/VBoxContainer"]
-margin_right = 32.0
+margin_right = 35.0
 margin_bottom = 7.0
 value = 25.0
 texture_under = SubResource( 1 )
@@ -45,9 +47,23 @@ texture_progress = SubResource( 2 )
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
 margin_top = 7.0
-margin_right = 32.0
-margin_bottom = 15.0
+margin_right = 35.0
+margin_bottom = 17.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "100.000$"
 align = 1
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+margin_left = 39.0
+margin_right = 107.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+custom_styles/separator = SubResource( 3 )
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+margin_left = 111.0
+margin_right = 185.0
+margin_bottom = 18.0
+disabled = true
+text = "Buy Hint (1000$)"

@@ -1,7 +1,7 @@
 extends Control
 
 func _on_Game_pressed():
-	Audio.play("confirm")
+	Audio.play("click")
 	Audio.fade_out("menu_music")
 	$StartTimer.start()
 

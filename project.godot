@@ -36,6 +36,7 @@ Scene="*res://source/global/Scene.tscn"
 Audio="*res://source/global/Audio.tscn"
 Helper="*res://source/global/Helper.gd"
 Global="*res://source/global/Global.gd"
+Hints="*res://source/global/Hints.gd"
 
 [display]
 
