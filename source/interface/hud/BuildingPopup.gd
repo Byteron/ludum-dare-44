@@ -13,7 +13,10 @@ onready var flavour_label = $CenterContainer/VBoxContainer/FlavourLabel
 func _set_building(slug):
 	building = slug
 	name_label.text = str(building.building_name)
-	cost_label.text = "Investment: %s$" % Helper.beautify_number(building.cost)
+	if building.type == Global.Game.discount_type:
+		cost_label.text = "Investment: %s$" % Helper.beautify_number(int(building.cost * Global.Game.discount))
+	else:
+		cost_label.text = "Investment: %s$" % Helper.beautify_number(building.cost)
 
 	if building.revenue_per_housing:
 		revenue_label.text = "Max Revenue: %s$" % Helper.beautify_number(building.revenue * 8)

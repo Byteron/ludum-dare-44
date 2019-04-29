@@ -1,5 +1,8 @@
 extends Node2D
 
+var discount = 1.0
+var discount_type = null
+
 export(int) var max_budget = 100000
 export(int) var budget = 85000 setget _set_budget
 
@@ -25,7 +28,11 @@ func _ready():
 	Audio.play("ambience")
 
 func _build(building):
-	var new_budget = budget - building.cost
+	var new_budget = 0
+	if building.type == discount_type:
+		new_budget = budget - int(building.cost * discount)
+	else:
+		new_budget = budget - building.cost
 	_set_budget(new_budget)
 	building.build()
 

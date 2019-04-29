@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://source/game/EventHandler.gd" type="Script" id=1]
 [ext_resource path="res://source/game/event/PaymentEvent.tscn" type="PackedScene" id=2]
 [ext_resource path="res://source/game/event/RandomTextEvent.tscn" type="PackedScene" id=3]
+[ext_resource path="res://source/game/event/DiscountEvent.tscn" type="PackedScene" id=4]
 
 [node name="EventHandler" type="Node"]
 script = ExtResource( 1 )
@@ -22,3 +23,19 @@ probability = 1.0
 title = "Weather Report"
 description = "Perfect wheather to go outside!"
 variants = [ "On such rainy days Netflix certainly is something!", "Hurricane! Hurricane! Hurricane!" ]
+
+[node name="EasyLiving" parent="Events" instance=ExtResource( 4 )]
+tick_time = 300
+probability = 0.2
+title = "Easy Living!"
+description = "Housings are now %d%% cheaper for %d seconds! Buy now!"
+discount = 0.5
+discount_time = 120
+
+[node name="EasySelling" parent="Events" instance=ExtResource( 4 )]
+tick_time = 250
+title = "Easy Selling!"
+description = "All Sellers are now %d%% cheaper for %d seconds! Buy now!"
+affected_type = 1
+discount = 0.4
+discount_time = 180
