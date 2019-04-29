@@ -54,35 +54,57 @@ build_on_startup = true
 
 [node name="Housings14" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 104, 72 )
-build_on_startup = true
 
 [node name="Housings15" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 104, 88 )
-build_on_startup = true
 
 [node name="Housings16" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 88, 88 )
-build_on_startup = true
+
+[node name="Housings26" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 88, 136 )
+
+[node name="Housings27" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 88, 168 )
+
+[node name="Housings28" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 72, 168 )
+
+[node name="Housings29" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 72, 136 )
+
+[node name="Housings31" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 72, 104 )
+
+[node name="Housings32" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 104, 104 )
 
 [node name="Housings17" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 72, 88 )
-build_on_startup = true
 
 [node name="Housings18" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 104, 56 )
-build_on_startup = true
 
 [node name="Housings19" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 120, 72 )
-build_on_startup = true
 
 [node name="Housings20" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 136, 56 )
-build_on_startup = true
 
 [node name="Housings21" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 136, 72 )
-build_on_startup = true
+
+[node name="Housings30" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 184, 40 )
+
+[node name="Housings34" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 168, 40 )
+
+[node name="Housings35" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 200, 40 )
+
+[node name="Housings33" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 200, 56 )
 
 [node name="Housings2" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 40, 72 )
@@ -124,25 +146,55 @@ position = Vector2( -24, 56 )
 [node name="Housings11" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( -8, 56 )
 
+[node name="Housings22" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 136, 216 )
+
+[node name="Housings36" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 184, 216 )
+
+[node name="Housings37" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 184, 232 )
+
+[node name="Housings38" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 168, 232 )
+
+[node name="Housings24" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 120, 232 )
+
+[node name="Housings25" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 120, 248 )
+
+[node name="Housings23" parent="BuildingContainer" instance=ExtResource( 5 )]
+position = Vector2( 136, 248 )
+
 [node name="SuperMarket" parent="BuildingContainer" instance=ExtResource( 6 )]
 position = Vector2( 24, 72 )
 build_on_startup = true
 
-[node name="SuperMarket2" parent="BuildingContainer" instance=ExtResource( 6 )]
-position = Vector2( 120, 56 )
+[node name="SuperMarket5" parent="BuildingContainer" instance=ExtResource( 6 )]
+position = Vector2( -40, 40 )
 build_on_startup = true
 
+[node name="SuperMarket3" parent="BuildingContainer" instance=ExtResource( 6 )]
+position = Vector2( 184, 56 )
+
+[node name="SuperMarket4" parent="BuildingContainer" instance=ExtResource( 6 )]
+position = Vector2( 168, 216 )
+
+[node name="SuperMarket2" parent="BuildingContainer" instance=ExtResource( 6 )]
+position = Vector2( 120, 56 )
+
 [node name="Townhall" parent="BuildingContainer" instance=ExtResource( 7 )]
-position = Vector2( 72, 136 )
+position = Vector2( 104, 168 )
 
 [node name="Church" parent="BuildingContainer" instance=ExtResource( 8 )]
-position = Vector2( 33, 176 )
+position = Vector2( 40, 184 )
 
 [node name="Statue" parent="BuildingContainer" instance=ExtResource( 9 )]
-position = Vector2( 296, 119.942 )
+position = Vector2( 294, 120 )
 
 [node name="Rocket" parent="BuildingContainer" instance=ExtResource( 10 )]
-position = Vector2( 278.833, 248 )
+position = Vector2( 279, 249 )
 
 [node name="Police" parent="BuildingContainer" instance=ExtResource( 11 )]
 position = Vector2( -24, 72 )
@@ -151,7 +203,7 @@ position = Vector2( -24, 72 )
 position = Vector2( 168, -8 )
 
 [node name="FireStation" parent="BuildingContainer" instance=ExtResource( 13 )]
-position = Vector2( 230.833, 56 )
+position = Vector2( 232, 56 )
 
 [node name="NewsTower" parent="BuildingContainer" instance=ExtResource( 14 )]
 position = Vector2( 104, 24 )
@@ -162,6 +214,9 @@ position = Vector2( 25, -72 )
 
 [node name="ElectroMarket" parent="BuildingContainer" instance=ExtResource( 16 )]
 position = Vector2( -40, 72 )
+
+[node name="ElectroMarket2" parent="BuildingContainer" instance=ExtResource( 16 )]
+position = Vector2( 136, 232 )
 
 [node name="CityBank" parent="BuildingContainer" instance=ExtResource( 17 )]
 position = Vector2( 72, 152 )
@@ -184,14 +239,17 @@ flavour_text = "Makes money from money"
 revenue_per_housing = false
 
 [node name="Airport" parent="BuildingContainer" instance=ExtResource( 18 )]
-position = Vector2( 168, 216 )
+position = Vector2( 309, 152 )
 tick = true
 
 [node name="Cafe" parent="BuildingContainer" instance=ExtResource( 19 )]
-position = Vector2( -8, 119.5 )
+position = Vector2( 88, 104 )
+
+[node name="Cafe2" parent="BuildingContainer" instance=ExtResource( 19 )]
+position = Vector2( 88, 152 )
 
 [node name="Hotel" parent="BuildingContainer" instance=ExtResource( 20 )]
-position = Vector2( 216, 101 )
+position = Vector2( 216, 102 )
 
 [node name="Farm" parent="BuildingContainer" instance=ExtResource( 21 )]
 position = Vector2( -24, 168 )

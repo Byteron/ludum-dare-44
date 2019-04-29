@@ -16,6 +16,6 @@ cost = 50000
 build_time = 30
 penalty = 4000
 revenue = 6000
-upkeep = 1000
+upkeep = 10000
 penalty_requirements = [ "Factory" ]
 building_texture = SubResource( 2 )

@@ -7,11 +7,11 @@
 atlas = ExtResource( 2 )
 region = Rect2( 128, 32, 16, 16 )
 
-[node name="SuperMarket" index="0" instance=ExtResource( 1 )]
+[node name="SuperMarket" instance=ExtResource( 1 )]
 building_name = "Supermarket"
 flavour_text = "Provides basic wares and fresh produce if available."
 cost = 35000
 build_time = 30
 revenue = 350
-upkeep = 1000
+upkeep = 500
 building_texture = SubResource( 1 )
