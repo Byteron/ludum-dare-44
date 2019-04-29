@@ -1,4 +1,4 @@
 extends Building
 
-func _ready():
+func _init():
 	type = TYPE.BANK
