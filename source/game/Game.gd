@@ -8,6 +8,7 @@ export(int) var budget = 85000 setget _set_budget
 
 onready var map = $Map
 onready var hud = $HUD
+onready var event_handler = $EventHandler
 onready var building_container = $BuildingContainer
 
 func _unhandled_input(event):
@@ -40,6 +41,7 @@ func _build(building):
 func _setup_buildings():
 	var buildings = get_tree().get_nodes_in_group("Building")
 	for building in buildings:
+		building.connect("build", self, "_on_building_build")
 		building.connect("mouse_entered", self, "_on_mouse_entered_building")
 		building.connect("mouse_exited", self, "_on_mouse_exited_building")
 
@@ -68,6 +70,10 @@ func _on_mouse_entered_building(building_name):
 
 func _on_mouse_exited_building():
 	hud.clear_name_panel()
+
+func _on_building_build(building_name):
+	if building_name == "News Publishing":
+		event_handler.start_events()
 
 func _on_building_ticked(income):
 	_set_budget(budget + income)

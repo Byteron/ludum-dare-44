@@ -4,7 +4,7 @@ class_name Building
 const PopLabel = preload("res://source/interface/PopLabel.tscn")
 
 signal ticked(income)
-
+signal build(building_name)
 signal mouse_entered(building_name)
 signal mouse_exited
 
@@ -44,7 +44,6 @@ onready var sprite = $Sprite
 onready var building_progress = $BuildingProgress
 
 func _ready():
-	building_name = name
 	_randomize_lot()
 	build_timer.wait_time = build_time
 	if build_on_startup:
@@ -124,6 +123,8 @@ func _on_BuildTimer_timeout():
 	if revenue_tick:
 		tick_timer.wait_time = tick_time
 		tick_timer.start()
+
+	emit_signal("build", building_name)
 
 func _on_MouseArea_mouse_entered():
 	emit_signal("mouse_entered", building_name)

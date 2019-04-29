@@ -7,6 +7,10 @@ onready var events = $Events
 func _ready():
 	_setup_events()
 
+func start_events():
+	for event in events.get_children():
+		event.start_tick_timer()
+
 func _setup_events():
 	for event in events.get_children():
 		event.connect("happened", self, "_on_event_happened")

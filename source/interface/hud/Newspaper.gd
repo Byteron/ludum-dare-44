@@ -40,6 +40,8 @@ func _on_Button_pressed():
 		event._execute()
 		accept_timer.stop()
 		slide_out()
+		if event.one_time_event:
+			event.queue_free()
 
 func _on_AcceptTimer_timeout():
 	button.emit_signal("pressed")
