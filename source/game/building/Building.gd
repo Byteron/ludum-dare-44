@@ -80,8 +80,7 @@ func build():
 func _randomize_lot():
 	randomize()
 	sprite.texture = sprite.texture.duplicate(true)
-	var steps = [0, 16, 32]
-	sprite.texture.region.position.x += steps[randi() % steps.size()]
+	sprite.texture.region.position.x += (randi() % 3) * 16
 
 func _calculate_income():
 	var income = 0
