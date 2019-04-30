@@ -129,6 +129,7 @@ position = Vector2( -56, 72 )
 
 [node name="Housings8" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( -56, 56 )
+build_on_startup = true
 
 [node name="Housings12" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( -56, 40 )
@@ -136,9 +137,11 @@ build_on_startup = true
 
 [node name="Housings13" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( -24, 40 )
+build_on_startup = true
 
 [node name="Housings9" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( -40, 56 )
+build_on_startup = true
 
 [node name="Housings10" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( -24, 56 )
@@ -167,21 +170,31 @@ position = Vector2( 120, 248 )
 [node name="Housings23" parent="BuildingContainer" instance=ExtResource( 5 )]
 position = Vector2( 136, 248 )
 
-[node name="SuperMarket" parent="BuildingContainer" instance=ExtResource( 6 )]
+[node name="SuperMarket" parent="BuildingContainer" groups=[
+"Building",
+] instance=ExtResource( 6 )]
 position = Vector2( 24, 72 )
 build_on_startup = true
 
-[node name="SuperMarket5" parent="BuildingContainer" instance=ExtResource( 6 )]
+[node name="SuperMarket5" parent="BuildingContainer" groups=[
+"Building",
+] instance=ExtResource( 6 )]
 position = Vector2( -40, 40 )
 build_on_startup = true
 
-[node name="SuperMarket3" parent="BuildingContainer" instance=ExtResource( 6 )]
+[node name="SuperMarket3" parent="BuildingContainer" groups=[
+"Building",
+] instance=ExtResource( 6 )]
 position = Vector2( 184, 56 )
 
-[node name="SuperMarket4" parent="BuildingContainer" instance=ExtResource( 6 )]
+[node name="SuperMarket4" parent="BuildingContainer" groups=[
+"Building",
+] instance=ExtResource( 6 )]
 position = Vector2( 168, 216 )
 
-[node name="SuperMarket2" parent="BuildingContainer" instance=ExtResource( 6 )]
+[node name="SuperMarket2" parent="BuildingContainer" groups=[
+"Building",
+] instance=ExtResource( 6 )]
 position = Vector2( 120, 56 )
 
 [node name="Townhall" parent="BuildingContainer" instance=ExtResource( 7 )]
@@ -212,10 +225,14 @@ build_on_startup = true
 [node name="LumberCamp" parent="BuildingContainer" instance=ExtResource( 15 )]
 position = Vector2( 25, -72 )
 
-[node name="ElectroMarket" parent="BuildingContainer" instance=ExtResource( 16 )]
+[node name="ElectroMarket" parent="BuildingContainer" groups=[
+"Building",
+] instance=ExtResource( 16 )]
 position = Vector2( -40, 72 )
 
-[node name="ElectroMarket2" parent="BuildingContainer" instance=ExtResource( 16 )]
+[node name="ElectroMarket2" parent="BuildingContainer" groups=[
+"Building",
+] instance=ExtResource( 16 )]
 position = Vector2( 136, 232 )
 
 [node name="CityBank" parent="BuildingContainer" instance=ExtResource( 17 )]
