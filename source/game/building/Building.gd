@@ -47,6 +47,7 @@ func _ready():
 	_randomize_lot()
 	build_timer.wait_time = build_time
 	if build_on_startup:
+		is_build = true
 		call_deferred("_on_BuildTimer_timeout")
 
 func penalty_requirements_satisfied():
