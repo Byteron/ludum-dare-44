@@ -47,7 +47,6 @@ func _ready():
 	_randomize_lot()
 	build_timer.wait_time = build_time
 	if build_on_startup:
-		is_build = true
 		call_deferred("_on_BuildTimer_timeout")
 
 func penalty_requirements_satisfied():
@@ -69,7 +68,6 @@ func boost_requirements_satisfied():
 	return true
 
 func build():
-	is_build = true
 	building_progress.show()
 	build_timer.start()
 
@@ -128,6 +126,7 @@ func _on_TickTimer_timeout():
 	Audio.play("cash")
 
 func _on_BuildTimer_timeout():
+	is_build = true
 	building_progress.hide()
 	Audio.play("build")
 	tween.interpolate_property(sprite, "modulate", Color("000000"), Color("FFFFFF"), 0.2, Tween.TRANS_SINE, Tween.EASE_IN)
