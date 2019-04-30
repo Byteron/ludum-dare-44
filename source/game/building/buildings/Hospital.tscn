@@ -13,6 +13,7 @@ region = Rect2( 80, 48, 16, 16 )
 building_name = "Hospital"
 flavour_text = "Takes care of the ill and inured."
 cost = 25000
+build_time = 30
 upkeep = 2500
 tick_time = 30
 building_texture = SubResource( 2 )

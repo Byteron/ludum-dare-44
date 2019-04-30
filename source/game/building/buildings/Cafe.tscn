@@ -13,6 +13,7 @@ script = ExtResource( 2 )
 building_name = "Café"
 flavour_text = "A place to relax and socialize"
 revenue_per_housing = false
+build_time = 25
 revenue = 3000
 upkeep = 500
 building_texture = SubResource( 1 )

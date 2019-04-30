@@ -7,7 +7,7 @@
 building_name = "Church"
 flavour_text = "It helps with praying"
 cost = 20000
-build_time = 90
+build_time = 400
 upkeep = 2000
 tick_time = 60
 building_texture = ExtResource( 2 )

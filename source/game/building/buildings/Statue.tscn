@@ -13,6 +13,6 @@ region = Rect2( 160, 48, 16, 16 )
 building_name = "Statue of Godot"
 flavour_text = "A symbol of wealth, prestige and bad budgeting"
 cost = 120000
-build_time = 6
+build_time = 180
 upkeep = 2000
 building_texture = SubResource( 2 )

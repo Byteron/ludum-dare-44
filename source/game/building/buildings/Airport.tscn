@@ -14,6 +14,7 @@ building_name = "Airport"
 flavour_text = "Brings people into our town.. and out of it!"
 tick = false
 cost = 240000
+build_time = 200
 revenue = 4000
 upkeep = 5000
 tick_time = 20

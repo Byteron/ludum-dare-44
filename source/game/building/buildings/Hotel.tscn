@@ -14,6 +14,7 @@ building_name = "Hotel"
 flavour_text = "Can be very lucrative, if we attract tourists"
 revenue_per_housing = false
 cost = 100000
+build_time = 45
 penalty = 6000
 boost = 3000
 revenue = 7000
