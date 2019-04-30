@@ -13,6 +13,7 @@ script = ExtResource( 2 )
 building_name = "Farm"
 flavour_text = "Provides fresh and healthy produce."
 revenue_per_housing = false
+cost = 35000
 build_time = 35
 revenue = 200
 upkeep = 600
