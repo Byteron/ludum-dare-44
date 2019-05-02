@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+const PopLabel = preload("res://source/interface/PopLabel.tscn")
+
 signal building_invested(building)
 signal hint_purchased
 
@@ -11,6 +13,12 @@ onready var name_panel = $NamePanel
 
 func _ready():
 	newspaper.show()
+
+func pop_income_label(income, position):
+	var label = PopLabel.instance()
+	label.rect_position = position
+	label.value = income
+	get_parent().add_child(label)
 
 func show_article(event):
 	newspaper.show_article(event)

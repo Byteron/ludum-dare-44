@@ -27,7 +27,7 @@ func get_neighbour_buildings(cell):
 			continue
 		if not n_loc.building:
 			continue
-		if not n_loc.building.is_build:
+		if not n_loc.building.built:
 			continue
 		neighbour_buildings.append(n_loc.building)
 	return neighbour_buildings

@@ -16,7 +16,7 @@ func _unhandled_input(event):
 		var mouse_cell = map.world_to_map(get_global_mouse_position())
 		var cell_tile = map.get_cellv(mouse_cell)
 		var location = map.get_location(mouse_cell)
-		if location.building and not location.building.is_build:
+		if location.building and not location.building.built:
 			hud.show_investment_popup(location.building)
 		elif location.building:
 			hud.show_info_popup(location.building)
@@ -28,6 +28,14 @@ func _ready():
 	_setup_buildings()
 	Audio.play("music")
 	Audio.play("ambience")
+
+func pay(amount):
+	var new_budget = budget - amount
+	_set_budget(new_budget)
+
+func earn(amount):
+	var new_budget = budget + amount
+	_set_budget(new_budget)
 
 func _build(building):
 	var new_budget = 0
@@ -41,29 +49,21 @@ func _build(building):
 func _setup_buildings():
 	var buildings = get_tree().get_nodes_in_group("Building")
 	for building in buildings:
-		building.connect("build", self, "_on_building_build")
+		building.connect("built", self, "_on_building_built")
 		building.connect("mouse_entered", self, "_on_mouse_entered_building")
 		building.connect("mouse_exited", self, "_on_mouse_exited_building")
 		building.connect("ticked", self, "_on_building_ticked")
 
 		var cell = map.world_to_map(building.position)
 		var location = map.get_location(cell)
-		building.position = location.position
 		location.building = building
-
-func pay(amount):
-	var new_budget = budget - amount
-	_set_budget(new_budget)
-
-func earn(amount):
-	var new_budget = budget + amount
-	_set_budget(new_budget)
+		building.position = location.position
 
 func _get_balance():
 	var balance = 0
 	var buildings = get_tree().get_nodes_in_group("Building")
 	for building in buildings:
-		if not building.is_build or not building.tick:
+		if not building.built or not building.tick:
 			continue
 
 		balance += building.income_per_minute()
@@ -85,14 +85,15 @@ func _on_mouse_entered_building(building_name):
 func _on_mouse_exited_building():
 	hud.clear_name_panel()
 
-func _on_building_build(building):
+func _on_building_built(building):
 	if building.type == Building.TYPE.PUBLISHER:
 		event_handler.start_events()
 	if building.type == Building.TYPE.BANK:
 		_set_max_budget(max_budget + 100000)
 
-func _on_building_ticked(income):
+func _on_building_ticked(income, position):
 	earn(income)
+	hud.pop_income_label(income, position)
 
 func _on_EventHandler_event_happened(event):
 	hud.show_article(event)

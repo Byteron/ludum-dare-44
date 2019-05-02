@@ -2,9 +2,6 @@ extends Node
 
 onready var fader = $Fader
 
-func _ready() -> void:
-	pass
-
 func play(sound_name):
 	if has_node(sound_name):
 		var sound = get_node(sound_name)

@@ -1,5 +1,7 @@
 extends Control
 
+var value
+
 export(String) var text = ""
 export(Color) var tint = Color("FFFFFFFF")
 
@@ -11,9 +13,15 @@ onready var tween = $Tween
 onready var label = $Label
 
 func _ready():
-	label.text = text
-	modulate = tint
 
+	if value < 0:
+		label.text = str(value) + "$"
+		tint = Color("FF0000")
+	else:
+		label.text = "+" + str(value) + "$"
+		tint = Color("00FF00")
+
+	modulate = tint
 	tween.interpolate_property(self, "rect_scale", rect_scale, final_scale, duration, Tween.TRANS_BACK, Tween.EASE_IN_OUT)
 	tween.start()
 

@@ -1,23 +1,24 @@
 extends Node2D
 class_name Building
 
-const PopLabel = preload("res://source/interface/PopLabel.tscn")
+signal ticked(income, position)
+signal built(building_name)
 
-signal ticked(income)
-signal build(building_name)
 signal mouse_entered(building_name)
 signal mouse_exited
 
 enum TYPE { LIVING_UNIT, SELLING_UNIT, PRODUCTION_UNIT, DECORATION_UNIT, PUBLISHER, BANK }
+# enum TYPE { RESIDENCE, SELLER, FABRICATOR, SIGHT, PUBLISHER, BANK }
 
 var type = TYPE.DECORATION_UNIT
 var neighbours = []
 
-var is_build = false
+var built = false
+var building = false
+var hovered = false
 
 export(String) var building_name = "Building"
 export(String) var flavour_text = "This is a Building"
-
 
 export(bool) var build_on_startup = false
 export(bool) var tick = true
@@ -43,11 +44,14 @@ onready var build_timer = $BuildTimer
 onready var sprite = $Sprite
 onready var building_progress = $BuildingProgress
 
+func _unhandled_input(event):
+	pass
+
 func _ready():
 	_randomize_lot()
 	build_timer.wait_time = build_time
 	if build_on_startup:
-		is_build = true
+		built = true
 		call_deferred("_on_BuildTimer_timeout")
 
 func penalty_requirements_satisfied():
@@ -55,7 +59,7 @@ func penalty_requirements_satisfied():
 	for building_name in penalty_requirements:
 		if not buildings.has_node(building_name):
 			return false
-		if not buildings.get_node(building_name).is_build:
+		if not buildings.get_node(building_name).built:
 			return false
 	return true
 
@@ -64,11 +68,12 @@ func boost_requirements_satisfied():
 	for building_name in boost_requirements:
 		if not buildings.has_node(building_name):
 			return false
-		if not buildings.get_node(building_name).is_build:
+		if not buildings.get_node(building_name).built:
 			return false
 	return true
 
 func build():
+	building = true
 	building_progress.show()
 	build_timer.start()
 
@@ -115,21 +120,15 @@ func revenue_per_minute():
 
 func _on_TickTimer_timeout():
 	var income = _calculate_income()
-	emit_signal("ticked", income)
-	var label = PopLabel.instance()
-	if income < 0:
-		label.text = str(income) + "$"
-		label.tint = Color("FF0000")
-	else:
-		label.text = "+" + str(income) + "$"
-		label.tint = Color("00FF00")
-	add_child(label)
+	print("ticked", position)
+	emit_signal("ticked", income, position)
 	Audio.play("cash")
 
 func _on_BuildTimer_timeout():
-	is_build = true
+	building = false
+	built = true
 	building_progress.hide()
-	Audio.play("build")
+	Audio.play("built")
 	tween.interpolate_property(sprite, "modulate", Color("000000"), Color("FFFFFF"), 0.2, Tween.TRANS_SINE, Tween.EASE_IN)
 	tween.start()
 
@@ -139,10 +138,12 @@ func _on_BuildTimer_timeout():
 		tick_timer.wait_time = tick_time
 		tick_timer.start()
 
-	emit_signal("build", self)
+	emit_signal("built", self)
 
 func _on_MouseArea_mouse_entered():
+	hovered = true
 	emit_signal("mouse_entered", building_name)
 
 func _on_MouseArea_mouse_exited():
+	hovered = false
 	emit_signal("mouse_exited")
