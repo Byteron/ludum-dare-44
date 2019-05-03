@@ -1,7 +1,7 @@
 extends PopupPanel
 class_name BuildingPopup
 
-var building setget _set_building
+var structure setget _set_structure
 
 onready var name_label = $CenterContainer/VBoxContainer/Name
 onready var cost_label = $CenterContainer/VBoxContainer/CostLabel
@@ -9,15 +9,15 @@ onready var income_label = $CenterContainer/VBoxContainer/IncomeLabel
 onready var upkeep_label = $CenterContainer/VBoxContainer/UpkeepLabel
 onready var flavour_label = $CenterContainer/VBoxContainer/FlavourLabel
 
-func _set_building(slug):
-	building = slug
-	name_label.text = str(building.building_name)
-	if building.type == Global.Game.discount_type:
-		cost_label.text = "Investment: %s$" % Helper.beautify_number(int(building.cost * Global.Game.discount))
+func _set_structure(slug):
+	structure = slug
+	name_label.text = str(structure.alias)
+	if structure.type == Global.Game.discount_type:
+		cost_label.text = "Investment: %s$" % Helper.beautify_number(int(structure.cost * Global.Game.discount))
 	else:
-		cost_label.text = "Investment: %s$" % Helper.beautify_number(building.cost)
+		cost_label.text = "Investment: %s$" % Helper.beautify_number(structure.cost)
 
-	upkeep_label.text = "Upkeep: %s$/m" % Helper.beautify_number(building.upkeep_per_minute())
-	income_label.text = "Income: %s$/m" % Helper.beautify_number(building.income_per_minute())
+	upkeep_label.text = "Upkeep: %s$/m" % Helper.beautify_number(structure.building.get_upkeep())
+	income_label.text = "Income: %s$/m" % Helper.beautify_number(structure.building.get_income())
 
-	flavour_label.text = str(building.flavour_text)
+	flavour_label.text = str(structure.description)

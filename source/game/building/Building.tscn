@@ -2,7 +2,7 @@
 
 [ext_resource path="res://source/game/building/Building.gd" type="Script" id=1]
 [ext_resource path="res://source/game/building/Treasurer.gd" type="Script" id=2]
-[ext_resource path="res://assets/textures/living_unit_red.tres" type="Texture" id=3]
+[ext_resource path="res://assets/textures/residence.tres" type="Texture" id=3]
 
 [node name="Building" type="Node2D" groups=[
 "Building",

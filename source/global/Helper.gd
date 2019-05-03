@@ -9,9 +9,9 @@ func beautify_number(num):
     return number_string
 
 func requirements_satisfied(required_buildings):
-	var buildings = Global.Game.building_container
-	for building_name in required_buildings:
-		var building = get_node(building_name)
+	var structures = Global.Game.structures
+	for alias in required_buildings:
+		var building = get_node(alias)
 		if not building:
 			return false
 		elif not building.built:

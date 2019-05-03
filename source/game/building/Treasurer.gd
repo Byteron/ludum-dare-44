@@ -5,14 +5,14 @@ const TICK_TIME = 10
 
 signal ticked
 
-var revenue
-var upkeep
+var revenue = 0
+var upkeep = 0
 
 var penalty = 0
 var boost = 0
 
-var penalty_requirements = []
-var boost_requirements = []
+var bonus_requirements = []
+var malus_requirements = []
 
 var income setget ,_calculate_income
 
@@ -28,9 +28,9 @@ func start():
 
 func _calculate_income():
 	var income = revenue - upkeep
-	if not Helper.requirements_satisfied(penalty_requirements):
+	if not Helper.requirements_satisfied(malus_requirements):
 		income -= penalty
-	elif Helper.requirements_satisfied(boost_requirements):
+	elif Helper.requirements_satisfied(bonus_requirements):
 		income += boost
 	return income
 

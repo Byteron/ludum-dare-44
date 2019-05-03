@@ -13,6 +13,7 @@ func _ready():
 	_randomize_sprite()
 
 func build():
+	timer.wait_time = build_time
 	timer.start()
 	emit_signal("building_started", build_time, hook)
 

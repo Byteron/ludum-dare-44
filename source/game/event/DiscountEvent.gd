@@ -3,7 +3,7 @@ extends Event
 signal discount_started(type, discount)
 signal discount_ended()
 
-export(Building.TYPE) var affected_type = null
+export(Structure.TYPE) var affected_type = null
 export(float, 0.0, 1.0) var discount = 0.3
 export(int) var discount_time = 60
 
