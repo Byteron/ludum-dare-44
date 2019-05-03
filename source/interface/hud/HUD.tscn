@@ -2,8 +2,8 @@
 
 [ext_resource path="res://source/interface/hud/HUD.gd" type="Script" id=1]
 [ext_resource path="res://source/interface/hud/TopPanel.tscn" type="PackedScene" id=2]
-[ext_resource path="res://source/interface/hud/InvestmentPopup.tscn" type="PackedScene" id=3]
-[ext_resource path="res://source/interface/hud/InfoPopup.tscn" type="PackedScene" id=4]
+[ext_resource path="res://source/interface/hud/building_popups/InvestmentPopup.tscn" type="PackedScene" id=3]
+[ext_resource path="res://source/interface/hud/building_popups/InfoPopup.tscn" type="PackedScene" id=4]
 [ext_resource path="res://source/interface/hud/Newspaper.tscn" type="PackedScene" id=5]
 [ext_resource path="res://source/interface/hud/NamePanel.tscn" type="PackedScene" id=6]
 [ext_resource path="res://source/interface/hud/Letter.tscn" type="PackedScene" id=7]

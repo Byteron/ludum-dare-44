@@ -17,7 +17,7 @@ _global_script_classes=[ {
 "base": "PopupPanel",
 "class": "BuildingPopup",
 "language": "GDScript",
-"path": "res://source/interface/hud/BuildingPopup.gd"
+"path": "res://source/interface/hud/building_popups/BuildingPopup.gd"
 }, {
 "base": "Node",
 "class": "Event",
@@ -33,13 +33,19 @@ _global_script_classes=[ {
 "class": "RBuilding",
 "language": "GDScript",
 "path": "res://templates/RBuilding.gd"
+}, {
+"base": "Node",
+"class": "Treasurer",
+"language": "GDScript",
+"path": "res://source/game/building/Treasurer.gd"
 } ]
 _global_script_class_icons={
 "Building": "",
 "BuildingPopup": "",
 "Event": "",
 "Location": "",
-"RBuilding": ""
+"RBuilding": "",
+"Treasurer": ""
 }
 
 [application]

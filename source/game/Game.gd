@@ -93,7 +93,7 @@ func _on_building_built(building):
 
 func _on_building_ticked(income, position):
 	earn(income)
-	hud.pop_income_label(income, position)
+	hud.add_income_label(income, position)
 
 func _on_EventHandler_event_happened(event):
 	hud.show_article(event)
