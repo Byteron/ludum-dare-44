@@ -32,7 +32,7 @@ func _handle_keyboard_scroll(delta: float) -> void:
 	position.x = clamp(position.x, -96.0,288.0)
 	position.y = clamp(position.y, -96.0,250.0)
 func _handle_middle_mouse(event: InputEvent) -> void:
-	if Input.is_mouse_button_pressed(BUTTON_MIDDLE):
+	if Input.is_action_pressed("click_right"):
 		var mouse_pos: Vector2 = get_viewport().get_mouse_position()
 
 		if not event is InputEventMouseMotion:
