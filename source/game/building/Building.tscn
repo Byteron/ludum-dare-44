@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://source/game/building/Building.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprites/building.tres" type="Texture" id=2]
-[ext_resource path="res://assets/sprites/construction_sight.tres" type="Texture" id=3]
-[ext_resource path="res://assets/sprites/progress.png" type="Texture" id=4]
+[ext_resource path="res://assets/textures/construction_sight.tres" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/progress.png" type="Texture" id=3]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
@@ -12,7 +12,6 @@ extents = Vector2( 8, 8 )
 "Building",
 ]]
 script = ExtResource( 1 )
-building_texture = ExtResource( 2 )
 
 [node name="Tween" type="Tween" parent="."]
 
@@ -22,7 +21,7 @@ building_texture = ExtResource( 2 )
 one_shot = true
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 
 [node name="MouseArea" type="Area2D" parent="."]
 
@@ -36,8 +35,8 @@ margin_top = -7.0
 margin_right = 7.0
 margin_bottom = 7.0
 value = 50.0
-texture_under = ExtResource( 4 )
-texture_progress = ExtResource( 4 )
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 3 )
 tint_under = Color( 0, 0, 0, 0.470588 )
 tint_progress = Color( 0.984314, 0.85098, 0.592157, 0.54902 )
 nine_patch_stretch = true

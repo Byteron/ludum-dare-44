@@ -7,35 +7,36 @@ signal built(building_name)
 signal mouse_entered(building_name)
 signal mouse_exited
 
-enum TYPE { LIVING_UNIT, SELLING_UNIT, PRODUCTION_UNIT, DECORATION_UNIT, PUBLISHER, BANK }
-# enum TYPE { RESIDENCE, SELLER, FABRICATOR, SIGHT, PUBLISHER, BANK }
+enum TYPE { BUILDING, RESIDENCE, SELLER, FABRICATOR, SIGHT, PUBLISHER, BANK }
 
-var type = TYPE.DECORATION_UNIT
+var type
+
 var neighbours = []
+
+var building_name = "Building"
+var flavour_text = "This is a Building"
+
+var tick = true
+var revenue_per_housing = true
+
+var cost = 15000
+var build_time = 10
+
+var penalty = 0
+var boost = 0
+var revenue = 0
+var upkeep = 0
+var tick_time = 10
+
+var penalty_requirements = []
+var boost_requirements = []
+var building_texture = null
 
 var built = false
 var building = false
 var hovered = false
 
-export(String) var building_name = "Building"
-export(String) var flavour_text = "This is a Building"
-
 export(bool) var build_on_startup = false
-export(bool) var tick = true
-export(bool) var revenue_per_housing = true
-
-export(int) var cost = 15000
-export(int) var build_time = 10
-
-export(int) var penalty = 0
-export(int) var boost = 0
-export(int) var revenue = 0
-export(int) var upkeep = 0
-export(int, 1, 60) var tick_time = 10
-
-export(Array, String) var penalty_requirements = []
-export(Array, String) var boost_requirements = []
-export(Texture) var building_texture = null
 
 onready var tick_timer = $TickTimer
 

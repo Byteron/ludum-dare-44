@@ -28,12 +28,18 @@ _global_script_classes=[ {
 "class": "Location",
 "language": "GDScript",
 "path": "res://source/game/map/Location.gd"
+}, {
+"base": "Resource",
+"class": "RBuilding",
+"language": "GDScript",
+"path": "res://templates/RBuilding.gd"
 } ]
 _global_script_class_icons={
 "Building": "",
 "BuildingPopup": "",
 "Event": "",
-"Location": ""
+"Location": "",
+"RBuilding": ""
 }
 
 [application]
