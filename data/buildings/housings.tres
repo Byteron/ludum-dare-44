@@ -1,16 +1,18 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" load_steps=3 format=2]
 
-[ext_resource path="res://templates/RBuilding.gd" type="Script" id=1]
+[ext_resource path="res://assets/textures/living_unit_red.tres" type="Texture" id=1]
+[ext_resource path="res://templates/RBuilding.gd" type="Script" id=2]
 
 [resource]
-script = ExtResource( 1 )
-name = "Building"
-description = "This is a Building"
-type = 0
-cost = 15000
-build_time = 10
-tick = true
-revenue_per_housing = true
+script = ExtResource( 2 )
+building_texture = ExtResource( 1 )
+name = "Housings"
+description = "Cosy and warm"
+type = 1
+cost = 20000
+build_time = 20
+tick = false
+revenue_per_housing = false
 revenue = 0
 upkeep = 0
 bonus = 0
