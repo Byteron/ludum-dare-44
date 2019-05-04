@@ -4,8 +4,6 @@
 [ext_resource path="res://assets/interface/theme.tres" type="Theme" id=2]
 [ext_resource path="res://source/interface/components/LoadingBar.tscn" type="PackedScene" id=3]
 
-
-
 [sub_resource type="Animation" id=1]
 resource_name = "fade_in"
 length = 0.3
@@ -54,10 +52,15 @@ mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
 
 [node name="FPS" type="Label" parent="."]
-visible = false
-margin_top = 1.0
-margin_right = 64.0
-margin_bottom = 16.0
+self_modulate = Color( 0.145098, 0.654902, 0, 1 )
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -34.0
+margin_top = -12.0
+margin_right = -2.0
+margin_bottom = -2.0
 theme = ExtResource( 2 )
 text = "120 FPS"
 
