@@ -38,6 +38,7 @@ func _unhandled_input(event):
 		emit_signal("selected", self)
 
 func _ready():
+	building.visible = false
 	_initialize()
 	if build_on_startup:
 		_on_Lot_building_finished()
@@ -68,6 +69,7 @@ func _on_Lot_building_started(build_time, hook):
 	emit_signal("building_started", build_time, hook)
 
 func _on_Lot_building_finished():
+	building.visible = true
 	state = STATE.BUILT
 	# building.build()
 	lot.queue_free()
