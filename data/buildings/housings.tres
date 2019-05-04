@@ -12,6 +12,7 @@ type = 1
 cost = 1000
 build_time = 4
 tick = false
+seller_area = Vector2( 32, 32 )
 revenue = 0
 upkeep = 0
 bonus = 0

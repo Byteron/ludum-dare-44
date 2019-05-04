@@ -44,7 +44,7 @@ func _setup_buildings():
 		structure.connect("building_finished", self, "_on_building_finished")
 		structure.connect("mouse_entered", self, "_on_mouse_entered_building")
 		structure.connect("mouse_exited", self, "_on_mouse_exited_building")
-		structure.building.connect("ticked", self, "_on_building_ticked")
+		structure.building.treasurer.connect("ticked", self, "_on_building_ticked")
 
 func _get_balance():
 	var balance = 0

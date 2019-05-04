@@ -13,6 +13,9 @@ export(int) var build_time = 0
 
 export(bool) var tick = true
 
+export(Vector2) var seller_area = Vector2(32,32)
+
+
 export(int) var revenue = 0
 export(int) var upkeep = 0
 export(int) var bonus = 0

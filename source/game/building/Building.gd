@@ -1,9 +1,9 @@
 extends Node2D
 class_name Building
 
-signal ticked(income, position)
-
 var tick = true
+
+var seller_area setget _set_seller_area
 
 onready var treasurer = $Treasurer
 onready var sprite = $Sprite
@@ -20,6 +20,5 @@ func get_upkeep():
 func get_income():
 	return treasurer.income
 
-func _on_Treasurer_ticked(income):
-	print(name, " ticked")
-	emit_signal("ticked", treasurer.income, hook.global_position)
+func _set_seller_area(size):
+	treasurer.seller_area.size = size

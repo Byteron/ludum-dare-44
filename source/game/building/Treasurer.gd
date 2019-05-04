@@ -1,9 +1,9 @@
-extends Node
+extends Node2D
 class_name Treasurer
 
 const TICK_TIME = 10
 
-signal ticked
+signal ticked(income, position)
 
 var revenue = 0
 var upkeep = 0
@@ -16,25 +16,24 @@ var malus_requirements = []
 
 var income setget ,_calculate_income
 
-onready var timer = Timer.new()
+onready var timer = $Timer
+onready var seller_area = $SellerArea
 
 func _ready():
 	timer.wait_time = TICK_TIME
-	timer.connect("timeout", self, "_on_timer_timeout")
-	add_child(timer)
 
 func start():
 	timer.start()
-	print(timer.name, " started ticking")
 
 func _calculate_income():
-	var income = revenue - upkeep
+	var count = seller_area.get_residence_count_in_area()
+	var income = revenue * count - upkeep
 	if not Helper.requirements_satisfied(malus_requirements):
 		income -= penalty
 	elif Helper.requirements_satisfied(bonus_requirements):
 		income += boost
 	return income
 
-func _on_timer_timeout():
-	emit_signal("ticked", _calculate_income())
+func _on_Timer_timeout():
+	emit_signal("ticked", _calculate_income(), global_position)
 	Audio.play("cash")

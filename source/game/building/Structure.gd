@@ -34,12 +34,14 @@ export(Array, String) var malus_requirements = []
 onready var lot = $Lot
 onready var building = $Building
 onready var hover_detector = $HoverDetector
+onready var collision_shape = $CollisionShape2D
 
 func _unhandled_input(event):
 	if event.is_action_pressed("click_left") and hover_detector.hovered:
 		emit_signal("selected", self)
 
 func _ready():
+	collision_shape.shape = collision_shape.shape.duplicate(true)
 	building.visible = false
 	_initialize()
 	if build_on_startup:
@@ -67,6 +69,7 @@ func _initialize():
 	building.treasurer.bonus_requirements = bonus_requirements
 	building.treasurer.malus_requirements = malus_requirements
 	building.sprite.texture = res.building_texture
+	building.seller_area = res.seller_area
 	lot.build_time = res.build_time
 	hover_detector.size = res.building_texture.region.size
 

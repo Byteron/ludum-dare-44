@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://assets/textures/factory.tres" type="Texture" id=1]
+[ext_resource path="res://templates/RBuilding.gd" type="Script" id=2]
+
+[resource]
+script = ExtResource( 2 )
+building_texture = ExtResource( 1 )
+alias = "Supermarket"
+description = "Food and Drinks!"
+type = 2
+cost = 15000
+build_time = 6
+tick = true
+seller_area = Vector2( 128, 128 )
+revenue = 350
+upkeep = 1000
+bonus = 0
+malus = 0
