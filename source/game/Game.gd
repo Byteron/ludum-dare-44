@@ -8,6 +8,7 @@ export(int) var budget = 45000 setget _set_budget
 
 onready var map = $Map
 onready var hud = $HUD
+onready var tick_timer = $TickTimer
 onready var event_handler = $EventHandler
 onready var structures = $Structures
 
@@ -99,6 +100,3 @@ func _on_HUD_building_invested(building):
 
 func _on_HUD_hint_purchased():
 	_set_budget(budget - Hints.cost_per_hint)
-
-func _on_BalanceTimer_timeout():
-	pass # hud.update_balance(_get_balance())

@@ -1,7 +1,7 @@
 extends Node2D
 class_name Treasurer
 
-const TICK_TIME = 10
+const FRACT = 7.0 / 30.0
 
 signal ticked(income, position)
 
@@ -16,14 +16,10 @@ var malus_requirements = []
 
 var income setget ,_calculate_income
 
-onready var timer = $Timer
 onready var seller_area = $SellerArea
 
-func _ready():
-	timer.wait_time = TICK_TIME
-
 func start():
-	timer.start()
+	Global.Game.tick_timer.connect("timeout", self, "_on_Timer_timeout")
 
 func _calculate_income():
 	var count = seller_area.get_residence_count_in_area()
@@ -35,5 +31,5 @@ func _calculate_income():
 	return income
 
 func _on_Timer_timeout():
-	emit_signal("ticked", _calculate_income(), global_position)
+	emit_signal("ticked", int(_calculate_income() * FRACT), global_position)
 	Audio.play("cash")

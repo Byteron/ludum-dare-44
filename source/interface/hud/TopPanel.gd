@@ -3,9 +3,9 @@ extends Control
 signal hint_purchased
 
 onready var tween = $Tween
-onready var budget_progress = $HBoxContainer/BudgetProgress
-onready var budget_label = $HBoxContainer/BudgetLabel
-onready var balance_label = $HBoxContainer/BalanceLabel
+onready var budget_progress = $VBoxContainer/HBoxContainer/BudgetProgress
+onready var budget_label = $VBoxContainer/HBoxContainer/BudgetLabel
+onready var balance_label = $VBoxContainer/HBoxContainer/BalanceLabel
 onready var hint_button = $HintButton
 
 func _ready():

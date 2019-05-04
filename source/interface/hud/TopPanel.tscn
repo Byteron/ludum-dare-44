@@ -1,10 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/interface/theme.tres" type="Theme" id=1]
 [ext_resource path="res://source/interface/hud/TopPanel.gd" type="Script" id=2]
 [ext_resource path="res://source/interface/components/LoadingBar.tscn" type="PackedScene" id=3]
-
-
+[ext_resource path="res://source/interface/hud/TimeLabel.gd" type="Script" id=4]
 
 [node name="TopPanel" type="Control"]
 anchor_right = 1.0
@@ -18,18 +17,21 @@ script = ExtResource( 2 )
 
 [node name="Tween" type="Tween" parent="."]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = -57.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
 
-[node name="BudgetProgress" parent="HBoxContainer" instance=ExtResource( 3 )]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 103.0
+margin_bottom = 10.0
+
+[node name="BudgetProgress" parent="VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
 margin_right = 60.0
 margin_bottom = 8.0
 rect_min_size = Vector2( 60, 8 )
 size_flags_vertical = 0
 
-[node name="BudgetLabel" type="Label" parent="HBoxContainer"]
+[node name="BudgetLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
 margin_left = 64.0
 margin_right = 99.0
 margin_bottom = 10.0
@@ -37,11 +39,20 @@ size_flags_vertical = 0
 text = "100.000$"
 align = 1
 
-[node name="BalanceLabel" type="Label" parent="HBoxContainer"]
+[node name="BalanceLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
 margin_left = 103.0
 margin_right = 103.0
 margin_bottom = 10.0
 size_flags_vertical = 0
+
+[node name="TimeLabel" type="Label" parent="VBoxContainer"]
+margin_top = 14.0
+margin_right = 103.0
+margin_bottom = 24.0
+script = ExtResource( 4 )
+
+[node name="Timer" type="Timer" parent="VBoxContainer/TimeLabel"]
+autostart = true
 
 [node name="HintButton" type="Button" parent="."]
 anchor_left = 1.0
@@ -49,4 +60,5 @@ anchor_right = 1.0
 margin_left = -54.0
 margin_bottom = 18.0
 text = "Hint (1000$)"
+[connection signal="timeout" from="VBoxContainer/TimeLabel/Timer" to="VBoxContainer/TimeLabel" method="_on_Timer_timeout"]
 [connection signal="pressed" from="HintButton" to="." method="_on_HintButton_pressed"]

@@ -79,7 +79,7 @@ func _on_Lot_building_started(build_time, hook):
 
 func _on_Lot_building_finished():
 	state = STATE.BUILT
-	building.build(tick)
+	building.call_deferred("build", tick)
 	lot.queue_free()
 	lot = null
 	emit_signal("building_finished", self)

@@ -17,7 +17,8 @@ __meta__ = {
 "_edit_vertical_guides_": [  ]
 }
 
-[node name="BalanceTimer" type="Timer" parent="."]
+[node name="TickTimer" type="Timer" parent="."]
+wait_time = 7.0
 autostart = true
 
 [node name="EventHandler" parent="." instance=ExtResource( 2 )]
@@ -38,6 +39,7 @@ tile_data = PoolIntArray( -393213, 3, 65536, -393198, 3, 65536, -327677, 3, 1310
 
 [node name="Housings" parent="Structures" instance=ExtResource( 4 )]
 position = Vector2( 144, 144 )
+build_on_startup = true
 res = ExtResource( 5 )
 
 [node name="Housings2" parent="Structures" instance=ExtResource( 4 )]
@@ -52,6 +54,7 @@ res = ExtResource( 5 )
 
 [node name="Housings4" parent="Structures" instance=ExtResource( 4 )]
 position = Vector2( 144, 176 )
+build_on_startup = true
 res = ExtResource( 5 )
 
 [node name="Housings5" parent="Structures" instance=ExtResource( 4 )]
@@ -117,7 +120,6 @@ limit_top = -150
 limit_right = 825
 limit_bottom = 725
 speed = 350
-[connection signal="timeout" from="BalanceTimer" to="." method="_on_BalanceTimer_timeout"]
 [connection signal="event_happened" from="EventHandler" to="." method="_on_EventHandler_event_happened"]
 [connection signal="building_invested" from="HUD" to="." method="_on_HUD_building_invested"]
 [connection signal="hint_purchased" from="HUD" to="." method="_on_HUD_hint_purchased"]
