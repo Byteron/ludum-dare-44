@@ -18,13 +18,14 @@ var income setget ,_calculate_income
 
 onready var timer = Timer.new()
 
-func ready():
+func _ready():
 	timer.wait_time = TICK_TIME
 	timer.connect("timeout", self, "_on_timer_timeout")
 	add_child(timer)
 
 func start():
 	timer.start()
+	print(timer.name, " started ticking")
 
 func _calculate_income():
 	var income = revenue - upkeep

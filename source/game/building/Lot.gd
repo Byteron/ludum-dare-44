@@ -7,10 +7,10 @@ var build_time
 
 onready var timer = $Timer
 onready var sprite = $Sprite
-onready var hook = $RemoteTransform2D
+onready var hook = $InterfaceHook
 
 func _ready():
-	_randomize_sprite()
+	pass # _randomize_sprite()
 
 func build():
 	timer.wait_time = build_time

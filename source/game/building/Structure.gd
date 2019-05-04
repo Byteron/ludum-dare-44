@@ -12,14 +12,16 @@ signal selected(structure)
 signal mouse_entered(building_name)
 signal mouse_exited
 
-var cost = 20000
-var build_time = 30
+var cost = 0
+var build_time = 0
 
 var alias = "Building"
 var description = "This is a Building"
 
 var state = STATE.UNBUILT
 var type = TYPE.BUILDING
+
+var tick = false
 
 export(bool) var build_on_startup = false
 
@@ -54,24 +56,27 @@ func _initialize():
 	if not res:
 		print("Warning: No resource defined for ", name)
 		return
+
 	cost = res.cost
 	type = res.type
+	tick = res.tick
 	description = res.description
 	building.tick = res.tick
 	building.treasurer.upkeep = res.upkeep
 	building.treasurer.revenue = res.revenue
 	building.treasurer.bonus_requirements = bonus_requirements
 	building.treasurer.malus_requirements = malus_requirements
+	building.sprite.texture = res.building_texture
 	lot.build_time = res.build_time
+	hover_detector.size = res.building_texture.region.size
 
 func _on_Lot_building_started(build_time, hook):
 	state = STATE.BUILDING
 	emit_signal("building_started", build_time, hook)
 
 func _on_Lot_building_finished():
-	building.visible = true
 	state = STATE.BUILT
-	# building.build()
+	building.build(tick)
 	lot.queue_free()
 	lot = null
 	emit_signal("building_finished", self)

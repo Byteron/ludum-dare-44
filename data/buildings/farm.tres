@@ -1,18 +1,18 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
-[ext_resource path="res://assets/textures/residence.tres" type="Texture" id=1]
+[ext_resource path="res://assets/textures/farm.tres" type="Texture" id=1]
 [ext_resource path="res://templates/RBuilding.gd" type="Script" id=2]
 
 [resource]
 script = ExtResource( 2 )
 building_texture = ExtResource( 1 )
-alias = "Housings"
-description = "Cosy and warm"
-type = 1
-cost = 1000
+alias = "Farm"
+description = "Wonderful Life"
+type = 3
+cost = 5000
 build_time = 4
-tick = false
+tick = true
 revenue = 0
-upkeep = 0
+upkeep = 1000
 bonus = 0
 malus = 0
