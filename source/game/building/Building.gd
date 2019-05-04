@@ -1,148 +1,17 @@
 extends Node2D
 class_name Building
 
-const PopLabel = preload("res://source/interface/PopLabel.tscn")
+signal ticked(income, position)
 
-signal ticked(income)
-signal build(building_name)
-signal mouse_entered(building_name)
-signal mouse_exited
+var tick = true
 
-enum TYPE { LIVING_UNIT, SELLING_UNIT, PRODUCTION_UNIT, DECORATION_UNIT, PUBLISHER, BANK }
+onready var treasurer = $Treasurer
 
-var type = TYPE.DECORATION_UNIT
-var neighbours = []
+func get_upkeep():
+	return treasurer.upkeep
 
-var is_build = false
+func get_income():
+	return treasurer.income
 
-export(String) var building_name = "Building"
-export(String) var flavour_text = "This is a Building"
-
-
-export(bool) var build_on_startup = false
-export(bool) var tick = true
-export(bool) var revenue_per_housing = true
-
-export(int) var cost = 15000
-export(int) var build_time = 10
-
-export(int) var penalty = 0
-export(int) var boost = 0
-export(int) var revenue = 0
-export(int) var upkeep = 0
-export(int, 1, 60) var tick_time = 10
-
-export(Array, String) var penalty_requirements = []
-export(Array, String) var boost_requirements = []
-export(Texture) var building_texture = null
-
-onready var tick_timer = $TickTimer
-
-onready var tween = $Tween
-onready var build_timer = $BuildTimer
-onready var sprite = $Sprite
-onready var building_progress = $BuildingProgress
-
-func _ready():
-	_randomize_lot()
-	build_timer.wait_time = build_time
-	if build_on_startup:
-		is_build = true
-		call_deferred("_on_BuildTimer_timeout")
-
-func penalty_requirements_satisfied():
-	var buildings = Global.Game.building_container
-	for building_name in penalty_requirements:
-		if not buildings.has_node(building_name):
-			return false
-		if not buildings.get_node(building_name).is_build:
-			return false
-	return true
-
-func boost_requirements_satisfied():
-	var buildings = Global.Game.building_container
-	for building_name in boost_requirements:
-		if not buildings.has_node(building_name):
-			return false
-		if not buildings.get_node(building_name).is_build:
-			return false
-	return true
-
-func build():
-	building_progress.show()
-	build_timer.start()
-
-	tween.interpolate_property(building_progress, "value", 0, building_progress.max_value, build_time, Tween.TRANS_LINEAR, Tween.EASE_IN)
-	tween.start()
-
-func _randomize_lot():
-	randomize()
-	sprite.texture = sprite.texture.duplicate(true)
-	sprite.texture.region.position.x += (randi() % 3) * 16
-
-func _calculate_income():
-	var income = 0
-	if revenue_per_housing:
-		for neighbor in neighbours:
-			if neighbor.type == TYPE.LIVING_UNIT:
-				income += revenue
-	else:
-		income = revenue
-
-	income -= upkeep
-
-	if not penalty_requirements_satisfied():
-		income -= penalty
-
-	elif boost_requirements_satisfied():
-		income += boost
-
-	return income
-
-func per_minute(value):
-	return int(value * (60 / tick_time))
-
-func income_per_minute():
-	return per_minute(_calculate_income())
-
-func upkeep_per_minute():
-	return per_minute(upkeep)
-
-func revenue_per_minute():
-	if revenue_per_housing:
-		return per_minute(revenue * 8)
-	return per_minute(revenue)
-
-func _on_TickTimer_timeout():
-	var income = _calculate_income()
-	emit_signal("ticked", income)
-	var label = PopLabel.instance()
-	if income < 0:
-		label.text = str(income) + "$"
-		label.tint = Color("FF0000")
-	else:
-		label.text = "+" + str(income) + "$"
-		label.tint = Color("00FF00")
-	add_child(label)
-	Audio.play("cash")
-
-func _on_BuildTimer_timeout():
-	is_build = true
-	building_progress.hide()
-	Audio.play("build")
-	tween.interpolate_property(sprite, "modulate", Color("000000"), Color("FFFFFF"), 0.2, Tween.TRANS_SINE, Tween.EASE_IN)
-	tween.start()
-
-	sprite.texture = building_texture
-
-	if tick:
-		tick_timer.wait_time = tick_time
-		tick_timer.start()
-
-	emit_signal("build", self)
-
-func _on_MouseArea_mouse_entered():
-	emit_signal("mouse_entered", building_name)
-
-func _on_MouseArea_mouse_exited():
-	emit_signal("mouse_exited")
+func _on_Treasurer_ticked(income):
+	emit_signal("ticked", treasurer.income, position)

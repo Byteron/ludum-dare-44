@@ -1,48 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://source/game/building/Building.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprites/building.tres" type="Texture" id=2]
-[ext_resource path="res://assets/sprites/construction_sight.tres" type="Texture" id=3]
-[ext_resource path="res://assets/sprites/progress.png" type="Texture" id=4]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6, 6 )
+[ext_resource path="res://source/game/building/Treasurer.gd" type="Script" id=2]
+[ext_resource path="res://assets/textures/residence.tres" type="Texture" id=3]
 
 [node name="Building" type="Node2D" groups=[
 "Building",
 ]]
 script = ExtResource( 1 )
-building_texture = ExtResource( 2 )
 
-[node name="Tween" type="Tween" parent="."]
-
-[node name="MouseArea" type="Area2D" parent="."]
-editor/display_folded = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea"]
-shape = SubResource( 1 )
-
-[node name="TickTimer" type="Timer" parent="."]
-
-[node name="BuildTimer" type="Timer" parent="."]
-one_shot = true
+[node name="Treasurer" type="Node" parent="."]
+script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 3 )
-
-[node name="BuildingProgress" type="TextureProgress" parent="."]
-visible = false
-margin_left = -7.0
-margin_top = -7.0
-margin_right = 7.0
-margin_bottom = 7.0
-value = 50.0
-texture_under = ExtResource( 4 )
-texture_progress = ExtResource( 4 )
-tint_under = Color( 0, 0, 0, 0.470588 )
-tint_progress = Color( 0.984314, 0.85098, 0.592157, 0.54902 )
-nine_patch_stretch = true
-[connection signal="mouse_entered" from="MouseArea" to="." method="_on_MouseArea_mouse_entered"]
-[connection signal="mouse_exited" from="MouseArea" to="." method="_on_MouseArea_mouse_exited"]
-[connection signal="timeout" from="TickTimer" to="." method="_on_TickTimer_timeout"]
-[connection signal="timeout" from="BuildTimer" to="." method="_on_BuildTimer_timeout"]
+[connection signal="ticked" from="Treasurer" to="." method="_on_Treasurer_ticked"]

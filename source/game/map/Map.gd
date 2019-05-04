@@ -8,7 +8,6 @@ func _ready():
 	map_rect = get_used_rect()
 
 	_load_locations()
-	call_deferred("_update_neighbours")
 
 func map_to_world_centered(cell):
 	return map_to_world(cell) + cell_size / 2
@@ -27,7 +26,7 @@ func get_neighbour_buildings(cell):
 			continue
 		if not n_loc.building:
 			continue
-		if not n_loc.building.is_build:
+		if not n_loc.building.built:
 			continue
 		neighbour_buildings.append(n_loc.building)
 	return neighbour_buildings

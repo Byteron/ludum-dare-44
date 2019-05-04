@@ -26,7 +26,7 @@ func _build_requirements_satisfied():
 	var buildings = Global.Game.building_container
 	for building_name in required_build:
 		var building = buildings.get_node(building_name)
-		if not building.is_build:
+		if not building.built:
 			return false
 	return true
 
@@ -34,7 +34,7 @@ func _unbuild_requirements_satisfied():
 	var buildings = Global.Game.building_container
 	for building_name in required_unbuild:
 		var building = buildings.get_node(building_name)
-		if building.is_build:
+		if building.built:
 			return false
 	return true
 

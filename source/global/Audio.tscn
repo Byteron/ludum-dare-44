@@ -36,7 +36,7 @@ bus = "sound"
 stream = ExtResource( 6 )
 bus = "sound"
 
-[node name="build" type="AudioStreamPlayer" parent="."]
+[node name="built" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 bus = "sound"
 
