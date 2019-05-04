@@ -69,7 +69,7 @@ func _initialize():
 	building.treasurer.bonus_requirements = bonus_requirements
 	building.treasurer.malus_requirements = malus_requirements
 	building.sprite.texture = res.building_texture
-	building.seller_area = res.seller_area
+	building.seller_area = res.seller_radius
 	lot.build_time = res.build_time
 	hover_detector.size = res.building_texture.region.size
 

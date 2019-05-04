@@ -8,8 +8,7 @@ func _ready():
 	collision_shape.shape = collision_shape.shape.duplicate(true)
 
 func _set_size(value):
-	collision_shape.shape.extents.x = value.x
-	collision_shape.shape.extents.y = value.y
+	collision_shape.shape.radius = value
 
 func get_residence_count_in_area():
 	var count = 0

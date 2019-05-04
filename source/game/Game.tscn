@@ -62,6 +62,42 @@ res = ExtResource( 5 )
 position = Vector2( 80, 176 )
 res = ExtResource( 5 )
 
+[node name="Housings7" parent="Structures" instance=ExtResource( 4 )]
+position = Vector2( 176, 144 )
+res = ExtResource( 5 )
+
+[node name="Housings8" parent="Structures" instance=ExtResource( 4 )]
+position = Vector2( 208, 144 )
+res = ExtResource( 5 )
+
+[node name="Housings9" parent="Structures" instance=ExtResource( 4 )]
+position = Vector2( 208, 176 )
+res = ExtResource( 5 )
+
+[node name="Housings10" parent="Structures" instance=ExtResource( 4 )]
+position = Vector2( 240, 176 )
+res = ExtResource( 5 )
+
+[node name="Housings11" parent="Structures" instance=ExtResource( 4 )]
+position = Vector2( 240, 144 )
+res = ExtResource( 5 )
+
+[node name="Housings12" parent="Structures" instance=ExtResource( 4 )]
+position = Vector2( 145, 241 )
+res = ExtResource( 5 )
+
+[node name="Housings13" parent="Structures" instance=ExtResource( 4 )]
+position = Vector2( 177, 241 )
+res = ExtResource( 5 )
+
+[node name="Housings14" parent="Structures" instance=ExtResource( 4 )]
+position = Vector2( 209, 241 )
+res = ExtResource( 5 )
+
+[node name="Housings15" parent="Structures" instance=ExtResource( 4 )]
+position = Vector2( 241, 241 )
+res = ExtResource( 5 )
+
 [node name="Farm" parent="Structures" instance=ExtResource( 4 )]
 position = Vector2( 64, 64 )
 build_on_startup = true

@@ -2,8 +2,7 @@
 
 [ext_resource path="res://source/game/building/SellerArea.gd" type="Script" id=1]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16, 16 )
+[sub_resource type="CircleShape2D" id=1]
 
 [node name="SellerArea" type="Area2D"]
 collision_layer = 4
