@@ -64,12 +64,14 @@ func _initialize():
 	tick = res.tick
 	description = res.description
 	building.tick = res.tick
+	building.treasurer.customers = res.customers
+	building.customer_type = res.customer_type
 	building.treasurer.upkeep = res.upkeep
 	building.treasurer.revenue = res.revenue
 	building.treasurer.bonus_requirements = bonus_requirements
 	building.treasurer.malus_requirements = malus_requirements
 	building.sprite.texture = res.building_texture
-	building.seller_area = res.seller_radius
+	building.customer_radius = res.customer_radius
 	lot.build_time = res.build_time
 	hover_detector.size = res.building_texture.region.size
 

@@ -1,13 +1,16 @@
 extends Area2D
 
-var size setget _set_size
+var radius setget _set_radius
+var customer_type
 
 onready var collision_shape = $CollisionShape2D
+
 
 func _ready():
 	collision_shape.shape = collision_shape.shape.duplicate(true)
 
-func _set_size(value):
+func _set_radius(value):
+	radius = value
 	collision_shape.shape.radius = value
 
 func get_residence_count_in_area():
@@ -22,6 +25,6 @@ func get_residence_count_in_area():
 		if not area.state == Structure.STATE.BUILT:
 			continue
 
-		if area.type == Structure.TYPE.RESIDENCE:
+		if area.type == customer_type:
 			count += 1
 	return count

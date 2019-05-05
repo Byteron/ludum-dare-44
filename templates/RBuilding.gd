@@ -13,8 +13,9 @@ export(int) var build_time = 0
 
 export(bool) var tick = true
 
-export(int) var seller_radius = 16
-
+export(bool) var customers = false
+export(int) var customer_radius = 16
+export(Structure.TYPE) var customer_type = Structure.TYPE.RESIDENCE
 
 export(int) var revenue = 0
 export(int) var upkeep = 0

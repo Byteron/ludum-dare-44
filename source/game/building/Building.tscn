@@ -16,4 +16,3 @@ position = Vector2( 0, 10 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 3 )
-[connection signal="ticked" from="Treasurer" to="." method="_on_Treasurer_ticked"]

@@ -3,7 +3,8 @@ class_name Building
 
 var tick = true
 
-var seller_area setget _set_seller_area
+var customer_radius setget _set_customer_radius
+var customer_type setget _set_customer_type
 
 onready var treasurer = $Treasurer
 onready var sprite = $Sprite
@@ -20,5 +21,8 @@ func get_upkeep():
 func get_income():
 	return treasurer.income
 
-func _set_seller_area(size):
-	treasurer.seller_area.size = size
+func _set_customer_radius(value):
+	treasurer.seller_area.radius = value
+
+func _set_customer_type(value):
+	treasurer.customer_type = value
