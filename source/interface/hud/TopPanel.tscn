@@ -61,4 +61,5 @@ margin_left = -54.0
 margin_bottom = 18.0
 text = "Hint (1000$)"
 [connection signal="timeout" from="VBoxContainer/TimeLabel/Timer" to="VBoxContainer/TimeLabel" method="_on_Timer_timeout"]
+[connection signal="timeout" from="VBoxContainer/TimeLabel/Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="HintButton" to="." method="_on_HintButton_pressed"]

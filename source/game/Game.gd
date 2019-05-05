@@ -47,14 +47,14 @@ func _setup_buildings():
 		structure.connect("mouse_exited", self, "_on_mouse_exited_building")
 		structure.building.treasurer.connect("ticked", self, "_on_building_ticked")
 
-func _get_balance():
+func get_balance():
 	var balance = 0
-	var buildings = get_tree().get_nodes_in_group("Building")
-	for building in buildings:
-		if not building.built or not building.tick:
+	var structures = get_tree().get_nodes_in_group("Structure")
+	for structure in structures:
+		if not structure.state == Structure.STATE.BUILT or not structure.building.tick:
 			continue
 
-		balance += building.income_per_minute()
+		balance += structure.building.get_income()
 	return balance
 
 func _set_max_budget(new_max_budget):

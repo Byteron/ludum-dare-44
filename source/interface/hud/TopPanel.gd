@@ -46,3 +46,6 @@ func update_balance(balance):
 
 func _on_HintButton_pressed():
 	emit_signal("hint_purchased")
+
+func _on_Timer_timeout():
+	update_balance(Global.Game.get_balance())
