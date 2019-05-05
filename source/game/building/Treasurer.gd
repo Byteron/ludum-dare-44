@@ -8,8 +8,8 @@ signal ticked(income, position)
 var revenue = 0
 var upkeep = 0
 
-var penalty = 0
-var boost = 0
+var bonus = 0
+var malus = 0
 
 var bonus_requirements = []
 var malus_requirements = []
@@ -32,9 +32,9 @@ func _calculate_income():
 	else:
 		income = revenue - upkeep
 	if not Helper.requirements_satisfied(malus_requirements):
-		income -= penalty
+		income -= malus
 	elif Helper.requirements_satisfied(bonus_requirements):
-		income += boost
+		income += bonus
 	return income
 
 func _set_customer_type(value):

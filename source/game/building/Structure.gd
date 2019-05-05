@@ -68,6 +68,8 @@ func _initialize():
 	building.customer_type = res.customer_type
 	building.treasurer.upkeep = res.upkeep
 	building.treasurer.revenue = res.revenue
+	building.treasurer.bonus = res.bonus
+	building.treasurer.malus = res.malus
 	building.treasurer.bonus_requirements = bonus_requirements
 	building.treasurer.malus_requirements = malus_requirements
 	building.sprite.texture = res.building_texture
