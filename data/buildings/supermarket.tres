@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=3 format=2]
 
-[ext_resource path="res://assets/textures/factory.tres" type="Texture" id=1]
+[ext_resource path="res://assets/textures/supermarket.tres" type="Texture" id=1]
 [ext_resource path="res://templates/RBuilding.gd" type="Script" id=2]
 
 [resource]
@@ -17,5 +17,5 @@ customer_radius = 128
 customer_type = 1
 revenue = 350
 upkeep = 1000
-bonus = 0
+bonus = 1000
 malus = 0
